@@ -1,0 +1,10 @@
+en:
+  site_title: 'Bitmask Help'
+  contribute_to_help: 'Contribute to these help pages'
+  download_bitmask: 'Download Bitmask'
+  downloads: Downloads
+  download: Download
+  leap: 'LEAP Encryption Access Project'
+  footer_text:
+  warning: <b>WARNING:</b> Bitmask is still experimental. Please do not use these beta releases of Bitmask for situations where a compromise of your data could put you in danger.
+  warning_disabled: Also, although Bitmask is improving rapidly, it is possible that you could lose your email when using an early beta release.

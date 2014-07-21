@@ -1,0 +1,315 @@
+// note: css paths are always relative to the css file
+$masthead-img: '/assets/rainbow-masthead-medium.png';
+$masthead-background-color: #5e9ee3;
+$masthead-height: 128px;
+$gutter: 15px;
+$background-color: #333;
+$menu-text-color: #fff;
+//$menu-shadow-size: 1px;
+//$menu-shadow-blur: 2px;
+//$menu-shadow-color: #000;
+$content-border-color: #000;
+$content-background-color: #fff;
+$content-shadow-color: #000;
+$content-shadow-size: 1px;
+$content-shadow-blur: 8px;
+$title-background-color: #efefef;
+$title-divider-color: #ccc;
+$footer-height: 50px;
+$footer-gutter: 20px;
+$footer-background-color: #666;
+$footer-color: #ddd;
+$footer-border-width: 1px;
+$footer-border-color: darken($background-color, 5%);
+$footer-shadow: true;
+$footer-shadow-color: #333;
+$footer-shadow-size: 1px;
+$footer-shadow-blur: 6px;
+$navigation-item-active-background-color: #999;
+$navigation-item-active-color: #000;
+$navigation-item-background-color: #ccc;
+$navigation-item-color: #666;
+$navigation-border: 1px solid #333;
+$navigation-shadow: 1px 1px 4px #111;
+$link-color: darken($masthead-background-color, 15%);
+$link-visited-color: darken($masthead-background-color, 25%);
+
+//
+// TYPOGRAPHY
+//
+
+a {
+  color: $link-color;
+}
+a:visited {
+  color: $link-visited-color;
+}
+
+.content-box h1:first-child, .content-box h2:first-child {
+  margin-top: 0px !important;
+}
+
+h2.hidey {
+  font-size: 0;
+  position: absolute;
+  z-index: -1000;
+}
+
+//
+// DESIGN ELEMENTS
+//
+
+.donation {border: 1px solid #FFE8A9; padding:0.5em; background-color: #FFF6DD; overflow: auto; display: inline-block;}
+
+.locale-links a {
+  color: $link-color;
+  &:hover {
+    color: $link-color !important;
+    text-decoration: underline;
+  }
+  &.label-primary {
+    color: white !important;
+  }
+}
+
+//
+// MASTHEAD
+//
+
+#masthead {
+  background-color: $masthead-background-color;
+  width: 100%;
+  margin: 0;
+  background: $masthead-background-color url(#{$masthead-img}) 50% 50%;
+  background-size: cover;
+  height: $masthead-height;
+  .masthead-inner {
+    height: $masthead-height;
+    .text {
+      //outline: 1px solid red;
+      color: black;
+      margin-left: 50%;
+      width: 50%;
+      font-size: 40px;
+      font-weight: bold;
+      font-family: Helvetica,Arial,sans-serif;
+      height: 64px;
+      &.top {
+        line-height: 100px;
+      }
+      &.bottom {
+        line-height: 40px;
+      }
+    }
+  }
+}
+
+#top-menu {
+  position: absolute;
+  bottom: 0px;
+  margin: 0;
+  li {
+    float: left;
+  }
+  a {
+    display: block;
+    padding: 5px 14px;
+    color: $menu-text-color;
+    font-size: 14px;
+    line-height: 20px;
+    background-color: rgba(0,0,0,0.15);
+  }
+  a.active {
+    background-color: $background-color;
+    color: $menu-text-color;;
+    //box-shadow: inset $menu-shadow-size $menu-shadow-size $menu-shadow-blur $menu-shadow-color;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  #top-menu a {
+    padding: 5px 6px;
+    font-size: 12px;
+  }
+}
+
+//
+// MIDDLE
+//
+
+#main {
+  margin-top: $gutter;
+}
+
+body {
+  background-color: $background-color;
+}
+
+.shadow-box {
+  background-color: $content-background-color;
+  border: 1px solid $content-border-color;
+  box-shadow: $content-shadow-size $content-shadow-size $content-shadow-blur $content-shadow-color;
+}
+
+.title-box {
+  color: black;
+  background-color: $title-background-color;
+  padding: $gutter;
+  border-bottom: 1px dotted $title-divider-color;
+  h1 {
+    margin: 0;
+  }
+  .summary {
+    color: #666;
+    line-height: 1.5em;
+    margin-top: 10px;
+  }
+}
+
+.content-box {
+  padding: $gutter;
+}
+
+//
+// SIDEBAR
+//
+
+#sidebar {
+  padding-right: 0;
+  margin-bottom: 15px;
+  #navigation {
+    background-color: $navigation-item-background-color;
+    @if $navigation-border {
+      border: $navigation-border;
+    }
+    @if $navigation-shadow {
+      box-shadow: $navigation-shadow;
+    }
+  }
+  ul.nav.nav-pills.nav-stacked {
+    li a {
+      color: $navigation-item-color;
+      border-radius: 0;
+      padding-top: 8px;
+      padding-bottom: 8px;
+    }
+    li.active a {
+      background-color: $navigation-item-active-background-color;
+      color: $navigation-item-active-color;
+    }
+  }
+  li.level2 a {padding-left: $gutter*2;}
+  li.level3 a {padding-left: $gutter*3;}
+  .sidebar-addendum {
+    margin-top: $gutter;
+  }
+}
+
+@media (max-width: 768px) {
+  #sidebar {
+    padding-right: 15px; // hard coded bootstrap gutter for now.
+  }
+}
+
+//
+// FOOTER
+// see http://getbootstrap.com/examples/sticky-footer/
+//
+
+html, body {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+#wrap {
+  min-height: 100%;
+  height: auto !important;
+  margin: 0 auto -1 * ($footer-height + $footer-gutter);
+  padding: 0 0 ($footer-height + $footer-gutter);
+}
+
+#footer {
+  padding-top: $footer-gutter;
+  //height: $footer-height - $footer-border-width;
+  #footer-inner {
+    height: $footer-height;
+    border-top: $footer-border-width solid $footer-border-color;
+    background-color: $footer-background-color;
+    @if $footer-shadow {
+      box-shadow: inset $footer-shadow-size $footer-shadow-size $footer-shadow-blur $footer-shadow-color;
+    }
+  }
+}
+
+ @media (max-width: 767px) {
+  #footer .footer-text {
+    font-size: 80%;
+    margin: 0 2px;
+  }
+}
+
+// footer styling
+
+#footer .footer-text {
+  text-align: center;
+  padding-top: 10px;
+  a, & {
+    color: $footer-color;
+    margin: 4px 5px;
+  }
+}
+
+//
+// UTILITY
+//
+
+.image-right {
+  margin-left: $gutter;
+  margin-bottom: $gutter;
+}
+
+//
+// FRONT PAGE
+//
+
+.logo {
+  min-height: 87px;
+  padding-left: 280px;
+  padding-top: 10px;
+  background: url(images/riseup-rainbow.png) no-repeat;
+}
+@media only screen and (max-width: 590px) {
+  .logo {
+     padding-left: 94px;
+     padding-top: 65px;
+  }
+}
+
+.feed {
+  border: 1px dotted #ccc;
+
+  .item {
+    border-top: 1px dotted #ccc;
+    padding: $gutter;
+    .label {
+      font-size: 1em;
+    }
+    .date {
+      font-style: italic;
+      line-height: 2em;
+    }
+    .text {
+
+    }
+  }
+
+  h2 {
+    font-weight: bold;
+    font-size: 1.1em;
+    line-height: 1.5em;
+    padding: $gutter;
+    margin: 0;
+    background: #f9f9f9;
+  }
+}

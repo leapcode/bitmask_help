@@ -1,0 +1,36 @@
+- @title = 'Benefits of EIP'
+- @nav_title = 'Benefits'
+
+h2. Why would you want an Encrypted Internet Proxy?
+
+The internet is being broken by governments, internet service providers (ISPs), and corporations.
+
+h3. Broken by governments
+
+Around the world, governments are using the internet for social control, through both surveillance and censorship. Many countries, such as China, Iran, and the United States practice active surveillance of the social relationships of everyone and the European Union countries require all ISPs and website operators to record and retain personal data on your behavior. With three-strikes laws, many countries now deny citizens access to the internet if accused of file sharing. Some countries even forbid the use of new communication technologies, like Skype.
+
+h3. Broken by ISPs
+
+Internet service providers are breaking the internet too. They happily cooperate with government repression, they practice intrusive monitoring of your traffic through deep packet inspection, they track your DNS usage, and they get people thrown in jail, expelled from school, or banned from the internet, merely from the accusation of copyright infringement. Also, ISPs typically limit you to one internet address. If you want to share your internet connection with multiple devices, you must put all the devices on a local network. This works OK if you just want to browse the web, but makes life difficult if you want to take advantage of many applications.
+
+h3. Broken by corporations
+
+Corporations have discovered how to make money from the internet: surveillance. By tracking your online habits, advertising companies build detailed profiles of your individual behavior in order to better sell you useless crap. Every single major internet ad company now uses behavioral tracking. Also, to comply with national copyright, many companies only make their services available to some internet users, those who reside in the 'right' country.
+
+h2. How an Encrypted Internet Proxy helps
+
+There are many ways that EIP can help:
+
+# *protect against ISP surveillance*: An EIP eliminates the ability of your ISP to monitor your communication. They have no meaningful records which can be used against you, either by marketers or the government.
+# *bypass government censorship*: An EIP can entirely bypass all government censorship, so long as you still have access to the internet. Note, however, that careful analysis of your traffic could reveal that you are using an EIP, which may or may not be legal in your jurisdiction.
+# *access the entire internet, regardless of where you live*: An EIP allows you to pretend to live in any country where we have a EIP gateway server. This gives you access to restricted content only available in those countries. An EIP also allows you to use services that may be blocked in your country.
+# *secure your Wi-Fi connection*: Any time you use a public Wi-Fi connection, everyone else using that access point can spy on your traffic. An EIP will prevent this.
+# *keep websites from logging your IP address*: Most all websites will log your IP address and some even retain this information for several years. Because your IP address is effectively an unique identifier that is connected to your real identity and your real location, there are many reasons why someone might not want every website they visit to have access to this personal information.
+
+h2. Special features of Bitmask EIP
+
+The Bitmask application provides an Encrypted Internet that has several advantages over traditional "Personal VPN":
+
+* Does not leak traffic: IPv6, DNS, Does not "Fail Open"
+* No logging: by default...
+* Semi-anonymous

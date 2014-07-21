@@ -1,0 +1,12 @@
+.container
+  .row
+    .col-sm-12
+      .masthead-inner
+        .text.top
+          Bitmask
+        .text.bottom
+          Help
+        %ul.list-unstyled#top-menu
+          - top_navigation_items(include_home:true) do |item|
+            %li{:class => item[:class]}
+              %a{:href => item[:href], :class => item[:class]}= item[:label]

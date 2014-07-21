@@ -1,0 +1,54 @@
+- if @locals[:os] == 'debian'
+
+  %p.b
+    To install
+
+  %pre
+    - if @locals[:distro] == 'wheezy'
+      :preserve
+        sudo -s
+        echo "deb http://deb.bitmask.net/debian #{@locals[:distro]} main" > /etc/apt/sources.list.d/bitmask.list
+        echo "deb http://http.debian.net/debian wheezy-backports main" >> /etc/apt/sources.list.d/bitmask.list
+        wget -O- https://dl.bitmask.net/apt.key | apt-key add -
+        apt-get update
+        apt-get install bitmask leap-keyring
+    - else
+      :preserve
+        sudo -s
+        echo "deb http://deb.bitmask.net/debian #{@locals[:distro]} main" > /etc/apt/sources.list.d/bitmask.list
+        wget -O- https://dl.bitmask.net/apt.key | apt-key add -
+        apt-get update
+        apt-get install bitmask leap-keyring
+
+  %p.b
+    To remove
+
+  %pre
+    :preserve
+      sudo -s
+      apt-get remove bitmask leap-keyring
+      apt-key del 0x1E34A1828E207901
+      rm /etc/apt/sources.list.d/bitmask.list
+
+- else
+
+  %p.b
+    To install
+
+  %pre
+    :preserve
+      sudo -s
+      add-apt-repository "deb http://deb.bitmask.net/debian #{@locals[:distro]} main"
+      wget -O- https://dl.bitmask.net/apt.key | apt-key add -
+      apt-get update
+      apt-get install bitmask leap-keyring
+
+  %p.b
+    To remove
+
+  %pre
+    :preserve
+      sudo -s
+      apt-get remove bitmask leap-keyring
+      apt-key del 0x1E34A1828E207901
+      add-apt-repository --remove "deb http://deb.bitmask.net/debian #{@locals[:distro]} main"

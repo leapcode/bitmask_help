@@ -1,0 +1,19 @@
+@nav_title = "EIP"
+@title = 'Encrypted Internet Proxy'
+
+h2. What is an Encrypted Internet Proxy?
+
+By using the Encrypted Internet Proxy (EIP) feature of Bitmask, you are able to securely route, or proxy, all your internet traffic through the server of your choice.
+
+With an Encrypted Internet Proxy you can circumvent censorship, anonymize your location, and block many forms of network surveillance. This type of service is often called a "Personal VPN" (Virtual Private Network). We use the term Encrypted Internet Proxy because VPNs have several different uses, many of which have nothing to do with providing you with enhanced security.
+
+For more information, see:
+
+* [[Benefits of using an EIP => benefits]]
+* [[Limitations of an EIP => limitations]]
+
+h2. How do I use it?
+
+* [[Using Bitmask EIP on Android => android]]
+* [[Using Bitmask EIP on Windows, Mac, or Linux => desktop]]
+

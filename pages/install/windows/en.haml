@@ -1,0 +1,19 @@
+- @title = "Bitmask for Windows"
+
+%h1 Bitmask for Windows
+
+.row
+  .col-sm-8.col-sm-offset-2
+    .p.alert.alert-danger
+      %i.fa.fa-warning
+      <b>WARNING:</b> Currently, the Windows build is very buggy and is not officially supported. If you know Windows programming, we could <a href="https://leap.se/get-involved">use your help</a>.
+
+%h2 Download latest version
+
+= render({:partial => 'common/download_button'}, {:link => '/client/windows/Bitmask-win32-latest.zip', :text => 'Download for Windows'})
+
+%h2 Download other versions
+
+%p If you want to install an old version of Bitmask, you can <a href="/client/windows/">browse all releases</a>.
+
+= render({:partial => 'common/email'})
