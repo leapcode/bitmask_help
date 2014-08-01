@@ -1,0 +1,18 @@
+- @toc = false
+- @title = 'Home'
+- @this.layout = 'home'
+
+.darker
+  .container
+    .row
+      .col-sm-9
+        .introtext
+          = render 'home/intro'
+      .col-sm-3
+        .download.text-left
+          %a.btn.btn-large.btn-primary{:href => 'install'}
+            %i.fa.fa-cloud-download.fa-2x
+            %span
+              = t :download_bitmask
+
+= render 'home/text'

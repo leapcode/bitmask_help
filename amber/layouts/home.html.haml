@@ -1,0 +1,20 @@
+!!!
+%html{:lang => @locals[:locale].to_s}
+  %head
+    %title
+      = t(:site_title)
+    %meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    %meta(charset="UTF-8")
+    %link(rel="stylesheet" href="/assets/bootstrap.min.css")
+    %link(rel="stylesheet" href="/assets/font-awesome/css/font-awesome.min.css")
+    %link(rel="stylesheet" href="/assets/style.css")
+    %link(rel="icon" href="/assets/images/favicon.png" type="image/x-icon")
+    = html_head_base
+  %body.home
+    #wrap
+      #masthead.large
+        = render 'layouts/masthead_large'
+      #main
+        = yield :content
+    #footer
+      = render 'layouts/footer'
