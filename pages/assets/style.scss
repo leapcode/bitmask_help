@@ -54,6 +54,14 @@ a:visited {
   color: $link-visited-color;
 }
 
+a.btn.btn-primary {
+  color: white;
+}
+
+.p {
+  margin: 12px 0;
+}
+
 .content-box h1:first-child, .content-box h2:first-child {
   margin-top: 0px !important;
 }
@@ -333,14 +341,14 @@ body.home {
     }
   }
   .pad {
-    margin: 8px 0;
+    margin: 15px 0;
   }
   .light, .dark, .lighter, .darker {
     padding-top: 15px;
     padding-bottom: 15px;
-    ul {
-      padding-left: 15px;
-    }
+    //ul {
+    //  padding-left: 15px;
+    //}
   }
   .dark, .darker {
     color: $home-dark-color;
@@ -374,5 +382,11 @@ body.home {
   }
   .introtext {
     font-size: 1.5em;
+  }
+  ul.fa-ul {
+    margin-left: 22px;
+  }
+  ul.spaced li {
+    margin-bottom: 15px;
   }
 }

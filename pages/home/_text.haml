@@ -14,12 +14,22 @@
           %i.fa.fa-shield.fa-3x
       .col-sm-10.text-left
         .h2
-          %span< Encrypted Internet Proxy
-        %p.pad With Encrypted Internet Proxy (EIP) all your traffic is encrypted and routed through your provider before it is decrypted and sent on to the open internet.
-        %ul
-          %li <b>Block Monitoring</b>: EIP is very effective at bypassing most censorship and network surveillance by your ISP or country.
-          %li <b>Anonymous IP</b>: EIP also hides your IP address, keeping your physical location safe from nefarious websites.
-          %li <b>Extra Security</b>: We take extra security measures to prevent problems common to VPN, such as DNS leakage and IPv6 leakage.
+          %span
+            [[Encrypted Internet => eip]]
+        %p.pad With Encrypted Internet, all your traffic is securely routed through your provider before it is decrypted and sent on to the open internet (this type of service is often called a personal VPN).
+        %ul.fa-ul.spaced
+          %li
+            %i.fa-li.fa.fa-check-square
+            <b>Thwart Network Surveillance</b><br>
+            Encrypted Internet is very effective at bypassing most censorship and network surveillance by your ISP or country.
+          %li
+            %i.fa-li.fa.fa-check-square
+            <b>Anonymize your address</b><br>
+            Your IP address will also be hidden, keeping your physical location safe from nefarious websites or network eavesdroppers.
+          %li
+            %i.fa-li.fa.fa-check-square
+            <b>Extra Security</b><br>
+            We take extra security measures to prevent problems common to other personal VPNs, such as DNS leakage and IPv6 leakage.
 
 .lighter
   .container
@@ -29,26 +39,56 @@
           %i.fa.fa-envelope.fa-2x
       .col-sm-10.text-left
         .h2
-          %span Encrypted Email
+          %span
+            [[Encrypted Email => email]]
         %p.pad Bitmask Encrypted Email is easy to use while still being backward compatible with the existing OpenPGP protocol for secure email.
-        %ul
-          %li <b>Secure Email Storage</b>: All incoming email is automatically encrypted so only you can read it (including meta-data).
-          %li <b>Automatic Key Management</b>: If possible, outgoing email is automatically encrypted so that only the recipient can read it (if a valid OpenPGP public key can be automatically discovered and validated for the recipient).
+        %ul.fa-ul.spaced
+          %li
+            %i.fa-li.fa.fa-check-square
+            <b>Full end-to-end encryption</b><br>
+            Whenever possible, all messages are encrypted end-to-end on the client device.
+          %li
+            %i.fa-li.fa.fa-check-square
+            <b>Secure Storage</b><br>
+            All incoming email is automatically encrypted so only you can read it (including meta-data).
+          %li
+            %i.fa-li.fa.fa-check-square
+            <b>Automatic Key Management</b><br>
+            The user never needs to know or worry about generating keys, discovering keys, or validating keys.
 
 .dark
   .container
     .row
       .col-sm-12
         %h1#security Security
-        %ul
+    .row
+      .col-sm-6
+        %ul.fa-ul.spaced
           %li
-            <b>Client encrypted storage</b>:
+            %i.fa-li.fa.fa-save
+            <b>Client-encrypted Storage</b><br>
             All data storage is encrypted, including local data and cloud backups. This encryption always [[takes place on your device => https://leap.se/en/soledad]], so the service provider cannot read your stored data.
-          %li *Availability*: Your data is always available and [[synchronized to the devices => https://leap.se/en/soledad]] you choose.
-          %li *Passwords, Improved*: Although you specify a username and password to login, your [[password is never communicated to the provider => https://en.wikipedia.org/wiki/Secure_Remote_Password_protocol]].
-          %li *Up to date*: The Bitmask application is always kept up to date with the latest security patches (coming soon).
-          %li *Don't trust the provider*: If you download the Bitmask application from [[dl.bitmask.net => https://dl.bitmask.net]], your service provider cannot add a backdoor to compromise your security.
-        %p As with any security system, Bitmask has [[known limitations => https://leap.se/en/limitations]]. For technical details, see our [[design documentation' => 'https://leap.se/en/design]].
+          %li
+            %i.fa-li.fa.fa-exchange
+            <b>Always Available</b><br>
+            Your data is always available, even when you are offline, it is [[synchronized to the devices => https://leap.se/en/soledad]] you choose, and secured backed up to the cloud.
+          %li
+            %i.fa-li.fa.fa-exclamation-circle
+            <b>Passwords, Improved</b><br>
+            Although you specify a username and password to login, your [[password is never communicated to the provider => https://en.wikipedia.org/wiki/Secure_Remote_Password_protocol]].
+      .col-sm-6
+        %ul.fa-ul.spaced
+          %li
+            %i.fa-li.fa.fa-clock-o
+            <b>Up to date</b><br>
+            The Bitmask application is always kept up to date with the latest security patches (coming soon).
+          %li
+            %i.fa-li.fa.fa-institution
+            <b>Don't trust the provider</b><br>
+            If you download the Bitmask application from [[dl.bitmask.net => https://dl.bitmask.net]], your service provider cannot add a backdoor to compromise your security.
+    .row
+      .col-sm-12
+        %p As with any security system, Bitmask has [[known limitations => https://leap.se/en/limitations]]. For technical details, see our [[design documentation => https://leap.se/en/design]].
 
 .light
   .container
@@ -98,4 +138,4 @@
 
         %p The <b>Bitmask</b> application is lovingly hand-crafted by a team of paid and volunteer programmers from seven different countries. Development is principally sponsored by the #{link 'LEAP Encryption Access Project' => 'https://leap.se'}, an non-profit organization dedicated to defending democracy by <b>protecting the right to whisper</b>.
 
-        %p The service provider <b>bitmask.net</b> is operated by LEAP in order to demonstrate usage of the <b>Bitmask</b> application. However, we actively encourage other organizations to start their own compatible service providers by using our free software #{link 'platform for server automation' => 'https://leap.se/en/platform'}.
+        %p The service provider <b>demo.bitmask.net</b> is operated by LEAP in order to demonstrate usage of the <b>Bitmask</b> application. However, we actively encourage other organizations to start their own compatible service providers by using our free software #{link 'platform for server automation' => 'https://leap.se/en/platform'}.
