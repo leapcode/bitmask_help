@@ -3,7 +3,9 @@ install
   linux
 eip
   android
-  desktop
+  linux
+  mac
+  windows
   benefits
   limitations
 email
