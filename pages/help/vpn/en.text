@@ -1,0 +1,20 @@
+@title = 'VPN'
+
+h2. What is Bitmask VPN?
+
+By using the Bitmask VPN, you are able to securely route all your internet traffic through the server of your choice.
+
+With Bitmask VPN you can circumvent censorship, anonymize your location, and block many forms of network surveillance.
+
+For more information, see:
+
+* [[Benefits of using Encrypted Internet => benefits]]
+* [[Limitations of Encrypted Internet => limitations]]
+
+h2. How do I use it?
+
+* [[Android => vpn/android]]
+* [[Linux => vpn/linux]]
+* [[Mac => vpn/mac]]
+* [[Windows => vpn/windows]]
+

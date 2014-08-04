@@ -1,11 +1,12 @@
 install
   android
   linux
-eip
-  android
-  linux
-  mac
-  windows
-  benefits
-  limitations
-email
+help
+  vpn
+    android
+    linux
+    mac
+    windows
+    benefits
+    limitations
+  email
