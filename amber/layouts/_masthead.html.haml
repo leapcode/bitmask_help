@@ -3,9 +3,9 @@
     .col-sm-12
       .masthead-inner
         .text.top
-          =t :banner_top
+          %span= t :banner_top
         .text.bottom
-          =t :banner_bottom
+          %span= t(:banner_motto).gsub('<br>', '&nbsp;<br>&nbsp;')
         %ul.list-unstyled#top-menu
           - top_navigation_items(include_home:true) do |item|
             %li{:class => item[:class]}

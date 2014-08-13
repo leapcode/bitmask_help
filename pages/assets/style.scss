@@ -1,9 +1,14 @@
 // note: css paths are always relative to the css file
-$masthead-img: '/assets/rainbow-masthead-medium.png';
+
+
+$masthead-large-img: '/assets/images/rainbow-masthead-large.png';
+$masthead-large-height: 200px;
+$masthead-medium-img: '/assets/images/rainbow-masthead-medium.png';
+$masthead-medium-height: 130px;
+$masthead-small-img: '/assets/images/rainbow-masthead-small.png';
+$masthead-small-height: 80px;
 $masthead-background-color: #5e9ee3;
-$masthead-height: 128px;
-$masthead-large-img: '/assets/rainbow-masthead-large.png';
-$masthead-large-height: 190px;
+
 $gutter: 15px;
 $background-color: #333;
 $menu-text-color: #fff;
@@ -113,49 +118,109 @@ h2.hidey {
   background-color: $masthead-background-color;
   width: 100%;
   margin: 0;
-  background: $masthead-background-color url(#{$masthead-img}) 50% 50%;
-  background-size: cover;
-  height: $masthead-height;
+  background-size: cover !important;
   .masthead-inner {
-    height: $masthead-height;
     .text {
       color: black;
       margin-left: 50%;
       width: 50%;
-      font-size: 40px;
       font-weight: bold;
       font-family: Helvetica,Arial,sans-serif;
-      height: $masthead-height / 2;
-      &.top {
-        line-height: 100px;
-      }
       &.bottom {
-        line-height: 40px;
+        display: none;
       }
     }
   }
 }
 
-#masthead.large {
+// home masthead
+body.home #masthead .text {
+  position: relative;
+  &.top {
+    line-height: 0.85em;
+    span {
+      position: absolute;
+      bottom: 0;
+      left: -1px;
+    }
+  }
+  &.bottom {
+    display: block;
+    span {
+      font-weight: normal;
+      background: rgba(255,255,255,0.5);
+      padding: 4px;
+    }
+  }
+}
+
+// large masthead
+
+#masthead {
   background: $masthead-background-color url(#{$masthead-large-img}) 50% 50%;
-  height: $masthead-large-height;
   .masthead-inner {
     height: $masthead-large-height;
     .text {
-      height: $masthead-large-height / 2;
       padding-left: 4px;
-      &.top {
-        font-size: 70px;
-        line-height: 130px;
+      font-size: 70px;
+      line-height: $masthead-large-height;
+    }
+  }
+}
+
+body.home #masthead .text {
+  height: $masthead-large-height/2;
+  &.bottom {
+    font-size: 20px;
+    line-height: 30px !important;
+  }
+}
+
+// medium masthead
+
+@media (max-width: 992px) {
+  #masthead {
+    background: $masthead-background-color url(#{$masthead-medium-img}) 50% 50%;
+    .masthead-inner {
+      height: $masthead-medium-height;
+      .text {
+        padding-left: 3px;
+        font-size: 50px;
+        line-height: $masthead-medium-height;
       }
-      &.bottom {
-        font-size: 18px;
-        line-height: 28px;
-        font-weight: normal;
-        span {
-          background: rgba(255,255,255,0.5);
-          padding: 4px;
-        }
+    }
+  }
+  body.home #masthead .text {
+    height: $masthead-medium-height/2;
+    &.bottom {
+      font-size: 14px;
+      line-height: 24px !important;
+    }
+  }
+}
+
+
+// small masthead
+
+@media (max-width: 767px) {
+  #masthead {
+    background: $masthead-background-color url(#{$masthead-small-img}) 50% 50%;
+    .masthead-inner {
+      height: $masthead-small-height;
+      .text {
+        padding-left: 1px;
+        font-size: 30px;
+        line-height: $masthead-small-height;
+      }
+    }
+  }
+  body.home #masthead .text {
+    height: $masthead-small-height/2;
+    &.bottom {
+      font-size: 9px;
+      line-height: 14px !important;
+      span {
+        padding: 2px;
       }
     }
   }
@@ -183,7 +248,7 @@ h2.hidey {
   }
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 767px) {
   #top-menu a {
     padding: 5px 6px;
     font-size: 12px;
@@ -299,7 +364,7 @@ html, body {
   }
 }
 
- @media (max-width: 767px) {
+@media (max-width: 767px) {
   #footer .footer-text {
     font-size: 80%;
     margin: 0 2px;
