@@ -1,0 +1,56 @@
+// note: css paths are always relative to the css file
+
+$masthead-large-img: '/assets/images/rainbow-masthead-large.png';
+$masthead-large-height: 200px;
+$masthead-medium-img: '/assets/images/rainbow-masthead-medium.png';
+$masthead-medium-height: 130px;
+$masthead-small-img: '/assets/images/rainbow-masthead-small.png';
+$masthead-small-height: 80px;
+$masthead-background-color: #5e9ee3;
+
+$gutter: 15px;
+$background-color: #333;
+$menu-text-color: #fff;
+$menu-padding: 8px 18px;
+$menu-background-color: rgba(0,0,0,0.4);
+//$menu-shadow-size: 1px;
+//$menu-shadow-blur: 2px;
+//$menu-shadow-color: #000;
+$content-border-color: #000;
+$content-background-color: #fff;
+$content-shadow-color: #000;
+$content-shadow-size: 1px;
+$content-shadow-blur: 8px;
+$title-background-color: #efefef;
+$title-divider-color: #ccc;
+$footer-height: 50px;
+$footer-gutter: 20px;
+$footer-background-color: #666;
+$footer-color: #ddd;
+$footer-border-width: 1px;
+$footer-border-color: darken($background-color, 5%);
+$footer-shadow: true;
+$footer-shadow-color: #333;
+$footer-shadow-size: 1px;
+$footer-shadow-blur: 6px;
+$navigation-item-active-background-color: #999;
+$navigation-item-active-color: #000;
+$navigation-item-background-color: #ccc;
+$navigation-item-color: #666;
+$navigation-border: 1px solid #333;
+$navigation-shadow: 1px 1px 4px #111;
+$link-color: darken($masthead-background-color, 15%);
+$link-visited-color: darken($masthead-background-color, 25%);
+
+$home-light-color: #fff;
+$home-light-background-color: #111;
+
+$home-dark-color: #fff;
+$home-dark-background-color: $background-color;
+
+//
+// magic widths:
+//   small: 767px
+//   medium: 992px
+//   large: 1200px
+//
