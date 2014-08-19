@@ -1,29 +1,33 @@
 .row
   .col-sm-12
-    %p.big The <b>Bitmask</b> application is designed to have a <b>friendly</b> interface with <b>automatic</b> configuration. You simply start the application, register with the compatible service provider of your choice, and away you go.
+    %p.big
+      = t :bitmask_app_blurb
 
 .row
   .col-sm-6
     .heading
       %span
         %i.fa.fa-shield
-        Bitmask VPN
-    %p.big With [[Bitmask VPN => features#vpn]], all your traffic is securely routed through your provider before it is decrypted and sent on to the open internet.
+        = t :bitmask_vpn
+    %p.big
+      = t :bitmask_vpn_blurb
   .col-sm-6
     .heading
       %span
         %i.fa.fa-envelope
-        Encrypted Email
-    %p.big [[Bitmask Encrypted Email => features#email]] is easy to use while still being backward compatible with the existing OpenPGP protocol for secure email.
+        = t :encrypted_email
+    %p.big
+      = t :encrypted_email_blurb
 
 .row
   .col-sm-12
-    .heading
+    .heading#providers
       %span
         %i.fa.fa-institution
-        Supported providers
+        = t :supported_providers
 
-    %p.big The following service providers are compatible with the Bitmask application:
+    %p.big
+      = t :supported_providers_text
 
     .row
       .col-lg-2.col-md-3.col-sm-3.col-xs-4
@@ -52,30 +56,12 @@
     .heading
       %span
         %i.fa.fa-code-fork
-        Fork our code
-
-    %p <b>Hey, you! We could use a hand here</b>. You want communication free of surveillance, based on open protocols, and that gives users control over their own data? Well, grab a keyboard and #{link 'pitch in' => 'https://leap.se/en/get-involved'}&mdash;the code is not going to write itself.
-
-    %p In particular, if you have finely honed skill in Python, Android Java, Ruby, C, CouchDB, Windows, Mac, Puppet, Qt, or you really love crypto, we could sure use your help.
-
-    %ol
-      %li #{link 'Fork our code' => 'https://leap.se/en/source'}.
-      %li Create a new branch from develop called feature/x or bugfix/x.
-      %li Hack away.
-      %li Issue a pull request on github from your feature or bugfix branch to the upstream develop branch.
-      %li Discuss and wait for request to be merged.
-      %li Repeat.
-
-    %p Currently, we release a new version of the Bitmask application every two weeks, and other components as necessary.
+        = t :fork_our_code
+    = render 'home/code'
 
   .col-sm-6
     .heading
       %span
         %i.fa.fa-group
-        About us
-
-    %img{src:'/assets/images/leap-small.png', align:'right'}
-
-    %p The <b>Bitmask</b> application is lovingly hand-crafted by a team of paid and volunteer programmers from seven different countries. Development is principally sponsored by the #{link 'LEAP Encryption Access Project' => 'https://leap.se'}, an non-profit organization dedicated to defending democracy by <b>protecting the right to whisper</b>.
-
-    %p The service provider <b>demo.bitmask.net</b> is operated by LEAP in order to demonstrate usage of the <b>Bitmask</b> application. However, we actively encourage other organizations to start their own compatible service providers by using our free software #{link 'platform for server automation' => 'https://leap.se/en/platform'}.
+        = t :about_us
+    = render 'home/about'

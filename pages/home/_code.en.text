@@ -1,0 +1,12 @@
+*Hey, you! We could use a hand here*. You want communication free of surveillance, based on open protocols, and that gives users control over their own data? Well, grab a keyboard and [[pitch in => https://leap.se/en/get-involved]]--the code is not going to write itself.
+
+In particular, if you have finely honed skill in Python, Android Java, Ruby, C, CouchDB, Windows, Mac, Puppet, Qt, or you really love crypto, we could sure use your help.
+
+* [[Fork our code => https://leap.se/en/source]]
+* Create a new branch from develop called feature/x or bugfix/x.
+* Hack away.
+* Issue a pull request on github from your feature or bugfix branch to the upstream develop branch.
+* Discuss and wait for request to be merged.
+* Repeat.
+
+Currently, we release a new version of the Bitmask application every two weeks, and other components as necessary.

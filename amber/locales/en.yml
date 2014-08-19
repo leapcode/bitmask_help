@@ -1,7 +1,6 @@
 en:
-  site_title: "Bitmask Help"
+  site_title: "Bitmask"
   banner_top: "Bitmask"
-  banner_bottom: "Help"
   banner_motto: "Encrypted communication for mere mortals<br>(superheroes welcome, too)"
   contribute_to_help: 'Contribute to these help pages'
   download_bitmask: 'Download Bitmask'
@@ -9,5 +8,30 @@ en:
   download: Download
   leap: 'LEAP Encryption Access Project'
   footer_text:
-  warning: <b>WARNING:</b> Bitmask is still experimental. Please do not use these beta releases of Bitmask for situations where a compromise of your data could put you in danger.
-  warning_disabled: Also, although Bitmask is improving rapidly, it is possible that you could lose your email when using an early beta release.
+  warning: >
+    <b>WARNING:</b> Bitmask is still experimental. Please do not use these beta
+    releases of Bitmask for situations where a compromise of your data could
+    put you in danger.
+  warning_disabled: >
+    Also, although Bitmask is improving rapidly, it is possible that you could
+    lose your email when using an early beta release.
+
+  #
+  # front page text
+  #
+  fork_our_code: Fork our code
+  about_us: About us
+  supported_providers: Supported providers
+  supported_providers_text: "The following service providers are compatible with the Bitmask application:"
+  bitmask_app_blurb: >
+    The <b>Bitmask</b> application is designed to have a <b>friendly</b> interface
+    with <b>automatic</b> configuration. You simply start the application, register
+    with the compatible service provider of your choice, and away you go.
+  bitmask_vpn: Bitmask VPN
+  bitmask_vpn_blurb: >
+    With [[Bitmask VPN => features#vpn]], all your traffic is securely routed through
+    your provider before it is decrypted and sent on to the open internet.
+  encrypted_email: Encrypted Email
+  encrypted_email_blurb: >
+    [[Bitmask Encrypted Email => features#email]] is easy to use while still being
+    backward compatible with the existing OpenPGP protocol for secure email.
