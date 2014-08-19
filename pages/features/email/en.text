@@ -1,0 +1,64 @@
+@title = "Bitmask Email Details"
+@nav_title = "Email"
+
+h2. How it works
+
+When a service provider runs the LEAP platform, their users can access secure email in three steps:
+
+# Download and install the Bitmask application.
+# Run the Bitmask application to log in or sign up with the service provider.
+# Configure the user's mail client to connect to the local Bitmask application. In case of the Thunderbird email client, this configuration is semi-automatic.
+
+The Bitmask application acts as a local "proxy" between the service provider and the mail client. It handles all the encryption and data synchronization.
+
+h2. Immediate benefits of using Bitmask email
+
+Email features include:
+
+* Bitmask encrypted email is easy to use while still being backward compatible with the existing OpenPGP protocol for secure email.
+* Unless already encrypted, all incoming email is automatically encrypted to the recipient on the server before being stored, so only you can read it (including meta-data). The server is able to read unencrypted incoming email for a brief moment, but no email is ever stored in a manner that the provider can read it.
+* Whenever possible, outgoing email is automatically encrypted so that only the recipients can read it (if a valid OpenPGP public keys can be discovered for the recipients). This encryption takes place on the user's device.
+* OpenPGP public keys are [[automatically discovered and validated => https://leap.se/nicknym]], allowing you to have confidence your communication is confidential and with the correct person (without the headache of typical key signing).
+* The user does not need to worry about key management. Their keys are always kept up-to-date on every device.
+* The user is able to use any email client of their choice (e.g. Thunderbird, Apple Mail, Outlook).
+* When disconnected from the internet, the user can still interact with a local copy of all their mail. When the internet connect is available again, all their changes will get synchronized with the server storage and to their other devices.
+
+General security features of the Bitmask application include:
+
+* All stored data is encrypted, including local data and cloud backups. This encryption always [[takes place on the user's device => https://leap.se/soledad]], so the service provider cannot read your stored data.
+* Although you specify a username and password to login, your [[password is never communicated to the provider => https://en.wikipedia.org/wiki/Secure_Remote_Password_protocol ]].
+* If you download the Bitmask application from https://dl.bitmask.net, your service provider cannot add a backdoor to compromise your security.
+* The Bitmask application is always kept up to date with the latest security patches (coming soon).
+
+h2. Long term benefits when two Bitmask compatible providers talk to one another
+
+One of the fundamental problems with email is that the meta-data routing information is exposed as cleartext. Encrypting a message with OpenPGP or S/MIME does nothing to help with this.
+
+The email protocol does support an optional method of securely relaying messages using TLS to encrypt the connection. This method, called StartTLS, is easily undermined by attackers and there is no good way for email providers to validate the authenticity of other servers (without relying on the problematic CA certificate authority system).
+
+For now, Bitmask addresses these problems with two enhancements when two compatible providers are talking to one another:
+
+* When relaying email, server keys are discovered and validated using DNSSEC/DANE.
+* For these providers, TLS with validated keys becomes required for all communication.
+
+This approach is effective against external network observers, but does not protect the meta-data from the service providers themselves. Also, it does not, by itself, protect against more advanced attacks involving timing and traffic analysis.
+
+In the long term, we plan to adopt one of several different schemes for [[securely routing meta-data => https://leap.se/routing]].
+
+h2. Limitations
+
+* Missing features: the initial release will not support email aliases, email forwarding, or multiple accounts simultaneously.
+* You cannot use Bitmask email from a web browser. It requires the Bitmask application to run.
+* The Bitmask application currently requires a compatible provider. We have plans in the future to semi-support commercial providers like gmail. This would provide the user with much less protection than when they use a Bitmask provider, but will still greatly enhance their email security.
+* Because all data is synced, if a user has one of their devices compromised, then the attacker has access to all their data. This is obvious, but worth mentioning.
+* The user must keep a complete copy of their entire email storage on every device they use. In the future, we plan to support partial syncing for mobile devices.
+* We do not plan to support key revocation. Instead, we plan to migrate to shorter and shorter lived keys, as practical.
+* With the current implementation, a compromised or nefarious service provider can still gather incoming messages that are not encrypted and meta-data routing information. As more users and providers adopt secure email, many of these problems will go away.
+
+For more details, please see [[known limitations => limitations]].
+
+h2. Related projects
+
+There are numerous other projects working on the next generation of secure email. In our view, it is not possible to do secure email alone, it requires new protocols for handing key validation, secure transport, and meta-data protection. We will continue our efforts to reach out to these groups to explore areas of cooperation.
+
+For a detailed report on all the related projects, see https://leap.se/secure-email
