@@ -1,4 +1,50 @@
-@title = 'Encrypted Internet on Linux'
-@nav_title = "Linux Usage"
+@title = 'VPN on Linux'
+@nav_title = 'Linux'
+@summary = 'Using Bitmask VPN on Linux devices'
 
-linux usage
+h2. VPN States
+
+The current state of the VPN connection is displayed in the system tray:
+
+*(desktop-off) VPN is *off*. No traffic is encrypted.
+** If the VPN was previously on, then all traffic is blocked until the VPN is turned back on.
+** Hit <button>Turn OFF</button> if you want to restore normal unencrypted network access.
+*(desktop-wait) VPN is *waiting* to connect or to reconnect after the loss of network access.
+** All traffic is blocked until the VPN connects.
+** Hit <button>Cancel</button> if you want to restore normal network access.
+*(desktop-on) VPN is *connected*, all traffic is securely routed to the provider.
+
+h2. Logging In
+
+When you first run the Bitmask VPN, you will need to log in to authenticate with your provider. Subsequently, you will be able to run the VPN without logging in.
+
+Once in a while, Bitmask may require that you login again in order to refresh the credentials used when the VPN is connecting. The default time between required log ins is one month, although your provider may be configured differently.
+
+h2. Troubleshooting
+
+h3. DNS
+
+Domain Name Service (DNS) is the system that allows your computer to resolve domain names like "bitmask.net" to find the real internet address of the appropriate computer. Unfortunately, DNS has many problems:
+
+# Most DNS is very insecure, and an attacker can easily forge DNS responses in order to send you to an incorrect server.
+# DNS doesn't use secure connections, so an eavesdropper can easily record a history of what internet sites you visit.
+# Most DNS servers also keep a historical log of all the sites you visit.
+
+For these reasons, Bitmask will ensure that all DNS requests that your computer makes are rerouted to the DNS server of the provider.
+
+This means that you will not be able to make a DNS request to any other DNS server, even if you want to. For example, the command @host bitmask.net 8.8.8.8@ will not use the nameserver 8.8.8.8 to resolve the name bitmask.net, because the request will get rewritten to use the DNS server of your provider.
+
+You will also not be able to run a local nameserver that attempts to connect directly to the root DNS zone. The packages @bind9@ or @unbound@ are configured this way by default. These requests will get rewritten to the provider's DNS server and will fail. Bitmask is compatible with @dnsmasq@ however.
+
+If you wish to disable this behavior for debugging purposes, you can run the command @sudo bitmask-root firewall stop@ although doing so may allow some traffic to bypass the VPN and escape your computer unencrypted.
+
+h3. Break glass in case of emergency
+
+In rare cases, your computer might get stuck in a mode that blocks all network traffic. Try this:
+
+* You can run @sudo bitmask-root firewall stop@ to remove all the Bitmask firewall rules that prevent traffic from leaking insecurely.
+* If all else fails, you can try logging out or restarting your computer.
+
+If you encounter a bug, please [[report it => support]].
+
+

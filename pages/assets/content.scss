@@ -1,0 +1,55 @@
+//
+// These styles are helpers for better formatting content
+//
+
+//
+// VPN Status Icons
+//
+
+li.status-icon {
+  padding-left: 32px;
+  background-repeat: no-repeat;
+  background-position: 0 -2px;
+  list-style-type: none;
+  margin: 1em;
+  & li {
+    list-style-type: none;
+  }
+  & ul {
+    margin-top: 1em
+  }
+}
+
+li.android-on {
+  @extend li.status-icon;
+  background-image: url(/assets/icons/22/vpn_connected.png);
+}
+li.android-wait {
+  @extend li.status-icon;
+  background-image: url(/assets/icons/22/vpn_progress.png);
+}
+li.android-off {
+  @extend li.status-icon;
+  background-image: url(/assets/icons/22/vpn_disconnected.png);
+}
+
+li.desktop-on {
+  @extend li.status-icon;
+  background-image: url(/assets/icons/22/on.png);
+}
+li.desktop-wait {
+  @extend li.status-icon;
+  background-image: url(/assets/icons/22/wait.png);
+}
+li.desktop-off {
+  @extend li.status-icon;
+  background-image: url(/assets/icons/22/off.png);
+}
+
+//
+// GENERAL UTILITY
+//
+
+ul.spaced li {
+  margin-bottom: 15px;
+}

@@ -1,0 +1,23 @@
+@title = 'Getting Support'
+@nav_title = 'Support'
+@toc = true
+
+h2. Found a bug in the software?
+
+You can "file a bug report":https://leap.se/code/projects/report-issues/issues/new?issue[tracker_id]=2 on the LEAP Bug Tracker. First, [[search the existing issues => https://leap.se/code/search]] to see if someone has already reported that bug.
+
+h2. Want to request a new feature?
+
+You can "request a new feature":https://leap.se/code/projects/report-issues/issues/new?issue[tracker_id]=1 on the LEAP Bug Tracker. First, [[search the existing issues => https://leap.se/code/search]] to see if someone has already requested that feature.
+
+h2. Search the forums
+
+Coming soon...
+
+h2. Get support from your provider
+
+For questions related to your service, and not the Bitmask software, you will need to contact your service provider directly. Here are links to some of the popular service providers that support Bitmask:
+
+* [[demo.bitmask.net -> https://demo.bitmask.net]]
+* [[riseup.net -> https://black.riseup.net]]
+* [[calyx.net -> https://calyx.net]]

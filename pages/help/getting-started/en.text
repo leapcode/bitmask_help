@@ -1,0 +1,73 @@
+@title = 'Getting Started'
+
+h1. Sign up for a new account
+
+In order to use Bitmask, you must have a user account with a compatible provider. You can create a new account using the Bitmask application or by visiting the website of the provider. For security reasons, we recommend that users always create accounts through the Bitmask application.
+
+h2. Android
+
+h4. Step 1 -- Choose a provider
+
+p((. When you run Bitmask for the first time it will display a list of available providers.
+
+p((. To add a new provider that is not part of the list, press the <button>&#8853;</button> button.
+
+h4. Step 2 -- Provider setup
+
+p((. In order to securely communicate with a provider, Bitmask needs to download and validate its credentials. These credentials allow Bitmask to know it is always talking with the right provider.
+
+h4. Step 3 -- Register a new user account
+
+p((. Select your desired username and password. The username must be all lowercase letters or numbers. The password must be at least eight characters and is case sensitive.
+
+p((. Because your password is never communicated to the provider, it is impossible to recover a lost password with Bitmask. Please, write your password down or store it in a password manager.
+
+h4. Step 4 -- Activate VPN
+
+p((. Activate the Bitmask VPN by tapping the On/Off switch.
+
+p((. Android will ask if you want to let Bitmask create a VPN Connection. Mark "I trust this application" and then accept.
+
+p((. Once the switch is on, you are using Bitmask VPN.
+
+h2. Desktop
+
+When you run Bitmask for the first time it will open the *Bitmask Provider Setup* wizard. If you have already run Bitmask, you can access this by selecting the menu item *Bitmask > Create a new account*.
+
+h4. Step 1 -- Welcome
+
+p((. Choose *Sign up for a new account* or *I have an account* and press <button>Next</button>.
+
+h4. Step 2 -- Choose a provider
+
+p((. If the provider you want is known to Bitmask, you can select it from the dropdown menu.
+
+p((. Otherwise, select *Configure new provider* and type in the domain name.
+
+p((. Press <button>Check</button> to validate the provider. Bitmask will then attempt to contact the provider and confirm that it is compatible.
+
+p((. If all the checks pass, then press <button>Next</button>. If the checks don't pass, contact the provider to let them know something is wrong.
+
+p((. The next page will give you more details about the provider you have selected. If you still want to proceed, hit <button>Next</button> button again.
+
+h4. Step 3 -- Provider setup
+
+p((. In order to securely communicate with a provider, Bitmask needs to download and validate its credentials. These credentials allow Bitmask to know it is always talking with the right provider.
+
+p((. If all the checks pass, then press <button>Next</button>.
+
+h4. Step 4 -- Register a new user account
+
+p((. Select your desired username and password. The username must be all lowercase letters or numbers. The password must be at least eight characters and is case sensitive.
+
+p((. Because your password is never communicated to the provider, it is impossible to recover a lost password with Bitmask. Please, write your password down or store it in a password manager.
+
+p((. If successful, hit <button>Next</button>.
+
+h4. Step 5 - Service selection
+
+p((. Select the services you want enabled for this new account. You can change this selection later.
+
+p((. Finally, hit <button>Connect</button>.
+
+

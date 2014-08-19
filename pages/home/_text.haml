@@ -1,141 +1,81 @@
-.lighter
-  .container
+.row
+  .col-sm-12
+    %p.big The <b>Bitmask</b> application is designed to have a <b>friendly</b> interface with <b>automatic</b> configuration. You simply start the application, register with the compatible service provider of your choice, and away you go.
+
+.row
+  .col-sm-6
+    .heading
+      %span
+        %i.fa.fa-shield
+        Bitmask VPN
+    %p.big With [[Bitmask VPN => features#vpn]], all your traffic is securely routed through your provider before it is decrypted and sent on to the open internet.
+  .col-sm-6
+    .heading
+      %span
+        %i.fa.fa-envelope
+        Encrypted Email
+    %p.big [[Bitmask Encrypted Email => features#email]] is easy to use while still being backward compatible with the existing OpenPGP protocol for secure email.
+
+.row
+  .col-sm-12
+    .heading
+      %span
+        %i.fa.fa-institution
+        Supported providers
+
+    %p.big The following service providers are compatible with the Bitmask application:
+
     .row
-      .col-sm-12
-        %h1#features Features
+      .col-lg-2.col-md-3.col-sm-3.col-xs-4
+        .thumbnail
+          %img(src='/assets/providers/demo.bitmask.net.png')
+          .b
+            [[demo.bitmask.net => https://demo.bitmask.net]]
+      .col-lg-2.col-md-3.col-sm-3.col-xs-4
+        .thumbnail
+          %img(src='/assets/providers/calyx.net.png')
+          .b
+            [[calyx.net => https://calyx.net]]
+      .col-lg-2.col-md-3.col-sm-3.col-xs-4
+        .thumbnail
+          %img(src='/assets/providers/oblivia.vc.png')
+          .b
+            [[oblivia.vc => https://oblivia.vc]]
+      .col-lg-2.col-md-3.col-sm-3.col-xs-4
+        .thumbnail
+          %img(src='/assets/providers/riseup.net.png')
+          .b
+            [[riseup.net => https://black.riseup.net]]
 
-        %p The <b>Bitmask</b> application is designed to have a <b>friendly</b> interface with <b>automatic</b> configuration. You simply start the application, register with the compatible service provider of your choice, and away you go.
+.row
+  .col-sm-6
+    .heading
+      %span
+        %i.fa.fa-code-fork
+        Fork our code
 
-.lighter
-  .container
-    .row
-      .col-sm-2.text-right
-        .h2
-          %i.fa.fa-shield.fa-3x
-      .col-sm-10.text-left
-        .h2
-          %span
-            [[VPN => help/vpn]]
-        %p.pad With Bitmask VPN, all your traffic is securely routed through your provider before it is decrypted and sent on to the open internet.
-        %ul.fa-ul.spaced
-          %li
-            %i.fa-li.fa.fa-check-square
-            <b>Thwart Network Surveillance</b><br>
-            Bitmask VPN is very effective at bypassing most censorship and network surveillance by your ISP or country.
-          %li
-            %i.fa-li.fa.fa-check-square
-            <b>Anonymize your address</b><br>
-            Your IP address will also be hidden, keeping your physical location safe from nefarious websites or network eavesdroppers.
-          %li
-            %i.fa-li.fa.fa-check-square
-            <b>Extra Security</b><br>
-            We take extra security measures to prevent problems common to other personal VPNs, such as DNS leakage and IPv6 leakage.
+    %p <b>Hey, you! We could use a hand here</b>. You want communication free of surveillance, based on open protocols, and that gives users control over their own data? Well, grab a keyboard and #{link 'pitch in' => 'https://leap.se/en/get-involved'}&mdash;the code is not going to write itself.
 
-.lighter
-  .container
-    .row
-      .col-sm-2.text-right
-        .h2
-          %i.fa.fa-envelope.fa-2x
-      .col-sm-10.text-left
-        .h2
-          %span
-            [[Encrypted Email => help/email]]
-        %p.pad Bitmask Encrypted Email is easy to use while still being backward compatible with the existing OpenPGP protocol for secure email.
-        %ul.fa-ul.spaced
-          %li
-            %i.fa-li.fa.fa-check-square
-            <b>Full end-to-end encryption</b><br>
-            Whenever possible, all messages are encrypted end-to-end on the client device.
-          %li
-            %i.fa-li.fa.fa-check-square
-            <b>Secure Storage</b><br>
-            All incoming email is automatically encrypted so only you can read it (including meta-data).
-          %li
-            %i.fa-li.fa.fa-check-square
-            <b>Automatic Key Management</b><br>
-            The user never needs to know or worry about generating keys, discovering keys, or validating keys.
+    %p In particular, if you have finely honed skill in Python, Android Java, Ruby, C, CouchDB, Windows, Mac, Puppet, Qt, or you really love crypto, we could sure use your help.
 
-.dark
-  .container
-    .row
-      .col-sm-12
-        %h1#security Security
-    .row
-      .col-sm-6
-        %ul.fa-ul.spaced
-          %li
-            %i.fa-li.fa.fa-save
-            <b>Client-encrypted Storage</b><br>
-            All data storage is encrypted, including local data and cloud backups. This encryption always [[takes place on your device => https://leap.se/en/soledad]], so the service provider cannot read your stored data.
-          %li
-            %i.fa-li.fa.fa-exchange
-            <b>Always Available</b><br>
-            Your data is always available, even when you are offline, it is [[synchronized to the devices => https://leap.se/en/soledad]] you choose, and secured backed up to the cloud.
-          %li
-            %i.fa-li.fa.fa-exclamation-circle
-            <b>Passwords, Improved</b><br>
-            Although you specify a username and password to login, your [[password is never communicated to the provider => https://en.wikipedia.org/wiki/Secure_Remote_Password_protocol]].
-      .col-sm-6
-        %ul.fa-ul.spaced
-          %li
-            %i.fa-li.fa.fa-clock-o
-            <b>Up to date</b><br>
-            The Bitmask application is always kept up to date with the latest security patches (coming soon).
-          %li
-            %i.fa-li.fa.fa-institution
-            <b>Don't trust the provider</b><br>
-            If you download the Bitmask application from [[dl.bitmask.net => https://dl.bitmask.net]], your service provider cannot add a backdoor to compromise your security.
-    .row
-      .col-sm-12
-        %p As with any security system, Bitmask has [[known limitations => https://leap.se/en/limitations]]. For technical details, see our [[design documentation => https://leap.se/en/design]].
+    %ol
+      %li #{link 'Fork our code' => 'https://leap.se/en/source'}.
+      %li Create a new branch from develop called feature/x or bugfix/x.
+      %li Hack away.
+      %li Issue a pull request on github from your feature or bugfix branch to the upstream develop branch.
+      %li Discuss and wait for request to be merged.
+      %li Repeat.
 
-.light
-  .container
-    .row
-      .col-sm-12
-        %h1#providers Supported providers
+    %p Currently, we release a new version of the Bitmask application every two weeks, and other components as necessary.
 
-        %p The following service providers are compatible with the Bitmask application:
+  .col-sm-6
+    .heading
+      %span
+        %i.fa.fa-group
+        About us
 
-        %ul
-          %li= link 'demo.bitmask.net' => 'https://demo.bitmask.net'
-          %li
-            = link 'calyx.net' => 'https://calyx.net'
-          %li
-            = link 'oblivia.vc' => 'https://oblivia.vc'
-            (coming soon)
-          %li
-            = link 'riseup.net' => 'https://riseup.net'
+    %img{src:'/assets/images/leap-small.png', align:'right'}
 
+    %p The <b>Bitmask</b> application is lovingly hand-crafted by a team of paid and volunteer programmers from seven different countries. Development is principally sponsored by the #{link 'LEAP Encryption Access Project' => 'https://leap.se'}, an non-profit organization dedicated to defending democracy by <b>protecting the right to whisper</b>.
 
-        %p Start your own compatible service provider with the free software #{link 'LEAP platform' => 'https://leap.se/en/platform'}.
-
-.darker
-  .container
-    .row
-      .col-sm-6
-        %h1#code Fork our code
-
-        %p <b>Hey, you! We could use a hand here</b>. You want communication free of surveillance, based on open protocols, and that gives users control over their own data? Well, grab a keyboard and #{link 'pitch in' => 'https://leap.se/en/get-involved'}&mdash;the code is not going to write itself.
-
-        %p In particular, if you have finely honed skill in Python, Android Java, Ruby, C, CouchDB, Windows, Mac, Puppet, Qt, or you really love crypto, we could sure use your help.
-
-        %ol
-          %li #{link 'Fork our code' => 'https://leap.se/en/source'}.
-          %li Create a new branch from develop called feature/x or bugfix/x.
-          %li Hack away.
-          %li Issue a pull request on github from your feature or bugfix branch to the upstream develop branch.
-          %li Discuss and wait for request to be merged.
-          %li Repeat.
-
-        %p Currently, we release a new version of the Bitmask application every two weeks, and other components as necessary.
-
-      .col-sm-6
-        %h1#about-us About us
-
-        %img{src:'/assets/images/leap-small.png', align:'right'}
-
-        %p The <b>Bitmask</b> application is lovingly hand-crafted by a team of paid and volunteer programmers from seven different countries. Development is principally sponsored by the #{link 'LEAP Encryption Access Project' => 'https://leap.se'}, an non-profit organization dedicated to defending democracy by <b>protecting the right to whisper</b>.
-
-        %p The service provider <b>demo.bitmask.net</b> is operated by LEAP in order to demonstrate usage of the <b>Bitmask</b> application. However, we actively encourage other organizations to start their own compatible service providers by using our free software #{link 'platform for server automation' => 'https://leap.se/en/platform'}.
+    %p The service provider <b>demo.bitmask.net</b> is operated by LEAP in order to demonstrate usage of the <b>Bitmask</b> application. However, we actively encourage other organizations to start their own compatible service providers by using our free software #{link 'platform for server automation' => 'https://leap.se/en/platform'}.

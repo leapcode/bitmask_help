@@ -1,52 +1,5 @@
-// note: css paths are always relative to the css file
-
-
-$masthead-large-img: '/assets/images/rainbow-masthead-large.png';
-$masthead-large-height: 200px;
-$masthead-medium-img: '/assets/images/rainbow-masthead-medium.png';
-$masthead-medium-height: 130px;
-$masthead-small-img: '/assets/images/rainbow-masthead-small.png';
-$masthead-small-height: 80px;
-$masthead-background-color: #5e9ee3;
-
-$gutter: 15px;
-$background-color: #333;
-$menu-text-color: #fff;
-$menu-padding: 8px 18px;
-//$menu-shadow-size: 1px;
-//$menu-shadow-blur: 2px;
-//$menu-shadow-color: #000;
-$content-border-color: #000;
-$content-background-color: #fff;
-$content-shadow-color: #000;
-$content-shadow-size: 1px;
-$content-shadow-blur: 8px;
-$title-background-color: #efefef;
-$title-divider-color: #ccc;
-$footer-height: 50px;
-$footer-gutter: 20px;
-$footer-background-color: #666;
-$footer-color: #ddd;
-$footer-border-width: 1px;
-$footer-border-color: darken($background-color, 5%);
-$footer-shadow: true;
-$footer-shadow-color: #333;
-$footer-shadow-size: 1px;
-$footer-shadow-blur: 6px;
-$navigation-item-active-background-color: #999;
-$navigation-item-active-color: #000;
-$navigation-item-background-color: #ccc;
-$navigation-item-color: #666;
-$navigation-border: 1px solid #333;
-$navigation-shadow: 1px 1px 4px #111;
-$link-color: darken($masthead-background-color, 15%);
-$link-visited-color: darken($masthead-background-color, 25%);
-
-$home-light-color: #333;
-$home-light-background-color: #eee;
-
-$home-dark-color: #fff;
-$home-dark-background-color: $background-color;
+@import "variables.scss";
+@import "content.scss";
 
 //
 // TYPOGRAPHY
@@ -85,6 +38,10 @@ h2.hidey {
 .h2 {
   @extend h2;
   margin: 0;
+}
+
+h4 {
+  margin-top: 20px;
 }
 
 //.h3 {
@@ -171,14 +128,14 @@ body.home #masthead .text {
 body.home #masthead .text {
   height: $masthead-large-height/2;
   &.bottom {
-    font-size: 20px;
-    line-height: 30px !important;
+    font-size: 18px;
+    line-height: 28px !important;
   }
 }
 
 // medium masthead
 
-@media (max-width: 992px) {
+@media (max-width: 767px) {
   #masthead {
     background: $masthead-background-color url(#{$masthead-medium-img}) 50% 50%;
     .masthead-inner {
@@ -193,8 +150,8 @@ body.home #masthead .text {
   body.home #masthead .text {
     height: $masthead-medium-height/2;
     &.bottom {
-      font-size: 14px;
-      line-height: 24px !important;
+      font-size: 10px;
+      line-height: 19px !important;
     }
   }
 }
@@ -202,29 +159,29 @@ body.home #masthead .text {
 
 // small masthead
 
-@media (max-width: 767px) {
-  #masthead {
-    background: $masthead-background-color url(#{$masthead-small-img}) 50% 50%;
-    .masthead-inner {
-      height: $masthead-small-height;
-      .text {
-        padding-left: 1px;
-        font-size: 30px;
-        line-height: $masthead-small-height;
-      }
-    }
-  }
-  body.home #masthead .text {
-    height: $masthead-small-height/2;
-    &.bottom {
-      font-size: 9px;
-      line-height: 14px !important;
-      span {
-        padding: 2px;
-      }
-    }
-  }
-}
+// @media (max-width: 767px) {
+//   #masthead {
+//     background: $masthead-background-color url(#{$masthead-small-img}) 50% 50%;
+//     .masthead-inner {
+//       height: $masthead-small-height;
+//       .text {
+//         padding-left: 1px;
+//         font-size: 30px;
+//         line-height: $masthead-small-height;
+//       }
+//     }
+//   }
+//   body.home #masthead .text {
+//     height: $masthead-small-height/2;
+//     &.bottom {
+//       font-size: 9px;
+//       line-height: 14px !important;
+//       span {
+//         padding: 2px;
+//       }
+//     }
+//   }
+// }
 
 #top-menu {
   position: absolute;
@@ -239,7 +196,7 @@ body.home #masthead .text {
     color: $menu-text-color;
     font-size: 14px;
     line-height: 20px;
-    background-color: rgba(0,0,0,0.25);
+    background-color: $menu-background-color;
   }
   a.active {
     background-color: $background-color;
@@ -250,7 +207,7 @@ body.home #masthead .text {
 
 @media only screen and (max-width: 767px) {
   #top-menu a {
-    padding: 5px 6px;
+    padding: 2px 6px;
     font-size: 12px;
   }
 }
@@ -396,6 +353,28 @@ html, body {
 //
 
 body.home {
+  .content-box {
+    padding: 20px;
+  }
+  .heading {
+    i {
+      padding-right: 10px;
+    }
+    span {
+      color: #003;
+    }
+    margin: 20px 0 15px 0;
+    font-size: 26px;
+  }
+  .thumbnail {
+    word-break: break-all;
+    .b {
+      font-size: 16px;
+    }
+  }
+  p.big {
+    font-size: 16px;
+  }
   .download a {
     color: white !important;
     font-size: 16px;
@@ -405,15 +384,9 @@ body.home {
       display: inline-block;
     }
   }
-  .pad {
-    margin: 15px 0;
-  }
   .light, .dark, .lighter, .darker {
     padding-top: 15px;
     padding-bottom: 15px;
-    //ul {
-    //  padding-left: 15px;
-    //}
   }
   .dark, .darker {
     color: $home-dark-color;
@@ -426,20 +399,13 @@ body.home {
     }
   }
   .dark {
-    //color: darken($home-dark-color, 20%);
-    background-color: lighten($home-dark-background-color, 10%);
+    background-color: lighten($home-dark-background-color, 5%);
   }
   .light, .lighter {
     color: $home-light-color;
     background-color: $home-light-background-color;
-    .h2 span {
-      //background: red;
-      //color: white;
-      //padding: 4px;
-    }
   }
   .light {
-    //color: darken($home-light-color, 20%);
     background-color: lighten($home-light-background-color, 20%);
   }
   .b {
@@ -451,7 +417,5 @@ body.home {
   ul.fa-ul {
     margin-left: 22px;
   }
-  ul.spaced li {
-    margin-bottom: 15px;
-  }
 }
+

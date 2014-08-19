@@ -11,13 +11,7 @@ This is the recommended method of installing Bitmask. If installed as a package,
 
 <%= render({:partial => 'via_packages'}, {:distro => 'trusty'}) %>
 
-### Ubuntu 13.10 (Saucy Salamander)
-
-<%= render({:partial => 'via_packages'}, {:distro => 'saucy'}) %>
-
 ### Debian 7.0 (Wheezy)
-
-Note: for wheezy, these instructions will enable `wheezy-backports`, causing your computer to install more up-to-date versions of many packages. For more information, see the [Debian backports page](https://wiki.debian.org/Backports).
 
 <%= render({:partial => 'via_packages'}, {:distro => 'wheezy', :os => 'debian'}) %>
 

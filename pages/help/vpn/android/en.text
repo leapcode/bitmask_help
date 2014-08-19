@@ -1,4 +1,23 @@
-@title = "Encrypted Internet on Android"
-@nav_title = "Android Usage"
+@title = 'VPN on Android'
+@nav_title = 'Android'
+@summary = 'Using Bitmask VPN on Android devices'
 
-How to use bitmask on android
+h2. VPN States
+
+The current state of the VPN connection is displayed as a notification icon:
+
+*(android-on) VPN is *connected*, traffic is securely routed to the provider.
+*(android-wait) VPN is *waiting* to connect or to reconnect after the loss of network access. Traffic might escape unencrypted during this period.
+*(android-off) VPN is *off*. No traffic is encrypted.
+
+h2. Logging In
+
+When you first run the Bitmask VPN, you will need to log in to authenticate with your provider. Subsequently, you will be able to run the VPN without logging in.
+
+Once in a while, Bitmask may require that you login again in order to refresh the credentials used when the VPN is connecting. The default time between required log ins is one month, although your provider may be configured differently.
+
+h2. Anonymous VPN
+
+Some providers support an anonymous VPN mode. When enabled, you do not need to ever log in to use the VPN service. However, these providers often offer faster service when you do log in.
+
+When you are running Bitmask in anonymous VPN mode you might be blocked from reaching some sites. This is because some sites will block all traffic that is originating from known anonymous proxies.

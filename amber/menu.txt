@@ -1,12 +1,13 @@
+features
 install
   android
   linux
 help
+  support
+  getting-started
   vpn
     android
     linux
-    mac
-    windows
-    benefits
-    limitations
   email
+    linux
+  faq

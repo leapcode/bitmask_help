@@ -1,0 +1,12 @@
+@title = 'FAQ'
+
+h1. General topics
+
+h2. How to I remove a provider?
+
+We are working on an easy way to remove a provider once it has been added. For now, you can remove the provider manually. Suppose the provider was example.org:
+
+* On Linux, run @rm -r ~/.config/leap/providers/example.org@
+* On Mac, ???
+* On Windows, ???
+

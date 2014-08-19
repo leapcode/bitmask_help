@@ -4,21 +4,12 @@
     To install
 
   %pre
-    - if @locals[:distro] == 'wheezy'
-      :preserve
-        sudo -s
-        echo "deb http://deb.bitmask.net/debian #{@locals[:distro]} main" > /etc/apt/sources.list.d/bitmask.list
-        echo "deb http://http.debian.net/debian wheezy-backports main" >> /etc/apt/sources.list.d/bitmask.list
-        wget -O- https://dl.bitmask.net/apt.key | apt-key add -
-        apt-get update
-        apt-get install bitmask leap-keyring
-    - else
-      :preserve
-        sudo -s
-        echo "deb http://deb.bitmask.net/debian #{@locals[:distro]} main" > /etc/apt/sources.list.d/bitmask.list
-        wget -O- https://dl.bitmask.net/apt.key | apt-key add -
-        apt-get update
-        apt-get install bitmask leap-keyring
+    :preserve
+      sudo -s
+      echo "deb http://deb.bitmask.net/debian #{@locals[:distro]} main" > /etc/apt/sources.list.d/bitmask.list
+      wget -O- https://dl.bitmask.net/apt.key | apt-key add -
+      apt-get update
+      apt-get install bitmask leap-keyring
 
   %p.b
     To remove

@@ -1,6 +1,8 @@
-@title = 'VPN'
+@nav_title = 'VPN'
+@title = 'Bitmask VPN'
+@this.toc = false
 
-h2. What is Bitmask VPN?
+h1. What is Bitmask VPN?
 
 By using the Bitmask VPN, you are able to securely route all your internet traffic through the server of your choice.
 
@@ -11,10 +13,5 @@ For more information, see:
 * [[Benefits of using Encrypted Internet => benefits]]
 * [[Limitations of Encrypted Internet => limitations]]
 
-h2. How do I use it?
-
-* [[Android => vpn/android]]
-* [[Linux => vpn/linux]]
-* [[Mac => vpn/mac]]
-* [[Windows => vpn/windows]]
+<%= child_summaries :include_toc => true, :heading => 1 %>
 

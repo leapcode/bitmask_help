@@ -1,4 +1,4 @@
-- @toc = false
+- @this.toc = false
 - @title = 'Home'
 - @this.layout = 'home'
 
@@ -15,4 +15,7 @@
             %span
               = t :download_bitmask
 
-= render 'home/text'
+.container
+  .shadow-box
+    .content-box
+      = render 'home/text'

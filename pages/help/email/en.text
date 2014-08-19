@@ -24,4 +24,5 @@ h3. Manual email client configuration
 ** *authentication*: none
 ** *SSL/TLS*: off
 
-You should also disable any local caching in your email client, if applicable. All the data stored by Bitmask is kept on disk in an encrypted format, but your mail client might cache your email in clear text, so it is good to disable caching if you can. Also, all your Bitmask email is sync'ed locally anyway, so there is no benefit to local caching.
+*Disable caching*: You should also disable any local caching in your email client, if applicable. All the data stored by Bitmask is kept on disk in an encrypted format, but any cache maintained by your mail client is probably less secure. Because all your Bitmask email is synchronized locally there is no benefit to local caching.
+
