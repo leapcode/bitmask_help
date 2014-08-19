@@ -188,16 +188,21 @@ Amber adds an additional way to make links:
     [[page-name]]
     or
     [[chat/client]]
+    or
+    [[label => https://bitmask.net]]
 
 By using this double bracket link notation will automatically find the right
 path for the page with the specified name. Also, it will warn you if the page
 name is missing and it will ensure that the link is created with the correct
-language prefix. In haml, you can get the same effect using
+language prefix. In haml, you can get the same effect using ruby code
 `link 'label' => 'page'`
 
-The standard textile method of linking does not work well with non-latin
-languages, so it is recommended that you always use the amber method of
-forming links.
+The standard textile and markdown methods of linking do not work well with
+non-latin languages or right-to-left script, so it is recommended that you
+always use the amber method of forming links.
+
+The arrows `->` and `=>` can be used interchangeably. For right-to-left script,
+the arrow goes the opposite direction (`<-` or `<=`).
 
 Setting page properties
 --------------------------------------------
@@ -235,8 +240,6 @@ Available properties:
 * `@layout` -- Manually set the layout template to use for rendering this page.
 * `@this.alias` -- An alternate url path (or paths if the value is an array)
    where this page should be available.
-
-Note: for haml files, properties need to be prefixed with '-'.
 
 Tracking pages that need translating
 --------------------------------------------
