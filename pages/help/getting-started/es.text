@@ -36,13 +36,13 @@ Cuando ejecutas Bitmask por primera vez se te presentará el *Asistente de Confi
 
 h4. Paso 1 -- Bienvenido
 
-p((. Elige *Crear una nueva cuenta* o *Ya tengo una cuenta* y presiona el botón <button>Siguiente</button>.
+p((. Elige *Sign up for a new account* si ya posees una cuenta o *Log in with my credentials* si ya posees un cuenta. Presiona el botón <button>Next</button> tras tu elección.
 
 h4. Paso 2 -- Elige un proveedor
 
 p((. Si el proveedor que deseas usar es conocido por Bitmask, puedes elegirlo mediante el menú desplegable..
 
-p((. De lo contrario, selecciona *Configurar proveedor nuevo* y escribe su nombre de dominio.
+p((. De lo contrario, selecciona *Configure new provider* y escribe su nombre de dominio del proveedor.
 
 p((. Presiona el botón <button>Check</button> para validar el proveedor. Bitmask intentará contactarse con éste para asegurarse que es compatible.
 
