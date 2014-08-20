@@ -1,0 +1,26 @@
+@title = 'Obteniendo Soporte'
+@nav_title = 'Soporte'
+@toc = true
+
+El idioma en común entre todos quienes desarrollan Bitmask es Inglés. Si necesitas ayuda con el idioma contacta con tu proveedor de Bitmask.
+
+h2. ¿Encontraste un fallo en el programa?
+
+Puedes enviar un "reporte del fallo":https://leap.se/code/projects/report-issues/issues/new?issue[tracker_id]=2 en el Sistema de Seguimiento de Errores de LEAP. Primero, [[busca entre los reportes existentes => https://leap.se/code/search]] para ver si alguien ya lo envió. 
+
+
+h2. ¿Quieres pedir una nueva funcionalidad?
+
+Puedes "pedir una nueva funcionalidad":https://leap.se/code/projects/report-issues/issues/new?issue[tracker_id]=1 en el Sistema de Seguimiento de Errores de LEAP. Primero, [[busca entre las peticiones existentes => https://leap.se/code/search]] para ver si alguien ya lo hizo.
+
+h2. Buscar en los foros
+
+Pronto...
+
+h2. Obtén ayuda de tu proveedor
+
+Para preguntas directamente relacionadas con tus servicios, y no el software de Bitmask, necesitarás contactar a tu proveedor de servicios directamente. Aquí hay una lista de algunos de los proveedores que soportan Bitmask:
+
+* [[demo.bitmask.net -> https://demo.bitmask.net]]
+* [[riseup.net -> https://black.riseup.net]]
+* [[calyx.net -> https://calyx.net]]

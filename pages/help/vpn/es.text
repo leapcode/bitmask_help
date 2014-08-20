@@ -1,0 +1,17 @@
+@nav_title = 'VPN'
+@title = 'Bitmask VPN'
+@this.toc = false
+
+h1. ¿Qué es Bitmask VPN?
+
+Al usar Bitmask VPN estás enviando todo tu tráfico de internet forma cifrada hacia le proveedor de tu elección.
+
+Al hacer esto Bitmask VPN te permite eludir la censura, anonimizar tu ubicación y bloquear varias formas de la vigilancia en la red.
+
+Para más información, revisa:
+
+* [[Beneficios de usar Internet Cifrada => benefits]]
+* [[Limitaciones de la Internet Cifrada => limitations]]
+
+<%= child_summaries :include_toc => true, :heading => 1 %>
+

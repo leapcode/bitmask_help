@@ -1,0 +1,50 @@
+@title = 'VPN on Linux'
+@nav_title = 'Linux'
+@summary = 'Using Bitmask VPN on Linux devices'
+
+h2. Estados de conexión VPN
+
+El estado de la conexión VPN se muestra en la bandeja del sistema:
+
+*(desktop-off) VPN está *apagada*. No se está cifrando el tráfico.
+** Si la VPN estaba previamente activada, entonces todo el tráfico está bloqueado hasta que se reactive la conexión VPN.
+** Presiona el botón <button>OFF</button> si deseas volver a usar la conexión regular sin protección.
+*(desktop-wait) La VPN está *esperando* conectar o reconectar tras tras haber perdido acceso a la red.
+** Todo el tráfico está bloqueado hasta que se vuelva conectar a la VPN.
+** Presiona el botón <button>Cancel</button> si deseas volver a usar la conexión regular sin protección.
+*(desktop-on) La VPN está *conectada*, todo el tráfico está saliendo de forma cifrada hacia el proveedor.
+
+h2. Ingresando
+
+Cuando ejecutas Bitmask por primera vez, necesitarás autentificarte con tu proveedor. Tras esto podrás usar la VPN sin necesidad ingresar los datos de tu cuenta.
+
+De vez en cuando, Bitmask puede necesitar que te identifiques nuevamente con el fin de actualizar las credenciales necesarias para la conexión VPN. El tiempo por defecto de esto es un mes, aunque es posible que tu proveedor haya configurado las cosas de forma diferente.
+
+h2. Resolviendo Problemas
+
+h3. DNS
+
+El Sistema de Nombres de Dominios (DNS) es lo que permite a tu computador encontrar la dirección real de un ordenador tras un nombre de dominio como "bitmask.net". Desafortunadamente, DNS tiene muchos problemas:
+
+# La mayoría de los DNS son muy inseguros, y un atacante puede fácilmente falsificar respuestas para enviarte a un servidor incorrecto.
+# DNS no usa conexiones seguras, lo que significa que alguien husmeando tu tráfico puede crear un registro histórico de las páginas que visitas.
+# La mayoría de los servidores DNS también un registro de los sitios que visitas.
+
+Por estos motivos, Bitmask obligará que todas las peticiones de DNS que tu computador realiza sean a través del servidor DNS del proveedor.
+
+Esto significa que no le será permitido a tu computador realizar peticiones de DNS a ningún otro servidor, incluso si eso es lo que deseas hacer. Por ejemplo, el comando @host bitmask.net 8.8.8.8@ será re-escrito para usar el servidor DNS de tu proveedor en vez de 8.8.8.8.
+
+Tampoco podrás correr un servidor DNS local que intente conectarse directamente a la zona DNS raíz. @bind9@ o @unbound@ están configurados de esta forma por defecto, y fallarán debido a que las peticiones enviadas serán re-escritas para usar el servidor DNS de tu proveedor. Sin embargo, Bitmask es compatible con @dnsmasq@.
+
+Si deseas deshabilitar este comportamiento para solucionar posibles errores, puedes ejecutar @sudo bitmask-root firewall stop@. Sin embargo, al hacer esto, parte de tu tráfico puede evadir la VPN y salir desde tu computadora sin cifrar.
+
+h3. En caso de emergencia, rompa el vidrio
+
+En alguna situación fortuita, es posible que tu computadora se mantenga en un modo que impida todo el tráfico de red. Prueba lo siguiente:
+
+* Ejecuta @sudo bitmask-root firewall stop@ para eliminar todas las reglas que el firewall de Bitmask levanta para impedir conexiones inseguras.
+* Si todo esto falla, prueba desconectarte del proveedor o reiniciar tu computadora.
+
+Si encuentras algún fallo, por favor [[repórtalo => support]].
+
+

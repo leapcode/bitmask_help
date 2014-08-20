@@ -1,0 +1,23 @@
+@title = 'VPN en Android'
+@nav_title = 'Android'
+@summary = 'Usando Bitmask VPN en Android'
+
+h2. Estados de conexión VPN
+
+El estado de la conexión VPN se muestra mediante un ícono de notificación:
+
+*(android-on) La VPN está *conectada*, todo el tráfico está saliendo de forma cifrada hacia el proveedor.
+*(android-wait) La VPN está *esperando* conectar o reconectarse tras haber perdido acceso a la red. Puede que parte del tráfico pueda escapar sin cifrar durante este periodo.
+*(android-off) La VPN está *desactivada*. El tráfico .
+
+h2. Ingresando
+
+Cuando ejecutas Bitmask por primera vez, necesitarás autentificarte con tu proveedor. Tras esto podrás usar la VPN sin necesidad ingresar los datos de tu cuenta.
+
+De vez en cuando, Bitmask puede necesitar que te identifiques nuevamente con el fin de actualizar las credenciales necesarias para la conexión VPN. El tiempo por defecto de esto es un mes, aunque es posible que tu proveedor haya configurado las cosas de forma diferente.
+
+h2. VPN Anónima
+
+Algunos proveedores soportan conexiones VPN de forma anónima. Cuando esta función esté activa, no necesitarás autentificarte con el proveedor para usar el servicio. Sin embargo, los proveedores suelen ofrecer un servicio más veloz a quienes sí lo hacen.  
+
+Cuando ejecutas Bitmask en modo VPN Anónima es posible que se te impida el acceso a ciertos sitios. Esto es porque algunos sitios bloquean todas las conexiones desde proxies anónimos.
