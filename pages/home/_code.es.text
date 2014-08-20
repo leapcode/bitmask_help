@@ -1,0 +1,12 @@
+*¡Eh, tú! ¡Sí, tú! Nos vendría bien un poco de ayuda*. ¿Quieres una comunicación a salvo de vigilancia, basada en protocolos abiertos, y que otorgue a los usuarios control sobre sus propios datos? Entonces, agarra un teclado y [[enrólate => https://leap.se/es/get-involved]] -- el código no se va a escribir solito.
+
+En particular, si estás bien curtido en las artes de Python, Android, Java, Ruby, C, CouchDB, Windows, Mac, Puppet, Qt, o realmente te apasiona la criptografía, tu ayuda es más que bienvenida.
+
+* [[Clónate nuestro código => https://leap.se/es/source]]
+* Crea una nueva rama a partir de develop, llamada feature/x ó bugfix/x
+* Hackea a tu gusto.
+* Abre un pull request en github a partir de tu rama de feature o bugfix, y hacia la rama develop en el upstream (es decir, el repo en leapcode).
+* Sigue la discusión y espera hasta que tu petición sea integrada.
+* Vuelve a comenzar.
+
+Por lo general, publicamos una nueva versión de Bitmask cada tres semanas, y de otros componentes a medida que va siendo necesario.

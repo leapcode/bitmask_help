@@ -1,31 +1,30 @@
 es:
   missing_translation: "Esta página aún no ha sido traducida del Inglés."
   banner_bottom: "Ayuda"
-  banner_motto: "La comunicación cifrada para los simples mortales<br>(superhéroes dan la bienvenida, también)"
+  banner_motto: "Comunicación cifrada para simples mortales<br>(superhéroes bienvenidos, también)"
   contribute_to_help: Contribuir a estas páginas de ayuda
   download_bitmask: Descarga Bitmask
   downloads: Descargas
   download: Descargar
   warning: >
-    <b>ADVERTENCIA:</b> Máscara de bits es todavía experimental. Por favor, no use estos beta
-    comunicados de Máscara de bits para las situaciones en que un compromiso de sus datos podría
-    ponerte en peligro.
+    <b>ADVERTENCIA:</b> Bitmask está todavía en fase experimental. Por favor, no uses estas versiones beta 
+    de Bitmask en situaciones en las que un compromiso de tus datos podría ponerte en peligro.
 
   #
   # front page text
   #
-  fork_our_code: Fork nuestro código
+  fork_our_code: Clónate nuestro código
   about_us: Quiénes somos
   supported_providers: Proveedores soportados
-  supported_providers_text: "Los siguientes proveedores de servicios son compatibles con la aplicación de Bitmask:"
+  supported_providers_text: "Los siguientes proveedores de servicios son compatibles con la aplicación Bitmask:"
   bitmask_app_blurb: >
-    El aplicación de <b>Bitmask</b> está diseñada para tener una <b>amigable</b> interfaz
-    con <b>automático</b> de configuración. Simplemente inicie la aplicación, se registra
-    con el proveedor de servicios compatibles de su elección, y ya está.
+    La aplicación <b>Bitmask</b> está diseñada para tener una interfaz <b>amigable</b>
+    y una configuración <b>automática</b>. Tan sólo tienes que lanzar la aplicación,
+    registrarte con un proveedor de servicios compatible de tu elección, y listo.
   bitmask_vpn_blurb: >
     Con [[Bitmask VPN => features#vpn]], todo el tráfico se enruta de forma segura a través de
-    su proveedor antes de que se descifra y se envía a la Internet abierta.
-  encrypted_email: Correo electrónico cifrado
+    tu proveedor antes de ser descifrado y enviado a la Internet abierta.
+  encrypted_email: Correo Electrónico Cifrado
   encrypted_email_blurb: >
-    [[Bitmask cifrado Email => features#email]] es fácil de usar sin dejar de ser
+    El [[Mail Cifrado Bitmask => features#email]] es fácil de usar, permaneciendo 
     compatible con el protocolo OpenPGP existente para correo electrónico seguro.
