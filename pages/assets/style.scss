@@ -363,8 +363,8 @@ body.home {
     span {
       color: #333;
     }
-    margin: 20px 0 15px 0;
-    font-size: 36px;
+    margin: 20px 0 0px 0;
+    font-size: 28px;
   }
   .thumbnail {
     word-break: break-all;
@@ -398,14 +398,14 @@ body.home {
       color: lighten($link-visited-color, 30%);
     }
   }
-  .dark {
-    background-color: lighten($home-dark-background-color, 5%);
+  .darker {
+    background-color: darken($home-dark-background-color, 5%);
   }
   .light, .lighter {
     color: $home-light-color;
     background-color: $home-light-background-color;
   }
-  .light {
+  .lighter {
     background-color: lighten($home-light-background-color, 20%);
   }
   .b {

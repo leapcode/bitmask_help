@@ -15,21 +15,17 @@
       #masthead
         = render 'layouts/masthead'
       #main
-        .darker
+        .dark
           .container
             .row
-              .col-sm-9
+              .col-sm-12
                 .introtext
                   = render 'home/intro'
-              .col-sm-3
                 .download.text-left
                   %a.btn.btn-large.btn-primary{:href => 'install'}
                     %i.fa.fa-download.fa-2x
                     %span
                       = t :download_bitmask
-        .container
-          .shadow-box
-            .content-box
-              = yield :content
+        = yield :content
     #footer
       = render 'layouts/footer'

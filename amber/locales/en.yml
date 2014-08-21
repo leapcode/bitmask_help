@@ -19,6 +19,7 @@ en:
   #
   # front page text
   #
+  services: Services
   fork_our_code: Fork our code
   about_us: About us
   supported_providers: Supported providers

@@ -1,35 +1,32 @@
-.row
-  .col-sm-12
-    %p.big
-      = t :bitmask_app_blurb
-
-.row
-  .col-sm-6
-    .heading
-      %span
-        %i.fa.fa-shield
-        = t :bitmask_vpn
-    %p.big
-      = t :bitmask_vpn_blurb
-  .col-sm-6
-    .heading
-      %span
-        %i.fa.fa-envelope
-        = t :encrypted_email
-    %p.big
-      = t :encrypted_email_blurb
-
-.row
-  .col-sm-12
-    .heading#providers
-      %span
-        %i.fa.fa-institution
-        = t :supported_providers
-
-    %p.big
-      = t :supported_providers_text
-
+.light
+  .container
     .row
+      .col-sm-12
+        %h1.b= t :services
+        %p.big
+          = t :bitmask_app_blurb
+      .col-lg-6
+        .heading
+          %span
+            %i.fa.fa-shield
+            = t :bitmask_vpn
+        %p.big
+          = t :bitmask_vpn_blurb
+      .col-lg-6
+        .heading
+          %span
+            %i.fa.fa-envelope
+            = t :encrypted_email
+        %p.big
+          = t :encrypted_email_blurb
+
+.lighter
+  .container
+    .row
+      .col-sm-12
+        %h1.b#providers= t :supported_providers
+        %p.big
+          = t :supported_providers_text
       .col-lg-2.col-md-3.col-sm-3.col-xs-4
         .thumbnail
           %img(src='/assets/providers/demo.bitmask.net.png')
@@ -50,18 +47,16 @@
           %img(src='/assets/providers/riseup.net.png')
           .b
             [[riseup.net => https://black.riseup.net]]
+.light
+  .container
+    .row
+      .col-sm-12
+        %h1.b= t :fork_our_code
+        = render 'home/code'
 
-.row
-  .col-sm-6
-    .heading
-      %span
-        %i.fa.fa-code-fork
-        = t :fork_our_code
-    = render 'home/code'
-
-  .col-sm-6
-    .heading
-      %span
-        %i.fa.fa-group
-        = t :about_us
-    = render 'home/about'
+.lighter
+  .container
+    .row
+      .col-sm-12
+        %h1.b= t :about_us
+        = render 'home/about'

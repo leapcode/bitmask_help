@@ -2,11 +2,11 @@
 
 In particular, if you have finely honed skill in Python, Android Java, Ruby, C, CouchDB, Windows, Mac, Puppet, Qt, or you really love crypto, we could sure use your help.
 
-* [[Fork our code => https://leap.se/en/source]]
-* Create a new branch from develop called feature/x or bugfix/x.
-* Hack away.
-* Issue a pull request on github from your feature or bugfix branch to the upstream develop branch.
-* Discuss and wait for request to be merged.
-* Repeat.
+# [[Fork our code => https://leap.se/en/source]]
+# Create a new branch from develop called feature/x or bugfix/x.
+# Hack away.
+# Issue a pull request on github from your feature or bugfix branch to the upstream develop branch.
+# Discuss and wait for request to be merged.
+# Repeat.
 
 Currently, we release a new version of the Bitmask application every three weeks, and other components as necessary.

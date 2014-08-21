@@ -7,12 +7,13 @@ es:
   downloads: Descargas
   download: Descargar
   warning: >
-    <b>ADVERTENCIA:</b> Bitmask está todavía en fase experimental. Por favor, no uses estas versiones beta 
+    <b>ADVERTENCIA:</b> Bitmask está todavía en fase experimental. Por favor, no uses estas versiones beta
     de Bitmask en situaciones en las que un compromiso de tus datos podría ponerte en peligro.
 
   #
   # front page text
   #
+  services: Servicios
   fork_our_code: Clónate nuestro código
   about_us: Quiénes somos
   supported_providers: Proveedores soportados
@@ -26,5 +27,5 @@ es:
     tu proveedor antes de ser descifrado y enviado a la Internet abierta.
   encrypted_email: Correo Electrónico Cifrado
   encrypted_email_blurb: >
-    El [[Mail Cifrado Bitmask => features#email]] es fácil de usar, permaneciendo 
+    El [[Mail Cifrado Bitmask => features#email]] es fácil de usar, permaneciendo
     compatible con el protocolo OpenPGP existente para correo electrónico seguro.
