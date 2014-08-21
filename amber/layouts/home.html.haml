@@ -15,6 +15,12 @@
       #masthead
         = render 'layouts/masthead'
       #main
+        .container
+          .row
+            .col-sm-12
+              .locale-links
+                - available_languages.each do |name, code, url|
+                  %a.label{:href => url, :class => (I18n.locale == code ? 'label-primary' : '')}= name
         .dark
           .container
             .row
