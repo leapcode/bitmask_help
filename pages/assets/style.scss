@@ -83,6 +83,8 @@ h4 {
       width: 50%;
       font-weight: bold;
       font-family: Helvetica,Arial,sans-serif;
+      white-space: nowrap;
+      overflow: hidden;
       &.bottom {
         display: none;
       }
@@ -414,4 +416,3 @@ body.home {
     margin-left: 22px;
   }
 }
-
