@@ -150,38 +150,34 @@ body.home #masthead .text {
   body.home #masthead .text {
     height: $masthead-medium-height/2;
     &.bottom {
-      font-size: 10px;
-      line-height: 19px !important;
+      font-size: 12px;
+      line-height: 22px !important;
     }
   }
 }
 
 
 // small masthead
+// same as medium, but smaller 'bitmask' and hide bottom text.
 
-// @media (max-width: 767px) {
-//   #masthead {
-//     background: $masthead-background-color url(#{$masthead-small-img}) 50% 50%;
-//     .masthead-inner {
-//       height: $masthead-small-height;
-//       .text {
-//         padding-left: 1px;
-//         font-size: 30px;
-//         line-height: $masthead-small-height;
-//       }
-//     }
-//   }
-//   body.home #masthead .text {
-//     height: $masthead-small-height/2;
-//     &.bottom {
-//       font-size: 9px;
-//       line-height: 14px !important;
-//       span {
-//         padding: 2px;
-//       }
-//     }
-//   }
-// }
+@media (max-width: 540px) {
+  #masthead {
+    .masthead-inner {
+      .text {
+        padding-left: 1px;
+        font-size: 36px;
+      }
+    }
+  }
+  // no .bottom, make .top fill whole space
+  body.home #masthead .text {
+    height: $masthead-medium-height;
+    line-height: $masthead-medium-height !important;
+    &.bottom {
+      display: none;
+    }
+  }
+}
 
 #top-menu {
   position: absolute;
@@ -207,7 +203,7 @@ body.home #masthead .text {
 
 @media only screen and (max-width: 767px) {
   #top-menu a {
-    padding: 2px 6px;
+    padding: 2px 10px;
     font-size: 12px;
   }
 }
