@@ -42,14 +42,14 @@ If the result is:
 
 ### 32 bit kernel
 
-<%= render({:partial => 'common/download_button'}, {:link => '/client/linux/Bitmask-linux32-latest.tar.bz2', :text => 'Download 32 bit'}) %>
+<%= render({:partial => 'common/download_button'}, {:link => 'https://dl.bitmask.net/client/linux/Bitmask-linux32-latest.tar.bz2', :text => 'Download 32 bit'}) %>
 
 ### 64 bit kernel
 
-<%= render({:partial => 'common/download_button'}, {:link => '/client/linux/Bitmask-linux64-latest.tar.bz2', :text => 'Download 64 bit'}) %>
+<%= render({:partial => 'common/download_button'}, {:link => 'https://dl.bitmask.net/client/linux/Bitmask-linux64-latest.tar.bz2', :text => 'Download 64 bit'}) %>
 
 ### Other options
 
-If you want to install an old or development version of Bitmask, you can [browse all releases.](/client/linux/)
+If you want to install an old or development version of Bitmask, you can [browse all releases.](https://dl.bitmask.net/client/linux/)
 
 <%= render({:partial => 'common/email'}) %>

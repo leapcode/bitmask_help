@@ -30,10 +30,10 @@ You can search for "Bitmask" in the Google Play store or use this link:
 %p Alternately, you can download the Bitmask app directly from this website. You will need to enabled the option <b>Settings > Security > Unknown Sources</b> on your device for this method to work.
 
 .p.android
-  = render({:partial => 'common/download_button'}, {:link => '/client/android/Bitmask-Android-latest.apk', :text => 'Download for Android'})
+  = render({:partial => 'common/download_button'}, {:link => 'https://dl.bitmask.net/client/android/Bitmask-Android-latest.apk', :text => 'Download for Android'})
 
 .p.non-android
-  %a(href='/client/android/Bitmask-Android-latest.apk' alt='download')
+  %a(href='https://dl.bitmask.net/client/android/Bitmask-Android-latest.apk' alt='download')
     %img(src='/assets/qr/dl.bitmask.net-bitmask-android-latest.png')
 
 %h2 Download other versions
