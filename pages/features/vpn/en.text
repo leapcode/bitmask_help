@@ -1,0 +1,110 @@
+@title = "Bitmask VPN Features and Limitations"
+@nav_title = "VPN"
+
+h1. Benefits of Bitmask VPN
+
+h2. Why would you want to run Bitmask VPN?
+
+The internet is being broken by governments, internet service providers (ISPs), and corporations.
+
+h3. Broken by governments
+
+Around the world, governments are using the internet for social control, through both surveillance and censorship. Many countries, such as China, Iran, and the United States practice active surveillance of the social relationships of everyone and the European Union countries require all ISPs and website operators to record and retain personal data on your behavior. With three-strikes laws, many countries now deny citizens access to the internet if accused of file sharing. Some countries even forbid the use of new communication technologies, like Skype.
+
+h3. Broken by ISPs
+
+Internet service providers are breaking the internet too. They happily cooperate with government repression, they practice intrusive monitoring of your traffic through deep packet inspection, they track your DNS usage, and they get people thrown in jail, expelled from school, or banned from the internet, merely from the accusation of copyright infringement. Also, ISPs typically limit you to one internet address. If you want to share your internet connection with multiple devices, you must put all the devices on a local network. This works OK if you just want to browse the web, but makes life difficult if you want to take advantage of many applications.
+
+h3. Broken by corporations
+
+Corporations have discovered how to make money from the internet: surveillance. By tracking your online habits, advertising companies build detailed profiles of your individual behavior in order to better sell you useless crap. Every single major internet ad company now uses behavioral tracking. Also, to comply with national copyright, many companies only make their services available to some internet users, those who reside in the 'right' country.
+
+h2. How Bitmask VPN helps
+
+There are many ways that Bitmask VPN can help:
+
+# *Protect against ISP surveillance*: A VPN eliminates the ability of your ISP to monitor your communication. They have no meaningful records which can be used against you, either by marketers or the government.
+# *Bypass government censorship*: An VPN can entirely bypass all government censorship, so long as you still have access to the internet. Note, however, that careful analysis of your traffic could reveal that you are using an VPN, which may or may not be legal in your jurisdiction. In particular, no VPN can hide your traffic from the NSA or GCHQ.
+# *Access the entire internet, regardless of where you live*: An VPN allows you to pretend to live in any country where we have a VPN gateway server. This gives you access to restricted content only available in those countries. An VPN also allows you to use services that may be blocked in your country.
+# *Secure your Wi-Fi connection*: Any time you use a public Wi-Fi connection, everyone else using that access point can spy on your traffic. An VPN will prevent this.
+# *Keep websites from logging your IP address*: Most all websites will log your IP address and some even retain this information for several years. Because your IP address is effectively an unique identifier that is connected to your real identity and your real location, there are many reasons why someone might not want every website they visit to have access to this personal information.
+
+h2. Special features of Bitmask VPN
+
+The Bitmask application provides an Encrypted Internet that has several advantages over traditional "Personal VPN":
+
+* Does not leak traffic: Bitmask VPN is much better than other VPNs at preventing any unencrypted traffic from leaking from your computer (for example, because of IPv6, DNS, "Fail Open" leaks). These guarentees are strong on the Desktop version, but weaker on the Android version (because of limitations in what the Android OS will let us do).
+* No logging: Bitmask VPN servers are configure to not keep any logs either for the VPN or domain name resolution. A nefarious provider may manually modify this behavior.
+* Semi-anonymous: Some Bitmask-compatible providers will allow anonymous VPN usage.
+
+h1. How Bitmask VPN works
+
+h2. Network security
+
+<table class="table table-striped">
+<tr>
+  <th style="width: 10em">Type of security</th>
+  <th>What is it?</th>
+</tr>
+<tr>
+  <td>Human Security</td>
+  <td>Human behavior that keeps you safe and out of harms way.</td>
+</tr>
+<tr>
+  <td>Device Security</td>
+  <td>The integrity of your computing devices to be free from hardware or software modifications that steal your information.</td>
+</tr>
+<tr>
+  <td>Message Security</td>
+  <td>The confidentiality of messages you send and receive, and the pattern of your associations.</td>
+</tr>
+<tr>
+  <td>Network Security</td>
+  <td>Protection of your internet traffic against behavioral tracking, account hijacking, censorship, eavesdropping, and advertising.</td>
+</tr>
+</table>
+
+Bitmask VPN only applies to *Network Security*. For example, it cannot improve your behavior, protect your device against viruses, or ensure your messages are end-to-end encrypted.
+
+h2. A normal internet connection
+
+!vpn-01_large.png!
+
+In a normal internet connection, all your traffic is routed from your computer through your ISP (Internet Service Provider) and out onto the internet and finally to its destinate. At every step of the way, your data is being recorded and is vulnerable to eavesdropping or man-in-the-middle attacks.
+
+h2. An internet connection with VPN
+
+!vpn-02_large.png!
+
+With an VPN, your traffic is encrypted on your computer, passes through your ISP and on to your VPN provider. Because the data is encrypted, your ISP has no knowledge of what is in your data that they relay on to your VPN provider. Once your data reaches the VPN provider, it is decrypted and forwarded on to its final destination.
+
+With the *Encrypted Internet Proxy*, if your data is not using a secure connections then it is still vulnerable from the point it leaves the VPN Gateway. However, by routing your data through the VPN provider, you have acheived two important advantages:
+
+* Your data is protected from blocking, tracking, or man-in-the-middle attacks conducted by your ISP or network operators in your local country.
+* Your data now appears to use the IP address of the VPN provider, and not your real IP address. Most websites gather and retain extensive data base on this IP address, which has now been anonymized.
+
+h2. VPN anonymizes your connection
+
+!vpn-03_large.png!
+
+Because your traffic appears to originate from the VPN provider, the recipient of your network communication does not know where you actually reside (unless, of course, you tell them). Also, your traffic has been mixed together with the traffic of hundreds or even thousands of other people.
+
+In the case illustrated above, the website in California thinks that the laptop in Brazil, the laptop in Europe, and the giant cellphone floating over Canada are all coming from New York, because that is where the VPN provider is.
+
+h1. Limitations of VPN
+
+* *Powerful attackers*: Very large spy agencies from the US and UK, like the NSA and GCHQ, have the ability to monitor all traffic everywhere on the internet. With this capability, we know that they will identify VPN traffic and correlate where this traffic originated. Because of this, using a VPN might actually invite more scrutiny from the NSA or GCHQ than not using anything at all.
+
+* *Legality*: If you live in an non-democratic state, it may be illegal to use an VPN or personal VPN to access the internet that has not been approved by the government.
+
+* *Mobile network*: Using an VPN on your mobile device will secure your data connection, but the telephone company will still know your location by recording which towers your device communicates with.
+
+* *An insecure connection is still insecure*: Although Bitmask will anonymize your location and protect you from surveillance from your ISP, once your data is securely routed through through your provider it will go out on the internet as it normally would. This means you should still use SSL or TLS when available.
+
+* *VPN only applies to network security*: Using an VPN will not protect your communication if your computer is already compromised with software or hardware that is stealing your personal information. Also, if you give personal information to a website, there is little that an VPN can do to maintain your anonymity with that website or its partners.
+
+* *Browser fingerprints*: Every web browser effectively has a fingerprint that can uniquely identify your web traffic from everyone else. Although websites rely on cookies for tracking, a powerful network observer could use the uniqueness of your browser in order to de-anonymize your traffic.
+
+* *The internet might get slower*: the Bitmask VPN routes all your traffic through an encrypted connection to your provider of choice before it goes out onto the normal internet. This extra step can slow things down. To minimize the slowdown, try to choose a VPN gateway server close to where you actually live.
+
+* *Anonymous proxies*: There are some websites that block access from "Anonymous Proxies". For this reason, depending on which VPN gateway you are using, your traffic might be blocked.

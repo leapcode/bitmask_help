@@ -1,4 +1,6 @@
 features
+  vpn
+  cryptography
 install
   android
   linux
