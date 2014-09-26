@@ -1,0 +1,81 @@
+@title = 'Signature Verification'
+
+Many of the files available for download from this site have been signed. This page will walk you through what you need to do in order to verify these signatures. This process is entirely optional.
+
+h2. Import LEAP's key
+
+All the files have been signed with the "LEAP archive signing key". The first step is to import this key into your local keyring. These instructions will use @gpg@, a free implementation of OpenPGP that works on Mac, Windows, and Linux.
+
+h3. Option 1 - wget
+
+The easiest way to get the LEAP archive signing key is to just download it from the bitmask.net website and import into your keyring:
+
+bc. wget -O- https://dl.bitmask.net/apt.key | gpg --import
+
+You should see output that looks like this:
+
+bc. gpg: key 0x1E34A1828E207901: public key "LEAP archive signing key <sysdev@leap.se>" imported
+gpg: Total number processed: 1
+gpg:               imported: 1  (RSA: 1)
+gpg: 3 marginal(s) needed, 1 complete(s) needed, classic trust model
+gpg: depth: 0  valid:   4  signed:   7  trust: 0-, 0q, 0n, 0m, 0f, 4u
+gpg: depth: 1  valid:   7  signed:  22  trust: 6-, 1q, 0n, 0m, 0f, 0u
+
+h3. Option 2 - search keyservers
+
+Alternately, you can import the LEAP archive signing key by fetching from a keyserver:
+
+bc. gpg --recv-key 1E453B2CE87BEE2F7DFE99661E34A1828E207901
+
+If you want to make the keyserver connection use TLS, you can use the sks-keyserver pool. To use this keyserver pool, you will need to [[download the sks-keyservers.net CA => https://sks-keyservers.net/sks-keyservers.netCA.pem]] and save it somewhere on your machine. Additionally, you can [[verify the certificate’s finger print => https://sks-keyservers.net/verify_tls.php]].
+
+Once you have downloaded the SKS keyserver pool CA, the @recv-key@ command looks like this:
+
+bc. gpg --keyserver hkps://pool.sks-keyservers.net --keyserver-options 'ca-cert-file=sks-keyservers.netCA.pem' --recv-key 1E453B2CE87BEE2F7DFE99661E34A1828E207901
+
+Assuming you saved the CA certificate to the file @sks-keyservers.netCA.pem@. For more information, see this [[OpenPGP best practices page => https://help.riseup.net/en/gpg-best-practices]].
+
+There is absolutely no guarentee that the key just imported with @recv-key@ is the one you just requested. To confirm, you need to manually check the fingerprint:
+
+bc. gpg --fingerprint 1E453B2CE87BEE2F7DFE99661E34A1828E207901
+
+Which should produce output like so:
+
+bc. pub   4096R/0x1E34A1828E207901 2013-02-06 [expires: 2015-02-07]
+      Key fingerprint = 1E45 3B2C E87B EE2F 7DFE  9966 1E34 A182 8E20 7901
+uid                 [  undef ] LEAP archive signing key <sysdev@leap.se>
+
+
+h2. Download signature file
+
+The signature file for each download has the same name as the file but with @.asc@ appended.
+
+For a listing of the available signature files, see:
+
+* [[All Android files => https://dl.bitmask.net/client/android/]]
+* [[All Linux files => https://dl.bitmask.net/client/linux/]]
+* [[All Mac files => https://dl.bitmask.net/client/mac/]]
+* [[All Windows files => https://dl.bitmask.net/client/windows/]]
+
+Make sure you put the signature file and the download you want to authenticate in the same directory, and that they have the same name (other than the .asc suffix for the signature file).
+
+h2. Verify signature
+
+Now, just run this command:
+
+bc. gpg --verify FILE.asc
+
+Where FILE is the name of the download you want to authenticate.
+
+You should see some output like so:
+
+bc. gpg: Signature made Mon 15 Sep 2014 07:49:07 AM PDT
+gpg:                using RSA key 0x1E34A1828E207901
+gpg: Good signature from "LEAP archive signing key <sysdev@leap.se>" [unknown]
+gpg: WARNING: This key is not certified with a trusted signature!
+gpg:          There is no indication that the signature belongs to the owner.
+Primary key fingerprint: 1E45 3B2C E87B EE2F 7DFE  9966 1E34 A182 8E20 7901
+
+If you have trusted one of the keys that has signed the LEAP key, then you will not see the warning.
+
+If you do not see the text [@Good signature from "LEAP archive signing key <sysdev@leap.se>"@] then something is wrong and you should not run the application you downloaded.

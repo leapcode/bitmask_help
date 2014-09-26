@@ -1,0 +1,9 @@
+.row
+  .col-sm-8.col-sm-offset-2
+    - if @locals[:type] == 'warning'
+      .p.alert.alert-danger
+        %i.fa.fa-warning
+        = @locals[:text]
+    - elsif @locals[:type] == 'info'
+      .p.alert.alert-info
+        = @locals[:text]

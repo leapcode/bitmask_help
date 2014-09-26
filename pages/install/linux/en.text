@@ -1,55 +1,58 @@
-- @title = 'Bitmask for Linux'
-- @nav_title = 'Linux'
+@title = 'Bitmask for Linux'
+@nav_title = 'Linux'
 
-<%= render :partial => 'notice' %>
+<%= render({:partial => 'common/notice'}, {:type => 'info', :text => '<b>NOTE:</b> Encrypted email support in Bitmask is still experimental.'}) %>
 
-## Install as packages
+h2. Install as packages
 
 This is the recommended method of installing Bitmask. If installed as a package, Bitmask will run faster, be better integrated in the system, and will be kept up to date.
 
-### Ubuntu 14.04 (Trusty Tahr)
+h2. Ubuntu 14.04 (Trusty Tahr)
 
 <%= render({:partial => 'via_packages'}, {:distro => 'trusty'}) %>
 
-### Debian 7.0 (Wheezy)
+h3. Debian 7.0 (Wheezy)
 
 <%= render({:partial => 'via_packages'}, {:distro => 'wheezy', :os => 'debian'}) %>
 
-### Debian 8.0 (Jessie)
+h3. Debian 8.0 (Jessie)
 
 <%= render({:partial => 'via_packages'}, {:distro => 'jessie', :os => 'debian'}) %>
 
-## Install stand-alone bundle
+h2. Install stand-alone bundle
 
 Alternately, you can run Bitmask from a stand alone bundle. This is useful if want to run Bitmask from a thumb drive. The bundle should work on most recent Linux distributions that are derived from Debian (e.g. Ubuntu, Mint, etc).
 
-There are several disadvantages to the stand-alone bundle:
+There are two disadvantages to the stand-alone bundle:
 
-* Installing via the bundle takes up more space.
 * The Bitmask app will be less well integrated with the desktop environment.
 * Running from the bundle is slower to start than via packages.
-* You will not get automatic updates running the stand alone bundle.
+
+Optionally, you can [[authenticate the signature => signature-verification]] for the Bitmask files before you run them.
 
 How do you tell if you running a 32 bit or 64 bit kernel? Run the following command:
 
-    uname -m
+bc. uname -m
 
 If the result is:
 
-* `x86_64`, you have **64 bit**
-* `i686`, you have **32 bit**
-* `i386`, you have **32 bit**
+* @x86_64@, you have *64 bit*
+* @i686@, you have *32 bit*
+* @i386@, you have *32 bit*
 
-### 32 bit kernel
+h3. 32 bit kernel
 
 <%= render({:partial => 'common/download_button'}, {:link => 'https://dl.bitmask.net/client/linux/Bitmask-linux32-latest.tar.bz2', :text => 'Download 32 bit'}) %>
 
-### 64 bit kernel
+[[Signature file => https://dl.bitmask.net/client/linux/Bitmask-linux32-latest.tar.bz2.asc]]
+
+h3. 64 bit kernel
 
 <%= render({:partial => 'common/download_button'}, {:link => 'https://dl.bitmask.net/client/linux/Bitmask-linux64-latest.tar.bz2', :text => 'Download 64 bit'}) %>
 
-### Other options
+[[Signature file => https://dl.bitmask.net/client/linux/Bitmask-linux64-latest.tar.bz2.asc]]
 
-If you want to install an old or development version of Bitmask, you can [browse all releases.](https://dl.bitmask.net/client/linux/)
+h3. Other options
 
-<%= render({:partial => 'common/email'}) %>
+If you want to install an old or development version of Bitmask, you can [[browse all releases => https://dl.bitmask.net/client/linux/]].
+

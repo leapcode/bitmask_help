@@ -1,0 +1,15 @@
+@title = "Bitmask for Windows"
+
+h1. Bitmask for Windows
+
+<%= render({:partial => 'common/notice'}, {:type => 'warning', :text => '<b>WARNING:</b> Currently, the Windows build is very buggy and is not officially supported. If you know Windows programming, we could <a href="https://leap.se/get-involved">use your help</a>.'}) %>
+
+h2. Download latest version
+
+<%= render({:partial => 'common/download_button'}, {:link => 'https://dl.bitmask.net/client/windows/Bitmask-win32-latest.zip', :text => 'Download for Windows'}) %>
+
+Optionally, you can [[authenticate the signature => signature-verification]] for the Bitmask .zip file using [[this signature file => https://dl.bitmask.net/client/osx/Bitmask-win32-latest.zip.asc]].
+
+h2. Download other versions
+
+If you want to install an old version of Bitmask, you can <a href="https://dl.bitmask.net/client/windows/">browse all releases</a>.

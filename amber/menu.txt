@@ -4,6 +4,7 @@ features
 install
   android
   linux
+  signature-verification
 help
   support
   getting-started
