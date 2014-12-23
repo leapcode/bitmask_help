@@ -3,11 +3,30 @@
 
 <%= render({:partial => 'common/notice'}, {:type => 'info', :text => '<b>NOTE:</b> Encrypted email support in Bitmask is still experimental.'}) %>
 
+h2. Upgrading
+
+*From stand-alone bundles*: Bitmask should upgrade itself automatically (for versions equal or later than 0.7.0). If you are running a version prior to 0.7.0, you can download the new bundle and copy the "config" folder from the old bundle directory.
+
+*From packages*: If you are running from packages, then you can trigger an update like so:
+
+bc. apt-get update
+apt-get dist-upgrade
+
+NOTE: When upgrading Ubuntu from Trusty to Unicorn, you may need to run this command again:
+
+bc. sudo add-apt-repository "deb http://deb.bitmask.net/debian utopic main"
+
+This is because the Ubuntu upgrade process probably commented out all your prior custom repository lines in @/etc/apt/sources.list@.
+
 h2. Install as packages
 
 This is the recommended method of installing Bitmask. If installed as a package, Bitmask will run faster, be better integrated in the system, and will be kept up to date.
 
-h2. Ubuntu 14.04 (Trusty Tahr)
+h3. Ubuntu 14.04 (Utopic Unicorn)
+
+<%= render({:partial => 'via_packages'}, {:distro => 'utopic'}) %>
+
+h3. Ubuntu 14.04 (Trusty Tahr)
 
 <%= render({:partial => 'via_packages'}, {:distro => 'trusty'}) %>
 
