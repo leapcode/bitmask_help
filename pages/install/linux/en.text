@@ -22,7 +22,7 @@ h2. Install as packages
 
 This is the recommended method of installing Bitmask. If installed as a package, Bitmask will run faster, be better integrated in the system, and will be kept up to date.
 
-h3. Ubuntu 14.04 (Utopic Unicorn)
+h3. Ubuntu 14.10 (Utopic Unicorn)
 
 <%= render({:partial => 'via_packages'}, {:distro => 'utopic'}) %>
 
