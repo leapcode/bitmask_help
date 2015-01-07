@@ -73,5 +73,6 @@ h3. 64 bit kernel
 
 h3. Other options
 
-If you want to install an old or development version of Bitmask, you can [[browse all releases => https://dl.bitmask.net/client/linux/]].
+You can [[browse all releases => https://dl.bitmask.net/client/osx/]] for old or experimental downloads.
 
+You should install the latest stable release. Downloads tagged with "RC" are "Release Candidates" and receive frequent experimental updates that may break the application.

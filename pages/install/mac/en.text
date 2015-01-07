@@ -13,5 +13,6 @@ Once the file `Bitmask-OSX-latest.dmg` has been saved to your computer, mount th
 
 h2. Download other versions
 
-If you want to install an old or experimental version of Bitmask, you can [[browse all releases => https://dl.bitmask.net/client/osx/]].
+You can [[browse all releases => https://dl.bitmask.net/client/osx/]] for old or experimental downloads.
 
+You should install the latest stable release. Downloads tagged with "RC" are "Release Candidates" and receive frequent experimental updates that may break the application.

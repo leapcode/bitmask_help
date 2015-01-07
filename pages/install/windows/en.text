@@ -12,4 +12,6 @@ Optionally, you can [[authenticate the signature => signature-verification]] for
 
 h2. Download other versions
 
-If you want to install an old version of Bitmask, you can <a href="https://dl.bitmask.net/client/windows/">browse all releases</a>.
+You can [[browse all releases => https://dl.bitmask.net/client/windows/]] for old or experimental downloads.
+
+You should install the latest stable release. Downloads tagged with "RC" are "Release Candidates" and receive frequent experimental updates that may break the application.
