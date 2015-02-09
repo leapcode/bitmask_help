@@ -26,7 +26,7 @@ h3. Ubuntu 14.10 (Utopic Unicorn)
 
 <%= render({:partial => 'via_packages'}, {:distro => 'utopic'}) %>
 
-h3. Ubuntu 14.04 (Trusty Tahr)
+h3. Ubuntu 14.04 LTS (Trusty Tahr)
 
 <%= render({:partial => 'via_packages'}, {:distro => 'trusty'}) %>
 
@@ -40,7 +40,7 @@ h3. Debian 8.0 (Jessie)
 
 h2. Install stand-alone bundle
 
-Alternately, you can run Bitmask from a stand alone bundle. This is useful if want to run Bitmask from a thumb drive. The bundle should work on most recent Linux distributions that are derived from Debian (e.g. Ubuntu, Mint, etc).
+Alternately, you can run Bitmask from a stand alone bundle. This is useful if want to run Bitmask from a thumb drive. The bundle should work on most recent Linux distributions that are derived from Debian (e.g. Ubuntu, Mint, Trisquel, etc).
 
 There are two disadvantages to the stand-alone bundle:
 
@@ -73,6 +73,6 @@ h3. 64 bit kernel
 
 h3. Other options
 
-You can [[browse all releases => https://dl.bitmask.net/client/osx/]] for old or experimental downloads.
+You can [[browse all releases => https://dl.bitmask.net/client/linux/]] for old or experimental downloads.
 
 You should install the latest stable release. Downloads tagged with "RC" are "Release Candidates" and receive frequent experimental updates that may break the application.
