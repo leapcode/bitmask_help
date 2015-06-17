@@ -66,10 +66,12 @@ p((. The block-encrypted local SQLite database uses @AES-256-CBC@ using the firs
 
 p((. Per-document encryption of documents stored remotely uses symmetric encryption with AES-256-CTR or XSalsa20 cipher using 256 bit keys. The library pycryptopp is used for this. The key and MAC used to encrypt each individual document are derived as follows:
 
-bc. storage_secret_a = first 256 bits of storage secret
+<pre style="margin-left: 2em">
+storage_secret_a = first 256 bits of storage secret
 storage_secret_b = everything after first 256 bits of storage secret
 document_key = hmac(document_id, storage_secret_b)
 document_mac = hmac(document_id | document_revision | iv | ciphertext, hmac(document_id, storage_secret_a)
+</pre>
 
 p((. Every document has its own key. The [@document_revision@] in the document MAC prevents a rollback to an old version of the document. HMAC uses SHA256.
 

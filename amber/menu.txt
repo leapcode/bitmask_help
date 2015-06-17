@@ -1,5 +1,6 @@
 features
   vpn
+  email
   cryptography
 install
   android

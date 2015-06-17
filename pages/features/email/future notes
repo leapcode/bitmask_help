@@ -1,0 +1,16 @@
+
+h2. Long term benefits when two Bitmask compatible providers talk to one another
+
+One of the fundamental problems with email is that the meta-data routing information is exposed as cleartext. Encrypting a message with OpenPGP or S/MIME does nothing to help with this.
+
+The email protocol does support an optional method of securely relaying messages using TLS to encrypt the connection. This method, called StartTLS, is easily undermined by attackers and there is no good way for email providers to validate the authenticity of other servers (without relying on the problematic CA certificate authority system).
+
+For now, Bitmask addresses these problems with two enhancements when two compatible providers are talking to one another:
+
+* When relaying email, server keys are discovered and validated using DNSSEC/DANE.
+* For these providers, TLS with validated keys becomes required for all communication.
+
+This approach is effective against external network observers, but does not protect the meta-data from the service providers themselves. Also, it does not, by itself, protect against more advanced attacks involving timing and traffic analysis.
+
+In the long term, we plan to adopt one of several different schemes for [[securely routing meta-data => https://leap.se/routing]].
+
