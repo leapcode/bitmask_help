@@ -10,8 +10,8 @@ With Bitmask VPN you can circumvent censorship, anonymize your location, and blo
 
 For more information, see:
 
-* [[Benefits of using Encrypted Internet => benefits]]
-* [[Limitations of Encrypted Internet => limitations]]
+* [[Benefits of using Encrypted Internet => features/vpn]]
+* [[Limitations of Encrypted Internet => https://leap.se/en/limitations]]
 
 <%= child_summaries :include_toc => true, :heading => 1 %>
 

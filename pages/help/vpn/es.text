@@ -10,8 +10,8 @@ Al hacer esto Bitmask VPN te permite eludir la censura, anonimizar tu ubicación
 
 Para más información, revisa:
 
-* [[Beneficios de usar Internet Cifrada => benefits]]
-* [[Limitaciones de la Internet Cifrada => limitations]]
+* [[Beneficios de usar Internet Cifrada => features/vpn]]
+* [[Limitaciones de la Internet Cifrada => https://leap.se/es/limitations]]
 
 <%= child_summaries :include_toc => true, :heading => 1 %>
 
