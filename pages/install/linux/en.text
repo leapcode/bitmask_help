@@ -12,9 +12,9 @@ h2. Upgrading
 bc. apt-get update
 apt-get dist-upgrade
 
-NOTE: When upgrading Ubuntu from Trusty to Unicorn, you may need to run this command again:
+NOTE: When upgrading Ubuntu from Unicorn to Vervet, you may need to run this command again:
 
-bc. sudo add-apt-repository "deb http://deb.bitmask.net/debian utopic main"
+bc. sudo add-apt-repository "deb http://deb.bitmask.net/debian vivd main"
 
 This is because the Ubuntu upgrade process probably commented out all your prior custom repository lines in @/etc/apt/sources.list@.
 
@@ -25,10 +25,6 @@ This is the recommended method of installing Bitmask. If installed as a package,
 h3. Ubuntu 15.04 (Vivid Vervet)
 
 <%= render({:partial => 'via_packages'}, {:distro => 'vivid'}) %>
-
-h3. Ubuntu 14.10 (Utopic Unicorn)
-
-<%= render({:partial => 'via_packages'}, {:distro => 'utopic'}) %>
 
 h3. Ubuntu 14.04 LTS (Trusty Tahr)
 
