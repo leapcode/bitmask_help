@@ -1,0 +1,69 @@
+- @title = 'Características do Bitmask'
+- @nav_title = 'Características'
+
+%h1#vpn VPN
+
+%p Com Bitmask VPN, todo o seu tráfego está roteado de forma secura através do seu provedor antes que ele seja desencriptado e mandado à internet aberta.
+
+%ul.fa-ul.spaced
+  %li
+    %i.fa-li.fa.fa-check-square
+    <b>Impedir a Vigilância na Rede</b><br>
+    Bitmask VPN é muito eficiente para anular grande parte da censura e vigilância do seu provedor de internet (ISP) ou país.
+  %li
+    %i.fa-li.fa.fa-check-square
+    <b>Tornar seu Endereço Anônimo</b><br>
+    O seu endereço de IP também estará escondido, mantendo a sua localização física a salvo de websites abomináveis ou intrometidos da rede.
+  %li
+    %i.fa-li.fa.fa-check-square
+    <b>Segurança Extra</b><br>
+    Tomamos medidas extras de segurança para evitar problemas comuns a outras VPNs pessoais, tais como vazamento de DNS ou de IPv6.
+
+%h1#email Email
+
+%p O Email Encriptado Bitmask é fácil de usar ao mesmo tempo que continua compatível com o protocolo OpenPGP existente para email seguro.
+
+%ul.fa-ul.spaced
+  %li
+    %i.fa-li.fa.fa-check-square
+    <b>Encriptação de ponta-a-ponta total</b><br>
+    Sempre que possível, todas as mensagens são encriptadas ponta-a-ponta no dispositivo cliente.
+  %li
+    %i.fa-li.fa.fa-check-square
+    <b>Armazenamento Seguro</b><br>
+    Todos os emails que chegam são automaticamente encriptados, de modo que só você pode lê-los (incluindo os metadados).
+  %li
+    %i.fa-li.fa.fa-check-square
+    <b>Gestão Automática de Chaves</b><br>
+    O usuário nunca precisa saber ou se preocupar com a geração, o descobrimento, ou a validação de chaves.
+
+
+%h1 Características de Segurança
+
+.row
+  .col-sm-6
+    %ul.fa-ul.spaced
+      %li
+        %i.fa-li.fa.fa-save
+        <b>Armazenamento Encriptado no Cliente</b><br>
+        Todos os dados armazenados são encriptados, incluindo dados locais e backups da nuvem. Esta encriptação sempre [[acontece no seu dispositivo => https://leap.se/en/soledad]], para que assim o provedor de serviço não possa ler seus dados armazenados.
+      %li
+        %i.fa-li.fa.fa-exchange
+        <b>Sempre Disponível</b><br>
+        Seus dados estão sempre disponíveis, mesmo quando você estiver desconectado. Eles são [[sincronizados com os dispositivos => https://leap.se/en/soledad]] que você escolher e replicados de forma segura na nuvem.
+      %li
+        %i.fa-li.fa.fa-exclamation-circle
+        <b>Senhas, Melhoradas</b><br>
+        Apesar de você especificar um usuário e senha para logar, sua [[senha nunca é mandada para o provedor => https://en.wikipedia.org/wiki/Secure_Remote_Password_protocol]].
+  .col-sm-6
+    %ul.fa-ul.spaced
+      %li
+        %i.fa-li.fa.fa-clock-o
+        <b>Atualizada</b><br>
+        O Bitmask está sempre atualizado com os mais recentes patches de segurança (em breve).
+      %li
+        %i.fa-li.fa.fa-institution
+        <b>Não confie no provedor</b><br>
+        Quando você baixa o Bitmask de [[dl.bitmask.net => https://dl.bitmask.net]], seu provedor de serviço não poderá te passar um cliente com backdoor.
+
+%p Como qualquer sistema de segurança, Bitmask tem [[limitações conhecidas => https://leap.se/en/limitations]]. Para os detalhes técnicos, veja nossa [[documentação de projeto => https://leap.se/en/design]].
