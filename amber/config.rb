@@ -2,4 +2,4 @@
 
 # uncomment these lines once :es pages have been added
 @default_locale = :en
-@locales = [:en, :es]
+@locales = [:en, :es, :pt]
