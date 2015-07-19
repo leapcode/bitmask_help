@@ -39,7 +39,7 @@ Todas as conexões subsequentes com aquele provedor usam o CA específico do pro
 
 Se um provedor já foi sido semeado previamente (pre-seeded) com uma aplicação Bitmask, então a impressão digital do certificado CA específico do provedor já é conhecida de antemão. Nesses casos, o sistema CA x.509 nunca é invocado.
 
-Os certificados CA específicos de provedores usam RSA de 4096 bit com SHA256 digest, por padrão. Os certificados do servidor usamRSA de 4096 bit com SHA256 digest, por padrão. Estes padrões podem ser alterados facilmente.
+Os certificados CA específicos de provedores usam RSA de 4096 bit com digest de SHA256, por padrão. Os certificados do servidor usamRSA de 4096 bit com digest de SHA256, por padrão. Estes padrões podem ser alterados facilmente.
 
 Todas as conexões TLS usan cifras PFS.
 
@@ -81,36 +81,36 @@ p((. Alguns documentos nos dados remotos de usuário são adicionados pelo prove
 
 p((. TLS, como acima. Em breve será com CurveZMQ.
 
-h2. Encrypted Tunnel - OpenVPN
+h2. Tunel Encriptado - OpenVPN
 
-OpenVPN has three settings that control what ciphers it uses (there is a fourth, @--tls-auth@, but we cannot use this in a public multi-user environment). Every provider can easily choose whatever options they want for these. Below are the current defaults that come with the leap_platform.
+OpenVPN possui três configurações que controlam quais cifras são usadas (existe uma quarta, @--tls-auth@, mas ainda não podemos usá-la num ambiente público de múltiplos usuários). Cada provedor pode facilmente escolher a opção que quiser. Abaixo estão os padrões atuais que vêm com a plataforma LEAP.
 
 *tls-cipher*
 
-p((. The @--tls-cipher@ option governs the session authentication process of OpenVPN. If this is compromised, you could be communicating with a MiTM attacker. The TLS part of OpenVPN authenticates the server and client with each other, and negotiates the random material used in the packet authentication digest and the packet encryption.
+p((. A opção @--tls-cipher@ governa o processo de autenticação de seção da OpenVPN. Se ela é comprimetida, você pode estar se comunicando com um atacante MiTM. A parte TLS da OpenVPN autentica o servidor e o cliente entre si, e negocia o material aleatório usado no resumo [digest] do pacote de autenticação e a encriptação de pacotes. 
 
-p((. Instead of allowing many options, Bitmask only supports a single cipher (to prevent rollback attacks).
+p((. Ao invés de permitir muitas opções, o Bitmask suporta uma única cifra apenas (para prevenir ataques de reversão [rollback attacks]).
 
-p((. For the moment, we have chosen @DHE-RSA-AES128-SHA@. The most important thing is to choose a cipher that supports PFS, as all the @DHE@ ciphers do.
+p((. Por enquanto, escolhemos o @DHE-RSA-AES128-SHA@. O mais importante é escolher uma cifra que suporte PFS, como todas as cifras @DHE@ fazem.
 
-p((. We have chosen @AES-128@ because there are known weaknesses with the @AES-192@ and @AES-256@ key schedules. There is no known weakness to brute force attacks against full 14 round AES-256, but weakness of AES-256 using other round counts is sufficient to recommend AES-128 over AES-256 generally. For more information, see Bruce Scheier's post [[
+p((. Escolhemos @AES-128@ porque existem ponto fracos conhecidos com os padrões de chaves @AES-192@ e @AES-256@ [key schedules]. Não existe nenhuma fraqueza conhecida com relação a ataques de força bruta contra 14 ciclos na AES-256, mas saber de fraquezas da AES-256 usando outros valores de ciclos é, em geral, suficiente para recomendar AES-128 ao invés da AES-256. Para mais informações, ver a postagem de Bruce Scheier [[
 Another New AES Attack => https://www.schneier.com/blog/archives/2009/07/another_new_aes.html]].
 
-p((. We would prefer to use ECC over RSA, and plan to eventually. It is a bit more complicated and involves changes to our TLS code in many places (recompiling openvpn, and changing certificate generation libraries used by sysadmins and the provider API).
+p((. Preferiríamos usar ECC no lugar da RSA, e planejamos em fazer isso em algum momento. ECC é um pouco mais complicado e involve mudanças no nosso código TLS em diversos lugares (tendo que recompilar a openvpn, e alterar as bibliotecas de geração de certificados usadas pelos sysadmins e pelo API do provedor).
 
-p((. The current default for client and server x.509 certificates used by OpenVPN is 2048 bit RSA and 4096 bit RSA (respectively) with SHA256 digest. This is also easily configurable by the provider (to see all the options, run @leap inspect provider.json@).
+p((. O padrão autal dos certificados x.509 do cliente e do servidor usados pelo OpenVPN é o 2048 bit RSA e o 4096 bit RSA (respectivamente) com digest de SHA256. Tudo isso também é facilmente configurável pelo provedor (para ver todas as opções, rode o @leap inspect provider.json@).
 
 *auth*
 
-p((. The @--auth@ option determines what hashing digest is used to to authenticate each packet of traffic using HMAC.
+p((. A opção @--auth@ determina qual hashing digest é usado para autenticar cada pacote do tráfego usando HMAC.
 
-p((. We have chosen to keep the @SHA1@ the default digest rather than go with @SHA256@. If an attacker can break a SHA1 HMAC on each packet in real time, you have bigger problems than your VPN.
+p((. Escolhemos manter o @SHA1@ como digest padrão ao invés de usar o  @SHA256@. Se um atacante consegue quebrar um SHA1 HMAC em cada pacote em tempo real, você tem problemas muito maiores que a sua VPN.
 
 *cipher*
 
-p((. The @--cipher@ option determines how actual traffic packets are encrypted. We have chosen @AES-128-CBC@.
+p((. A opção @--cipher@ determina como os próprios pacotes do tráfego  são encriptados. Escolhemos o @AES-128-CBC@.
 
-p((. The OpenVPN default is probably actually better than AES-128, since it's Blowfish. We have chosen AES-128 because the TLS cipher is already relying on AES-128. We would normally prefer cipher mode OFB over CBC, but the OpenVPN manual says that "CBC is recommended and CFB and OFB should be considered advanced modes".
+p((. Na verdade, o padrão da OpenVPN provavelmente é melhor que AES-128, desde que passou a usar Blowfish. Escolhemos o AES-128 porque a cifra TLS já depende do AES-128. Normalmente preferiríamos o modo de cifra OFB ao invés do CBC, mas o manual da OpenVPN diz que o "CBC é recomendado e o CFB e o OFB devem ser considerados para modos avançados".
 
 h3. obfsproxy
 

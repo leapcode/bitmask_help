@@ -1,2 +1,30 @@
 pt:
-  missing_translation: "Esta página ainda não foi traduzida do inglês."
+  site_title: "Bitmask"
+  banner_top: "Bitmask"
+  banner_motto: "Comunicação encriptada para meros mortais<br>(super-herois também são bem-vindos)"
+  contribute_to_help: 'Contribua com estas páginas de ajuda'
+  download_bitmask: 'Baixe o Bitmask'
+  downloads: Downloads
+  download: Download
+  leap: 'LEAP Encryption Access Project'
+  footer_text:
+  warning: >
+    <b>WARNING:</b> O Bitmask ainda é um aplicativo experimental. Favor não usar estes releases betas do Bitmask para situações onde seus dados possam ser colocados em perigo.
+  warning_disabled: >
+    E ainda, embora o Bitmask esteja melhorando rapidamente, é possível que talvez você perca seu email ao usar um dos primeiros releases beta.
+  #
+  # front page text
+  #
+  services: Serviços
+  fork_our_code: Ramifique nosso código
+  about_us: Quem somos
+  supported_providers: Provedores suportados
+  supported_providers_text: "Os provedores de serviço a seguir são compatíveis com o Bitmask:"
+  bitmask_app_blurb: >
+    O aplicativo <b>Bitmask</b> está projetado para ter interface <b>amigável</b> e configuração <b>automática</b>. É só iniciar a aplicação, registrar-se com um provedor de serviço compatível de sua escolha, e ir com tudo.
+  bitmask_vpn: Bitmask VPN
+  bitmask_vpn_blurb: >
+    Com a [[VPN do Bitmask => features#vpn]], todo o seu tráfego é roteado de forma segura pelo seu provedor antes de ser desencriptado e enviado para a internet aberta.
+  encrypted_email: Email Encriptado
+  encrypted_email_blurb: >
+    [[O Email Encriptado do Bitmask => features#email]] é fácil de usar e ainda é compatível com o protocolo OpenPGP existente para emails seguros.
