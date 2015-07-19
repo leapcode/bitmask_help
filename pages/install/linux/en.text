@@ -12,9 +12,9 @@ h2. Upgrading
 bc. apt-get update
 apt-get dist-upgrade
 
-NOTE: When upgrading Ubuntu from Unicorn to Vervet, you may need to run this command again:
+NOTE: When upgrading Ubuntu from 14.10 (Utopic) to 15.04 (Vivid), you may need to run this command again:
 
-bc. sudo add-apt-repository "deb http://deb.bitmask.net/debian vivd main"
+bc. sudo add-apt-repository "deb http://deb.bitmask.net/debian vivid main"
 
 This is because the Ubuntu upgrade process probably commented out all your prior custom repository lines in @/etc/apt/sources.list@.
 
@@ -61,15 +61,15 @@ If the result is:
 
 h3. 32 bit kernel
 
-<%= render({:partial => 'common/download_button'}, {:link => 'https://dl.bitmask.net/client/linux/Bitmask-linux32-latest.tar.bz2', :text => 'Download 32 bit'}) %>
+<%= render({:partial => 'common/download_button'}, {:link => 'https://dl.bitmask.net/client/linux/stable/Bitmask-linux32-latest.tar.bz2', :text => 'Download 32 bit'}) %>
 
-[[Signature file => https://dl.bitmask.net/client/linux/Bitmask-linux32-latest.tar.bz2.asc]]
+[[Signature file => https://dl.bitmask.net/client/linux/stable/Bitmask-linux32-latest.tar.bz2.asc]]
 
 h3. 64 bit kernel
 
-<%= render({:partial => 'common/download_button'}, {:link => 'https://dl.bitmask.net/client/linux/Bitmask-linux64-latest.tar.bz2', :text => 'Download 64 bit'}) %>
+<%= render({:partial => 'common/download_button'}, {:link => 'https://dl.bitmask.net/client/linux/stable/Bitmask-linux64-latest.tar.bz2', :text => 'Download 64 bit'}) %>
 
-[[Signature file => https://dl.bitmask.net/client/linux/Bitmask-linux64-latest.tar.bz2.asc]]
+[[Signature file => https://dl.bitmask.net/client/linux/stable/Bitmask-linux64-latest.tar.bz2.asc]]
 
 h3. Other options
 
