@@ -1,6 +1,6 @@
-*Ei! Você pode dar uma mãozinha aqui*. Quer uma comunicação sem vigilância, baseada em protocolos abertos e que permite controle do usuário sobre seus próprios dados? Então pegue um teclado e [[envolva-se => https://leap.se/en/get-involved]] -- o código não será escrito por si mesmo.
+*Ei! Você pode dar uma mãozinha aqui*. Quer uma comunicação sem vigilância, baseada em protocolos abertos e que o usuário possa controlar seus próprios dados? Então pegue um teclado e [[envolva-se => https://leap.se/en/get-involved]] -- o código não será escrito por si mesmo.
 
-Em particular, se você domina bem Python, Android Java, Ruby, C, CouchDB, Windows, Mac, Puppet, Qt, ou gosta muito de criptografia, sua ajuda será muito bem-vinda.
+Se você tem bom domínio de Python, Android Java, Ruby, C, CouchDB, Windows, Mac, Puppet, Qt, ou gosta muito de criptografia, sua ajuda será muito bem-vinda.
 
 # [[Clone nosso código => https://leap.se/en/source]]
 # Crie uma nova ramificação a partir de 'develop' chamada 'feature/x' ou 'bugfix/x'.
@@ -9,4 +9,4 @@ Em particular, se você domina bem Python, Android Java, Ruby, C, CouchDB, Windo
 # Discuta e aguarde pela integração do seu pedido.
 # Faça novamente.
 
-Em geral, publicamos uma nova versão da aplicação Bitmask a cada três semanas, e de outros componentes quando for necessário.
+Em geral, publicamos uma nova versão do Bitmask a cada três semanas, e de outros componentes quando for necessário.
