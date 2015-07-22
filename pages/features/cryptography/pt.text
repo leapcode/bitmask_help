@@ -132,22 +132,22 @@ O Bitmask usa GnuPG. A biblioteca em python que usamos é a [[ramificação Isis
 
 h2. Atualizações de Segurança - TUF
 
-As atualizações de segurança são feitas usando o [[TUF => http://theupdateframework.com/]], they use OpenSSL 4096 RSA keys with pyCrypto. There is three keys involved in the update process (root, targets and timestamp).
+As atualizações de segurança são feitas usando o [[TUF => http://theupdateframework.com/]], que usa chaves RSA OpenSSL 4096 com pyCrypto. Existe três chaves envolvidas no processo de atualização (root, targets e timestamp).
 
-* The root key is used to certify the rest of the keys that lives in an offline storage and only gets used once per year to update the cerification or in case of rotation of another other key.
-* The targets key is used to sign all the updates. This key is in the hands of the release manager and used on every release.
-* The timestamp key is used to sing a timestamp file every day, this file is used by the client to prevent an adversary from replaying an out-of-date updates. This key lives online in the platform servers.
+* A chave 'root' é usada para certificar o resto das chaves que estão armazenadas offline e é usada somente uma vez por ano para atualizar a certificação ou no caso de mudança de alguma outra chave [key rotation].
+* A chave 'targets' é usada para assinar todas as atualizações. Esta chave está nas mãos do gerenciador de lançamentos [release] e é usada a cada nova versão.
+* A chave 'timestamp' é usada para assinar um arquivo com data e hora a cada dia. Este arquivo é usada pelo cliente para prevenir que um adversário imponha uma atualização antiga. Esta chave está online nos servidores da plataforma.
 
-h2. Other
+h2. Outros
 
 h3. OpenSSH
 
-By default, all servers use RSA key host keys instead of ECDSA. If a host has a ECDSA key, the platform will prompt the sysadmin to switch to RSA. In the future, when Curve255219 is better supported, the platform will encourage switching to 25519.
+Por padrão, todos os servidores usam chave RSA para guardar as chaves ao invés de ECDSA. Se um 'host' possui uma chave ECDSA, a plataforma irá sugerir ao 'sysadmin' que mude para RSA. No futuro, quando o Curve255219 for bem suportado, a plataforma instigará a mudar para 25519.
 
 h3. DNSSec
 
-To be written
+Ainda será escrito.
 
 h3. StartTLS + DANE
 
-To be written
+Ainda será escrito.
