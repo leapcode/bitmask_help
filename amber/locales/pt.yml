@@ -22,7 +22,7 @@ pt:
   supported_providers: Provedores suportados
   supported_providers_text: "Os provedores de serviço a seguir são compatíveis com o Bitmask:"
   bitmask_app_blurb: >
-    O aplicativo <b>Bitmask</b> está projetado para ter interface <b>amigável</b> e configuração <b>automática</b>. É só iniciar a aplicação, registrar-se com um provedor de serviço compatível de sua escolha, e ir com tudo.
+    O aplicativo <b>Bitmask</b> está projetado para ter interface <b>amigável</b> e configuração <b>automática</b>. É só iniciar a aplicação, registrar-se com um provedor de serviço compatível de sua escolha, e pronto.
   bitmask_vpn: Bitmask VPN
   bitmask_vpn_blurb: >
     Com a [[VPN do Bitmask => features#vpn]], todo o seu tráfego é roteado de forma segura pelo seu provedor antes de ser desencriptado e enviado para a internet aberta.
