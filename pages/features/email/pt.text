@@ -1,0 +1,116 @@
+@title = "Bitmask Email Details"
+@nav_title = "Email"
+
+h2. How to use it
+
+# Download and install the Bitmask application.
+# Run the Bitmask application to log in or sign up with the service provider.
+# Configure the user's mail client to connect to the local IMAP and SMTP services provided by the Bitmask application. In case of the Thunderbird email client, this configuration is semi-automatic.
+
+The Bitmask application acts as a local "proxy" between the service provider and the mail client. It handles all the encryption and data synchronization.
+
+h2. Benefits of Bitmask Email
+
+Email features include:
+
+* Bitmask encrypted email is easy to use while still being backward compatible with the existing protocols for secure email (currently OpenPGP, with additional support for S/MIME coming in the future).
+* Unless already encrypted, all incoming email is automatically encrypted to the recipient on the server before being stored, so only you can read it (including meta-data). The server is able to read unencrypted incoming email for a brief moment, but no email is ever stored in a manner that the provider can read it.
+* Whenever possible, outgoing email is automatically encrypted so that only the recipients can read it (if a valid public keys can be discovered for the recipients). This encryption takes place on the user's device.
+* Public keys are [[automatically discovered and validated => https://leap.se/nicknym]], allowing you to have confidence your communication is confidential and with the correct person (without the headache of typical key signing).
+* The user does not need to worry about key management. Their keys are always kept up-to-date on every device.
+* The user is able to use any email client of their choice (e.g. Thunderbird, Apple Mail, Outlook).
+* When disconnected from the internet, the user can still interact with a local copy of all their mail. When the internet connect is available again, all their changes will get synchronized with the server storage and to their other devices.
+
+General security features of the Bitmask application include:
+
+* All stored data is encrypted, including local data and cloud backups. This encryption always [[takes place on the user's device => https://leap.se/soledad]], so the service provider cannot read your stored data.
+* Although you specify a username and password to login, your [[password is never communicated to the provider => https://en.wikipedia.org/wiki/Secure_Remote_Password_protocol ]].
+* If you download the Bitmask application from https://dl.bitmask.net, your service provider cannot add a backdoor to compromise your security.
+* The Bitmask application is always kept up to date with the latest security patches (coming soon).
+
+h2. How it works
+
+NOTE: technical jargon ahead.
+
+h3. Receiving mail
+
+*Message reception and storage*
+
+# An incoming email is received by the provider's MX (mail exchange) server.
+# The MX server re-encrypts the incoming email using the public key of the recipient user. This happens even if the email is already encrypted so that the metadata is not stored in a way that anyone but the recipient may access it.
+# The user logs in to their Bitmask client:
+## The client unlocks the locally encrypted storage database.
+## The client asks the server if there is any new data and begins a synchronization process.
+# The client downloads the new incoming message.
+# The message is decrypted using the user's private key, and then stored in the locally encrypted storage database.
+# The local storage database is synchronized with the provider's cloud storage service. To be stored on the server, a unique key generate for each document in the local storage database before it is sent to the server  (see [[Soledad => https://leap.se/en/soledad]] for more details).
+# If the user has the Bitmask client running on other devices, then these clients will notice the change to the storage database and re-synchronize.
+
+*Message validation*
+
+# If the received message was signed, the client will attempt to validate the signature.
+# If the sender's public key is not already known to the client's key manager, the client will attempt to acquire it:
+## If the email was sent from a LEAP-powered provider, the key will be anonymously requested from the sender's provider.
+## If the public key is attached to the email, it will be imported.
+## If the email contains an OpenPGP header, the client will download the public key from the specified source.
+## If all else fails, the client will search OpenPGP keyservers for a key that matches the fingerprint on the signature.
+# Once acquire, the sender's public key is stored in the locally encrypted and synchronized storage database.
+# Public keys are updated using the rules for [[transitional key validation => https://leap.se/en/transitional-key-validation]].
+
+*Reading the message*
+
+The user can read the email in one of two ways:
+
+# By connecting a mail user agent, such as Thunderbird, to the local IMAP server created by Bitmask.
+# By launching the built-in mail app (in progress, not part of current stable releases).
+
+h3. Sending mail
+
+*Composing the message*
+
+The user can compose an email in one of two ways:
+
+# By connecting a mail user agent, such as Thunderbird, to the local SMTP server created by Bitmask.
+# By launching the built-in mail app (in progress, not part of current stable releases).
+
+*Encrypting the message*
+
+# The client's key manager acquires the public key for each recipient, if not already stored.
+## The key manager tries whatever means it can. Currently, this includes anonymously contacting the recipient's provider and searching OpenPGP keyservers, and will include DANE/DNSSec and CONIKS in the future.
+## Discovered keys are stored in the locally encrypted storage database, and synchronized among the user's devices.
+# The message is duplicated into separate copies, once for each recipient, and each copy is encrypted for one recipient and relayed for delivery.
+
+*Relaying the message*
+
+Currently:
+
+# The Bitmask client connects to MX server of the sender's provider. This connection is authenticated using a X.509 client certificate stored by the client, a separate one for each sender email address.
+# If the client certificate matches the "From" field of the email, then the email is DKIM signed and relayed to the destination MX server.
+
+In the future (currently being developed):
+
+# The Bitmask client checks to see if the recipient supports delivery via Panoramix (anonymous mix network).
+** If supported, the client checks to see if the sender has permission to deliver anonymously to the recipient (via special delivery keys).
+** If delivery permission is granted, the email message will be directly delivered to the recipient's provider using Panoramix. In this case, the sender's provider will never see the email.
+# If Panoramix is not available, the Bitmask client connects to MX server of the sender's provider. This connection is authenticated using a X.509 client certificate stored by the client, a separate one for each sender email address.
+# If the client certificate matches the "From" field of the email, then the email is DKIM signed and relayed to the destination MX server.
+
+h2. Limitations
+
+* Missing features: the initial release will not support email aliases, email forwarding, or multiple accounts simultaneously.
+* You cannot use Bitmask email from a web browser. It requires the Bitmask application to run.
+* The Bitmask application currently requires a compatible provider. We have plans in the future to semi-support commercial providers like gmail. This would provide the user with much less protection than when they use a Bitmask provider, but will still greatly enhance their email security.
+* Because all data is synced, if a user has one of their devices compromised, then the attacker has access to all their data. This is obvious, but worth mentioning.
+* The user must keep a complete copy of their entire email storage on every device they use. In the future, we plan to support partial syncing for mobile devices.
+* We do not plan to support key revocation. Instead, we plan to migrate to shorter and shorter lived keys, as practical.
+* With the current implementation, a compromised or nefarious service provider can still gather incoming messages that are not encrypted and meta-data routing information. For the future, we are working on a project called Panoramix that will allow for message routing that is anonymous and exposes zero meta-data information to the service provider (so long as both sender and recipient support Panoramix).
+* OpenPGP and S/MIME message encryption has no forward secrecy, although we do use PFS ciphers for StartTLS relay. In the future, we hope to add additional forms of message encryption, such as Axolotl.
+* With our current scheme of automatic key validation, there is a chance that a provider could endorse a bogus public key for a short period of time such that the holder of the correct key does not notice the subterfuge. In the future, we hope to add compatibility with CONIKS, which supports an cryptographic append-only log of all key endorsements and allows for strong auditing of these past endorsements.
+
+For more details, please see [[known limitations => https://leap.se/en/limitations]].
+
+h2. Related projects
+
+There are numerous other projects working on the next generation of secure email. In our view, it is not possible to do secure email alone, it requires new protocols for handing key validation, secure transport, and meta-data protection. We will continue our efforts to reach out to these groups to explore areas of cooperation.
+
+For a detailed report on all the related projects, see https://leap.se/secure-email
