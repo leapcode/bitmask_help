@@ -1,40 +1,40 @@
-@title = "Bitmask Email Details"
+@title = "Detalhes sobre o Email Bitmask"
 @nav_title = "Email"
 
-h2. How to use it
+h2. Como usar
 
-# Download and install the Bitmask application.
-# Run the Bitmask application to log in or sign up with the service provider.
-# Configure the user's mail client to connect to the local IMAP and SMTP services provided by the Bitmask application. In case of the Thunderbird email client, this configuration is semi-automatic.
+# Baixe e instale o Bitmask.
+# Rode o Bitmask para logar ou criar uma conta num provedor de serviços.
+# Configure o cliente de email de usuário para se conectar aos serviços de IMAP local e SMTP fornecido pelo Bitmask. No caso do cliente de email Thunderbird, esta configuração é semi-automática.
 
-The Bitmask application acts as a local "proxy" between the service provider and the mail client. It handles all the encryption and data synchronization.
+O Bitmask age como um "proxy" local entre o provedor de serviço e o cliente de email. Ele lida com toda a parte de encriptação e sincronização de dados.
 
-h2. Benefits of Bitmask Email
+h2. Benefícios do Email Bitmask
 
-Email features include:
+Como funcionalidades do email temos:
 
-* Bitmask encrypted email is easy to use while still being backward compatible with the existing protocols for secure email (currently OpenPGP, with additional support for S/MIME coming in the future).
-* Unless already encrypted, all incoming email is automatically encrypted to the recipient on the server before being stored, so only you can read it (including meta-data). The server is able to read unencrypted incoming email for a brief moment, but no email is ever stored in a manner that the provider can read it.
-* Whenever possible, outgoing email is automatically encrypted so that only the recipients can read it (if a valid public keys can be discovered for the recipients). This encryption takes place on the user's device.
-* Public keys are [[automatically discovered and validated => https://leap.se/nicknym]], allowing you to have confidence your communication is confidential and with the correct person (without the headache of typical key signing).
-* The user does not need to worry about key management. Their keys are always kept up-to-date on every device.
-* The user is able to use any email client of their choice (e.g. Thunderbird, Apple Mail, Outlook).
-* When disconnected from the internet, the user can still interact with a local copy of all their mail. When the internet connect is available again, all their changes will get synchronized with the server storage and to their other devices.
+* O email encriptado Bitmask é fácil de usar ao mesmo tempo que continua compatível com os protocolos existente para email seguros (atualmente OpenPGP, e em breve com suporte adicional para S/MIME).
+* Ao menos que já estejam encriptados, todos os emails novos são automaticamente encriptados para o destinatário no servidor antes de ser armazenado, para que só você consiga lê-los (inclusive meta-data). O servidor é capaz de ler emails não encriptados por um breve momento, mas jamais um email é armazenado de forma que o servidor possa lê-lo.
+* Sempre que possível, emails enviados são automaticamente encriptados de forma que apenas o destinatário possa lê-los (se uma chave pública for encontrada para esse destinatário). Esta encriptação acontece no aparelho do usuário.
+* As chaves públicas são [[automaticamente encontradas e validadas => https://leap.se/nicknym]], dando-lhe a confiança de que suas comunicações são confidenciais e enviadas para a pessoa certa (sem a dor de cabeça de fazer a assinatura com chave).
+* O usuário não precisa se preocupar com o gerenciamento de chaves. Suas chaves sempre estão atualizadas em cada aparelho.
+* O usuário pode usar qualquer cliente de email (e.g. Thunderbird, Apple Mail, Outlook).
+* Quando desconectar da internet, o usuário ainda consegue interagir com sua cópia local de todos os seus emails. Quando uma conexão estiver disponível novamente, todas as mudanças são sincronizadas com o que foi armazenado no servidor e nos seus outros aparelhos.
 
-General security features of the Bitmask application include:
+Características gerais de segurança do Bitmask:
 
-* All stored data is encrypted, including local data and cloud backups. This encryption always [[takes place on the user's device => https://leap.se/soledad]], so the service provider cannot read your stored data.
-* Although you specify a username and password to login, your [[password is never communicated to the provider => https://en.wikipedia.org/wiki/Secure_Remote_Password_protocol ]].
-* If you download the Bitmask application from https://dl.bitmask.net, your service provider cannot add a backdoor to compromise your security.
-* The Bitmask application is always kept up to date with the latest security patches (coming soon).
+* Todos os dados armazenados são encriptados, incluindo dados locais e backups na nuvem. Esta encriptação sempre [[acontece no aparelho do usuário => https://leap.se/soledad]], para que o provedor de serviço não consiga ler seus dados armazenados.
+* Embora você especifique um nome de usuário e uma senha para logar, sua [[senha nunca vai para o provedor => https://en.wikipedia.org/wiki/Secure_Remote_Password_protocol ]].
+* Se você baixar o Bitmask de https://dl.bitmask.net, seu provedor de serviço não poderá colocar uma backdoor que comprometa sua segurança.
+* O Bitmask está sempre atualizado com os últimos correções (patches) de segurança (em breve).
 
-h2. How it works
+h2. Como funciona
 
-NOTE: technical jargon ahead.
+NOTE: jargões técnicos à frente.
 
-h3. Receiving mail
+h3. Recebendo emails
 
-*Message reception and storage*
+*Recebimento e armazenamento de mensagens*
 
 # An incoming email is received by the provider's MX (mail exchange) server.
 # The MX server re-encrypts the incoming email using the public key of the recipient user. This happens even if the email is already encrypted so that the metadata is not stored in a way that anyone but the recipient may access it.
