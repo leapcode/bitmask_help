@@ -48,23 +48,23 @@ h3. Recebendo emails
 
 *Validação da mensagem*
 
-# If the received message was signed, the client will attempt to validate the signature.
-# If the sender's public key is not already known to the client's key manager, the client will attempt to acquire it:
-## If the email was sent from a LEAP-powered provider, the key will be anonymously requested from the sender's provider.
-## If the public key is attached to the email, it will be imported.
-## If the email contains an OpenPGP header, the client will download the public key from the specified source.
-## If all else fails, the client will search OpenPGP keyservers for a key that matches the fingerprint on the signature.
-# Once acquire, the sender's public key is stored in the locally encrypted and synchronized storage database.
-# Public keys are updated using the rules for [[transitional key validation => https://leap.se/en/transitional-key-validation]].
+# Se a mensagem recebida foi assinada, o cliente tentará validar a assinatura.
+# Se a chave pública do remetente ainda não é conhecida pelo gerenciador de chaves do cliente, o cliente tentará adquiri-la:
+## Se o email foi enviado por um provedor alimentado pelo LEAP, a chave será requisitada anonimamente ao provedor do rementente.
+## Se a chave pública veio anexada ao email, ela será importada.
+## Se o email contém um cabeçalho OpenPGP, o cliente baixará a chave pública da fonte especificada no cabeçalho.
+## Se tudo isso falhar, o cliente irá procurar nos servidores de chaves OpenPGP por uma chave que combine com a impressão digital da assinatura.
+# Uma vez adquirida, a chave pública do remetente é armazenada na base de dados localmente encriptada e sincronizada.
+# As chaves públicas são atualizadas usando as regras para [[validação de chave transicional => https://leap.se/en/transitional-key-validation]].
 
-*Reading the message*
+*Lendo a mensagem*
 
-The user can read the email in one of two ways:
+O usuário pode ler o email em uma dessas duas maneitas:
 
-# By connecting a mail user agent, such as Thunderbird, to the local IMAP server created by Bitmask.
-# By launching the built-in mail app (in progress, not part of current stable releases).
+# Conectando um cliente de email, como o Thunderbird, ao servidor IMAP local criado pelo Bitmask.
+# Rodando o aplicativo interno do Bitmask (ainda em andamento; não faz parte das versões estáveis atuais).
 
-h3. Sending mail
+h3. Enviando emails
 
 *Composing the message*
 
