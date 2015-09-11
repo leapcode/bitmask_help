@@ -36,17 +36,17 @@ h3. Recebendo emails
 
 *Recebimento e armazenamento de mensagens*
 
-# An incoming email is received by the provider's MX (mail exchange) server.
-# The MX server re-encrypts the incoming email using the public key of the recipient user. This happens even if the email is already encrypted so that the metadata is not stored in a way that anyone but the recipient may access it.
-# The user logs in to their Bitmask client:
-## The client unlocks the locally encrypted storage database.
-## The client asks the server if there is any new data and begins a synchronization process.
-# The client downloads the new incoming message.
-# The message is decrypted using the user's private key, and then stored in the locally encrypted storage database.
-# The local storage database is synchronized with the provider's cloud storage service. To be stored on the server, a unique key generate for each document in the local storage database before it is sent to the server  (see [[Soledad => https://leap.se/en/soledad]] for more details).
-# If the user has the Bitmask client running on other devices, then these clients will notice the change to the storage database and re-synchronize.
+# O servidos MX (mail exchange) do provedor recebe um email.
+# O servidor MX re-encripta o email recebido usando a chave pública do destinatário. Isso acontece mesmo que o email já esteja encriptado para que o metadado não seja guardado visível para ninguém além do destinatário.
+# O usuário loga no seu cliente Bitmask:
+## O cliente desbloqueia a base de dados armazenada encriptada localmente.
+## O cliente pergunta ao servidor se há algum dado novo e começa o processo de sincronização.
+# O cliente baixa as novas mensagens.
+# A mensagem é desencriptada usando a chave privada do usuário e, em seguida, é armazenada na base da dados encriptada localmente.
+# A base de dados local é sincronizada com o serviço de armazenamento na nuvem do provedor. Para ser armazenada no servidor, uma chave única é gerada para cada documento na base de dados local antes que seja enviada para o servidor (veja [[Soledad => https://leap.se/en/soledad]] para mais detalhes).
+# Se o usuário está com o cliente Bitmask rodando em outros aparelhos, então estes clientes serão notificados que houve uma mudança na base de dados e re-sincronizados.
 
-*Message validation*
+*Validação da mensagem*
 
 # If the received message was signed, the client will attempt to validate the signature.
 # If the sender's public key is not already known to the client's key manager, the client will attempt to acquire it:
