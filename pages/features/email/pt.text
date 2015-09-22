@@ -5,7 +5,7 @@ h2. Como usar
 
 # Baixe e instale o Bitmask.
 # Rode o Bitmask para logar ou criar uma conta num provedor de serviços.
-# Configure o cliente de email de usuário para se conectar aos serviços de IMAP local e SMTP fornecido pelo Bitmask. No caso do cliente de email Thunderbird, esta configuração é semi-automática.
+# Configure o cliente de email de usuário para se conectar aos serviços de IMAP local e SMTP fornecido pelo Bitmask. No caso do cliente de email Thunderbird, esta configuração é semiautomática.
 
 O Bitmask age como um "proxy" local entre o provedor de serviço e o cliente de email. Ele lida com toda a parte de encriptação e sincronização de dados.
 
@@ -14,7 +14,7 @@ h2. Benefícios do Email Bitmask
 Como funcionalidades do email temos:
 
 * O email encriptado Bitmask é fácil de usar ao mesmo tempo que continua compatível com os protocolos existente para email seguros (atualmente OpenPGP, e em breve com suporte adicional para S/MIME).
-* Ao menos que já estejam encriptados, todos os emails novos são automaticamente encriptados para o destinatário no servidor antes de ser armazenado, para que só você consiga lê-los (inclusive meta-data). O servidor é capaz de ler emails não encriptados por um breve momento, mas jamais um email é armazenado de forma que o servidor possa lê-lo.
+* Ao menos que já estejam encriptados, todos os emails novos são automaticamente encriptados para o destinatário no servidor antes de ser armazenado, para que só você consiga lê-los (inclusive metadados). O servidor é capaz de ler emails não encriptados por um breve momento, mas jamais um email é armazenado de forma que o servidor possa lê-lo.
 * Sempre que possível, emails enviados são automaticamente encriptados de forma que apenas o destinatário possa lê-los (se uma chave pública for encontrada para esse destinatário). Esta encriptação acontece no aparelho do usuário.
 * As chaves públicas são [[automaticamente encontradas e validadas => https://leap.se/nicknym]], dando-lhe a confiança de que suas comunicações são confidenciais e enviadas para a pessoa certa (sem a dor de cabeça de fazer a assinatura com chave).
 * O usuário não precisa se preocupar com o gerenciamento de chaves. Suas chaves sempre estão atualizadas em cada aparelho.
@@ -50,7 +50,7 @@ h3. Recebendo emails
 
 # Se a mensagem recebida foi assinada, o cliente tentará validar a assinatura.
 # Se a chave pública do remetente ainda não é conhecida pelo gerenciador de chaves do cliente, o cliente tentará adquiri-la:
-## Se o email foi enviado por um provedor alimentado pelo LEAP, a chave será requisitada anonimamente ao provedor do rementente.
+## Se o email foi enviado por um provedor alimentado pelo LEAP, a chave será requisitada anonimamente ao provedor do remetente.
 ## Se a chave pública veio anexada ao email, ela será importada.
 ## Se o email contém um cabeçalho OpenPGP, o cliente baixará a chave pública da fonte especificada no cabeçalho.
 ## Se tudo isso falhar, o cliente irá procurar nos servidores de chaves OpenPGP por uma chave que combine com a impressão digital da assinatura.
@@ -66,51 +66,51 @@ O usuário pode ler o email em uma dessas duas maneitas:
 
 h3. Enviando emails
 
-*Composing the message*
+*Escrevendo uma mensagem*
 
-The user can compose an email in one of two ways:
+O usuário pode escrever um email de uma das seguintes maneiras::
 
-# By connecting a mail user agent, such as Thunderbird, to the local SMTP server created by Bitmask.
-# By launching the built-in mail app (in progress, not part of current stable releases).
+# Conectando um agente de usuário de email, como o Thunderbird, ao servidor local SMPT criado pelo Bitmask.
+# Lançando a aplicação de correio embutida (opção em andamento, ainda não faz parte da versão estável atual).
 
-*Encrypting the message*
+*Encriptando uma mensagem*
 
-# The client's key manager acquires the public key for each recipient, if not already stored.
-## The key manager tries whatever means it can. Currently, this includes anonymously contacting the recipient's provider and searching OpenPGP keyservers, and will include DANE/DNSSec and CONIKS in the future.
-## Discovered keys are stored in the locally encrypted storage database, and synchronized among the user's devices.
-# The message is duplicated into separate copies, once for each recipient, and each copy is encrypted for one recipient and relayed for delivery.
+# O gerenciador de chaves do cliente adquire a chave pública de cada destinatário, se ainda não estiver armazenada.
+## O gerenciador de chaves vai tentar de todas as formas. Atualmente, isso significa contatar anonimamente o provedor do destinatário e procurar nos servidores de chave OpenPGP, e, no futuro, no servidores DANE/DNSSec e CONIKS.
+## As chaves encontradas são armazenadas na base de dados de armazenamento encriptada localmente, e sincronizada com os outros dispositivos do usuário.
+# A mensagem é duplicada em cópias separadas, uma para cada destinatário, e cada cópia é encriptada para um destinatário e encaminhada para entrega.
 
-*Relaying the message*
+*Entregando a mensagem*
 
-Currently:
+Atualmente:
 
-# The Bitmask client connects to MX server of the sender's provider. This connection is authenticated using a X.509 client certificate stored by the client, a separate one for each sender email address.
-# If the client certificate matches the "From" field of the email, then the email is DKIM signed and relayed to the destination MX server.
+# O cliente Bitmask se conecta ao servidor MX do provedor do remetente. Esta conexão é autenticada usando um certificado de cliente X.509 armazenado pelo cliente, um para cada um do endereços de email de envio.
+# Se o certificado de cliente combina com o campo "De:" do email, então o email é assinado com DKIM e enviado para o servidor MX de destino.
 
-In the future (currently being developed):
+No futuro (em desenvolvimento):
 
-# The Bitmask client checks to see if the recipient supports delivery via Panoramix (anonymous mix network).
-** If supported, the client checks to see if the sender has permission to deliver anonymously to the recipient (via special delivery keys).
-** If delivery permission is granted, the email message will be directly delivered to the recipient's provider using Panoramix. In this case, the sender's provider will never see the email.
-# If Panoramix is not available, the Bitmask client connects to MX server of the sender's provider. This connection is authenticated using a X.509 client certificate stored by the client, a separate one for each sender email address.
-# If the client certificate matches the "From" field of the email, then the email is DKIM signed and relayed to the destination MX server.
+# O cliente Bitmask verifica se o destinatário suporta entrega via Panoramix (rede mista anônima).
+** Se suportar, o cliente verifica se o remetente tem permissão para fazer a entrega anonimamente para o destinatário (via chaves especiais de entrega).
+** Se a permissão de entrega é confirmada, a mensagem será entregue diretamente para o provedor do destinatário usando Panoramix. Neste caso, o provedor do remetente nunca verá o email.
+# Se o Panoramix não estiver disponível, o cliente Bitmask se conecta com o servidor MX do provedor do remetente. esta conexão é autenticada usando um certificado de cliente X.509 armazenado pelo cliente, um para cada um dos endereços de envio de email.
+# Se o certificado de cliente combina com o campo "De:" do email, então o email é assinado com DKIM e enviado para o servidor MX de destino.
 
-h2. Limitations
+h2. Limitações
 
-* Missing features: the initial release will not support email aliases, email forwarding, or multiple accounts simultaneously.
-* You cannot use Bitmask email from a web browser. It requires the Bitmask application to run.
-* The Bitmask application currently requires a compatible provider. We have plans in the future to semi-support commercial providers like gmail. This would provide the user with much less protection than when they use a Bitmask provider, but will still greatly enhance their email security.
-* Because all data is synced, if a user has one of their devices compromised, then the attacker has access to all their data. This is obvious, but worth mentioning.
-* The user must keep a complete copy of their entire email storage on every device they use. In the future, we plan to support partial syncing for mobile devices.
-* We do not plan to support key revocation. Instead, we plan to migrate to shorter and shorter lived keys, as practical.
-* With the current implementation, a compromised or nefarious service provider can still gather incoming messages that are not encrypted and meta-data routing information. For the future, we are working on a project called Panoramix that will allow for message routing that is anonymous and exposes zero meta-data information to the service provider (so long as both sender and recipient support Panoramix).
-* OpenPGP and S/MIME message encryption has no forward secrecy, although we do use PFS ciphers for StartTLS relay. In the future, we hope to add additional forms of message encryption, such as Axolotl.
-* With our current scheme of automatic key validation, there is a chance that a provider could endorse a bogus public key for a short period of time such that the holder of the correct key does not notice the subterfuge. In the future, we hope to add compatibility with CONIKS, which supports an cryptographic append-only log of all key endorsements and allows for strong auditing of these past endorsements.
+* Funcionalidades em falta: a versão inicial não suportará aliases de email, encaminhamento de mensagem ou múltiplas contas simultaneamente.
+* Você não terá com usar o email Bitmask de um navegador web. O email requer o aplicativo Bitmask para rodar.
+* Atualmente, o aplicativo Bitmask requer um provedor compatível. Temos planos de suportar parcialmente provedores comerciais como gmail no futuro. Isso fará com que o usuário fique menos protegido do que se estivesse usando um provedor Bitmask, mas ainda assim iria melhorar bastante a segurança dos seus email.
+* Dado que todos os dados são sincronizados, se um usuário tiver um de seus dispositivos comprometidos, então um atacante terá acesso a todos os seus dados. Isto é óbvio, mas vale lembrar.
+* O usuário precisa manter uma cópia completa de todos os seus email em cada um dos seus dispositivos. No futuro, planejamos que se possa fazer sincronizações parciais para dispositivos móveis.
+* Não estamos planejando a revogação de chaves. Ao invés disso, queremos migrar para chaves temporárias o mais curtas possível.
+* Na implementação atual, um provedor de serviços comprometido ou malicioso ainda pode recolher informações que não são encriptadas e metadados sobre o roteamento. Para o futuro, estamos trabalhando em um projeto chamado Panoramix que permitirá que o roteamento da mensagem seja anônimo e que não seja exposto nenhum metadado ao provedor de serviço (somente se o remetente e o destinatário suportarem o Panoramix).
+* A encriptação de mensagens por OpenPGP e S/MIME não possuem sigilo futuro (forward secrecy), embora usemos cifras PFS para retransmissão StartTLS. No futuro, esperamos adicionar outras formas de encriptação de mensagem, como o Axolotl.
+* Como o nosso esquema atual de validação de chaves, é possível que um provedor possa aceitar uma chave pública falsa por um período de tempo tal que o titular da chave correta não perceba a tramoia. No futuro, esperamos adicionar uma compatibilidade com CONIKS, a qual suporta um histórico de anexação em contínua (cryptographic append-only log) de todas as aceitações de chaves e permita uma auditoria severa das aceitações passadas.
 
-For more details, please see [[known limitations => https://leap.se/en/limitations]].
+Para mais detalhes, veja por favor as [[limitações conhecidas => https://leap.se/en/limitations]].
 
-h2. Related projects
+h2. Projetos relacionados
 
-There are numerous other projects working on the next generation of secure email. In our view, it is not possible to do secure email alone, it requires new protocols for handing key validation, secure transport, and meta-data protection. We will continue our efforts to reach out to these groups to explore areas of cooperation.
+Existem vários outros projetos que trabalham em cima da nova geração dos emails seguros. Na nossa visão, não é possível tornar um email seguro sozinho. Isso requer novos protocolas para lidar com validação de chaves, transporte seguro, e proteção de metadados. Daremos continuidade em nossos esforços para fazer contato com estes grupos e assim buscar áreas de cooperação.
 
-For a detailed report on all the related projects, see https://leap.se/secure-email
+Para um relatório detalhado de todos os projetos afins, veja https://leap.se/secure-email
