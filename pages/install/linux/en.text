@@ -24,19 +24,19 @@ This is the recommended method of installing Bitmask. If installed as a package,
 
 h3. Ubuntu 15.04 (Vivid Vervet)
 
-<%= render({:partial => 'via_packages'}, {:distro => 'vivid', :install => 'To install', :remove => 'To remove'}) %>
+<%= render({:partial => 'via_packages'}, {:distro => 'vivid'}) %>
 
 h3. Ubuntu 14.04 LTS (Trusty Tahr)
 
-<%= render({:partial => 'via_packages'}, {:distro => 'trusty', :install => 'To install', :remove => 'To remove'}) %>
+<%= render({:partial => 'via_packages'}, {:distro => 'trusty'}) %>
 
 h3. Debian 7.0 (Wheezy)
 
-<%= render({:partial => 'via_packages'}, {:distro => 'wheezy', :os => 'debian', :install => 'To install', :remove => 'To remove'}) %>
+<%= render({:partial => 'via_packages'}, {:distro => 'wheezy', :os => 'debian'}) %>
 
 h3. Debian 8.0 (Jessie)
 
-<%= render({:partial => 'via_packages'}, {:distro => 'jessie', :os => 'debian', :install => 'To install', :remove => 'To remove'}) %>
+<%= render({:partial => 'via_packages'}, {:distro => 'jessie', :os => 'debian'}) %>
 
 h2. Install stand-alone bundle
 

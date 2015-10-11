@@ -24,19 +24,19 @@ h2. Установить как пакет
 
 h3. Ubuntu 15.04 (Vivid Vervet)
 
-<%= render({:partial => 'via_packages'}, {:distro => 'vivid', :install => 'Для установки', :remove => 'Для удаления'}) %>
+<%= render({:partial => 'via_packages'}, {:distro => 'vivid'}) %>
 
 h3. Ubuntu 14.04 LTS (Trusty Tahr)
 
-<%= render({:partial => 'via_packages'}, {:distro => 'trusty', :install => 'Для установки', :remove => 'Для удаления'}) %>
+<%= render({:partial => 'via_packages'}, {:distro => 'trusty'}) %>
 
 h3. Debian 7.0 (Wheezy)
 
-<%= render({:partial => 'via_packages'}, {:distro => 'wheezy', :os => 'debian', :install => 'Для установки', :remove => 'Для удаления'}) %>
+<%= render({:partial => 'via_packages'}, {:distro => 'wheezy', :os => 'debian'}) %>
 
 h3. Debian 8.0 (Jessie)
 
-<%= render({:partial => 'via_packages'}, {:distro => 'jessie', :os => 'debian', :install => 'Для установки', :remove => 'Для удаления'}) %>
+<%= render({:partial => 'via_packages'}, {:distro => 'jessie', :os => 'debian'}) %>
 
 h2. Установить из архива
 
