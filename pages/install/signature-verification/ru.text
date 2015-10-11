@@ -1,0 +1,81 @@
+@title = 'Проверка подписи'
+
+Многие файлы, доступные для скачивания с этого сайта, были подписаны. Эта страница даст вам подробное разъяснение того, что вам нужно сделать, чтобы проверить эти подписи. Этот процесс полностью на ваше усмотрение.
+
+h2. Импортировать ключ LEAP
+
+Все файлы были подписаны "ключом подписи архива LEAP". Первый шаг заключается в импортировании этого ключа в ваше локальное хранилище ключей. Эти инструкции будут использовать @gpg@, свободную реализацию OpenPGP, которая работает на Mac, Windows и Linux.
+
+h3. Способ 1 - wget
+
+Самый простой способ получить ключ подписи архива LEAP - это просто скачать его с сайта bitmask.net и импортировать в ваше хранилище ключей:
+
+bc. wget -O- https://dl.bitmask.net/apt.key | gpg --import
+
+Вы должны увидеть результат выполнения, который будет выглядеть следующим образом:
+
+bc. gpg: key 0x1E34A1828E207901: public key "LEAP archive signing key <sysdev@leap.se>" imported
+gpg: Total number processed: 1
+gpg:               imported: 1  (RSA: 1)
+gpg: 3 marginal(s) needed, 1 complete(s) needed, classic trust model
+gpg: depth: 0  valid:   4  signed:   7  trust: 0-, 0q, 0n, 0m, 0f, 4u
+gpg: depth: 1  valid:   7  signed:  22  trust: 6-, 1q, 0n, 0m, 0f, 0u
+
+h3. Способ 2 - найти сервер ключей
+
+Кроме того, вы можете импортировать ключ подписи архива LEAP, получив его с сервера ключей:
+
+bc. gpg --recv-key 1E453B2CE87BEE2F7DFE99661E34A1828E207901
+
+Если вы хотите соединиться с сервером ключей используя TLS, вы можете использовать пул синхронизирующего сервера ключей. Чтобы использовать этот пул сервера ключей, вам нужно [[скачать sks-keyservers.net CA => https://sks-keyservers.net/sks-keyservers.netCA.pem]] и сохранить его где-нибудь на вашем компьютере. Дополнительно вы можете [[проверить отпечаток сертификата => https://sks-keyservers.net/verify_tls.php]].
+
+После того как вы скачали сертификат пула синхронизирующего сервера ключей, команда @recv-key@ выглядит следующим образом:
+
+bc. gpg --keyserver hkps://pool.sks-keyservers.net --keyserver-options 'ca-cert-file=sks-keyservers.netCA.pem' --recv-key 1E453B2CE87BEE2F7DFE99661E34A1828E207901
+
+Предположим, что вы сохранили сертификат в файл @sks-keyservers.netCA.pem@. Для получения более подробной информации смотрите эту [[страницу лучших практик по работе с OpenPGP => https://help.riseup.net/en/gpg-best-practices]].
+
+Нет абсолютно никаких гарантий того, что ключ, только что импортированный с @recv-key@, является именно тем, который вы только что запросили. Чтобы это подтвердить, что вам нужно вручную проверить отпечаток:
+
+bc. gpg --fingerprint 1E453B2CE87BEE2F7DFE99661E34A1828E207901
+
+Результат выполнения должен быть таким:
+
+bc. pub   4096R/0x1E34A1828E207901 2013-02-06 [expires: 2015-02-07]
+      Key fingerprint = 1E45 3B2C E87B EE2F 7DFE  9966 1E34 A182 8E20 7901
+uid                 [  undef ] LEAP archive signing key <sysdev@leap.se>
+
+
+h2. Скачать файл подписи
+
+Файл подписи для каждого скачанного файла имеет то же имя, что и сам файл, но с добавленным @.asc@.
+
+Для просмотра доступных файлов сигнатур, смотрите:
+
+* [[Все файлы для Android => https://dl.bitmask.net/client/android/]]
+* [[Все файлы для Linux => https://dl.bitmask.net/client/linux/]]
+* [[Все файлы для ac => https://dl.bitmask.net/client/mac/]]
+* [[Все файлы для Windows => https://dl.bitmask.net/client/windows/]]
+
+Убедитесь, что вы поместили файл подписи и скачанный файл, который вы хотите аутентифицировать, в одну папку, и что они имеют одинаковое имя (кроме суффикса .asc для файла подписи).
+
+h2. Проверить подпись
+
+Теперь просто выполните эту команду:
+
+bc. gpg --verify FILE.asc
+
+Где FILE - это имя скачанного файла, который вы хотите аутентифицировать.
+
+Вы должны увидеть такой результат выполнения:
+
+bc. gpg: Signature made Mon 15 Sep 2014 07:49:07 AM PDT
+gpg:                using RSA key 0x1E34A1828E207901
+gpg: Good signature from "LEAP archive signing key <sysdev@leap.se>" [unknown]
+gpg: WARNING: This key is not certified with a trusted signature!
+gpg:          There is no indication that the signature belongs to the owner.
+Primary key fingerprint: 1E45 3B2C E87B EE2F 7DFE  9966 1E34 A182 8E20 7901
+
+Если вы доверились одному из ключей, который подписал ключ LEAP, то вы не увидите предупреждение.
+
+Если вы не видите текст [@Good signature from "LEAP archive signing key <sysdev@leap.se>"@], то что-то не так, и вы не должны запускать загруженное приложение.

@@ -33,7 +33,7 @@ h2. Special features of Bitmask VPN
 
 The Bitmask application provides an Encrypted Internet that has several advantages over traditional "Personal VPN":
 
-* Does not leak traffic: Bitmask VPN is much better than other VPNs at preventing any unencrypted traffic from leaking from your computer (for example, because of IPv6, DNS, "Fail Open" leaks). These guarentees are strong on the Desktop version, but weaker on the Android version (because of limitations in what the Android OS will let us do).
+* Does not leak traffic: Bitmask VPN is much better than other VPNs at preventing any unencrypted traffic from leaking from your computer (for example, because of IPv6, DNS, "Fail Open" leaks). These guarantees are strong on the Desktop version, but weaker on the Android version (because of limitations in what the Android OS will let us do).
 * No logging: Bitmask VPN servers are configure to not keep any logs either for the VPN or domain name resolution. A nefarious provider may manually modify this behavior.
 * Semi-anonymous: Some Bitmask-compatible providers will allow anonymous VPN usage.
 

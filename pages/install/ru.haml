@@ -1,0 +1,38 @@
+- @title = 'Установка Bitmask'
+- @nav_title = 'Установка'
+
+.row
+  .col-sm-8.col-sm-offset-2
+    .p.alert.alert-danger
+      %i.fa.fa-warning
+        = t :warning
+
+.row.bm-front-buttons
+  .col-sm-3.col-xs-6
+    %a.btn.btn-default{:href=>"android"}
+      %i.fa.fa-android.fa-4x
+      %br
+      %b Android
+      %br
+      %small 4.0 и выше
+  .col-sm-3.col-xs-6
+    %a.btn.btn-default{:href=>"linux"}
+      %i.fa.fa-linux.fa-4x
+      %br
+      %b GNU/Linux
+      %br
+      %small Debian, Ubuntu, Mint
+  .col-sm-3.col-xs-6
+    %a.btn.btn-default.disabled{:href=>"mac"}
+      %i.fa.fa-apple.fa-4x
+      %br
+      %b Mac OS
+      %br
+      %small Очень скоро...
+  .col-sm-3.col-xs-6
+    %a.btn.btn-default.disabled{:href=>"windows"}
+      %i.fa.fa-windows.fa-4x
+      %br
+      %b Windows
+      %br
+      %small Скоро...

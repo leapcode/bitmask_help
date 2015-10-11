@@ -1,7 +1,7 @@
 - if @locals[:os] == 'debian'
 
   %p.b
-    To install
+    #{@locals[:install]}
 
   %pre
     :preserve
@@ -12,7 +12,7 @@
       apt-get install bitmask leap-keyring
 
   %p.b
-    To remove
+    #{@locals[:remove]}
 
   %pre
     :preserve
@@ -24,7 +24,7 @@
 - else
 
   %p.b
-    To install
+    #{@locals[:install]}
 
   %pre
     :preserve
@@ -35,7 +35,7 @@
       apt-get install bitmask leap-keyring
 
   %p.b
-    To remove
+    #{@locals[:remove]}
 
   %pre
     :preserve

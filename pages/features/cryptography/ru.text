@@ -1,0 +1,153 @@
+@title = "Подробности криптографии Bitmask"
+@nav_title = "Подробности криптографии"
+
+You asked for encryption details, you get encryption details. Here we try to document all the crypto used by Bitmask, and some of the thinking behind these decisions. For more details, [[inspect the source => https://leap.se/git]] or browse our [[technical documentation => https://leap.se/docs]].
+
+h2. Authentication - Secure Remote Password
+
+Bitmask uses Secure Remote Password (SRP) to authenticate with a service provider. SRP is a type of zero-knowledge-proof for authentication via username and password that does not give the server a copy of the actual password. Typically, password systems work by sending a cleartext copy of the password to the server, which then hashes this password and saves the hash. With SRP, the client and server negotiate a "password verifier" after several round trips. The server never has access to the cleartext of the password.
+
+One additional benefit of SRP is that both parties authenticate each other. With traditional hashed passwords, the server can say that the password was correct, even if it has no idea what the real password is. With SRP, the user authenticates with the server, but the server also authenticates with the user.
+
+Currently we use 1024-bit discrete-log parameters. We are exploring increasing this to 2048-bit.
+
+There are some limitations with SRP. A compromised or nefarious provider can attempt to brute force crack a password by trying millions of combinations, just like with normal hashed passwords. For this reason, it is still important to pick a strong password. In practice, however, users are horrible at picking strong passwords.
+
+A second limitation is with the web application. It also uses SRP, but the SRP javascript code is loaded from the provider. If the provider is compromised or nefarious, they could load some javascript to capture the user's password.
+
+We have three plans for the future to overcome these potential problems:
+
+# Allow the use of an additional long random key that is required as part of the authentication process (optionally). For example, each device a user has Bitmask installed on could have a "device key" and the user would need to authorize these device keys before they could run Bitmask on that new device.
+
+# We also plan to include with Bitmask a bloom filter of the top 10,000 most commonly used passwords. By some accounts, 98.8% of all users pick a password in the top 10,000. A bloom filter of these passwords is relatively small, and we can simply forbid the user from selecting any of these (albeit with some false positives).
+
+# Allow providers to forbid authentication via the web application. Authentication would happen via the Bitmask app, which would then load the website with the session token it obtained. This way, the critical SRP authentication code is never loaded from the provider.
+
+For more information, see:
+
+* http://srp.stanford.edu
+* https://en.wikipedia.org/wiki/Secure_Remote_Password_protocol
+* https://xato.net/passwords/more-top-worst-passwords
+
+h2. Transport - TLS
+
+The Bitmask client frequently makes various connections using TLS to the provider. For example, to check to see if there is an update to the list of VPN gateways.
+
+When a service provider is first added by Bitmask, the CA certificate from the provider is downloaded via a normal TLS connection authenticated using existing x.509 CA system. This is the only moment that Bitmask relies on the CA system.
+
+All subsequent connections with that provider use the provider-specific CA to authenticate the TLS connection. Essentially, this is a form of certificate pinning and TOFU. In order for an outside attacker to impersonate a provider, they would need to present a false x.509 server certificate authenticated by a Certificate Authority, and then intercept and rewrite all subsequent traffic between the Bitmask client and provider.
+
+If a provider has been pre-seeded with the Bitmask application, then the fingerprint of the provider-specific CA certificate is known in advance. In these cases, the x.509 CA system is never relied upon.
+
+The provider-specific CA certificates use 4096 bit RSA with SHA256 digest, by default. The server certificates use 4096 bit RSA with SHA256 digest, by default. These defaults are easily changed.
+
+All TLS connections use PFS ciphers.
+
+h2. Storage - Soledad
+
+The Bitmask application stores its data in [[Soledad => https://leap.se/soledad]], which handles encrypting this data, securely backing it up, and synchronizing it among a user's devices. In Soledad, local storage uses symmetric block encryption of the entire database using a single key. For data stored remotely, each individual document is separately encrypted using a key unique to that document.
+
+Both local storage and remote storage keys are derived from a master "storage secret." This long random storage secret is stored locally on disk, protected by symmetric encryption using a key derived from the user's password (scrypt is used as the key derivation function).
+
+Currently, our scrypt parameters are:
+
+bc. N (CPU/memory cost parameter) = 2^14 = 16384
+p (paralelization parameter) = 1
+r (length of block mixed by SMix()) = 8
+dkLen (length of derived key) = 32 bytes = 256 bits
+
+We are considering using a larger N.
+
+*Local storage*
+
+p((. The block-encrypted local SQLite database uses @AES-256-CBC@ using the first 256 bits of [@storage_secret@]. See https://github.com/kalikaneko/python-u1dbcipher and http://sqlcipher.net.
+
+*Remote storage*
+
+p((. Per-document encryption of documents stored remotely uses symmetric encryption with AES-256-CTR or XSalsa20 cipher using 256 bit keys. The library pycryptopp is used for this. The key and MAC used to encrypt each individual document are derived as follows:
+
+<pre style="margin-left: 2em">
+storage_secret_a = first 256 bits of storage secret
+storage_secret_b = everything after first 256 bits of storage secret
+document_key = hmac(document_id, storage_secret_b)
+document_mac = hmac(document_id | document_revision | iv | ciphertext, hmac(document_id, storage_secret_a)
+</pre>
+
+p((. Every document has its own key. The [@document_revision@] in the document MAC prevents a rollback to an old version of the document. HMAC uses SHA256.
+
+p((. Some documents in a user's remote data store are added by the provider, such as in the case of new incoming email. These documents use asymmetric encryption, with each document encrypted using the user's OpenPGP public key. The library we use for this is [[Isis's fork of python-gnupg => https://github.com/isislovecruft/python-gnupg]]. These documents are only temporarily stored this way: as soon as the client sees them, they get unencrypted and re-encrypted using the other methods.
+
+*Transport*
+
+p((. TLS, as above. Soon to be CurveZMQ.
+
+h2. Encrypted Tunnel - OpenVPN
+
+OpenVPN has three settings that control what ciphers it uses (there is a fourth, @--tls-auth@, but we cannot use this in a public multi-user environment). Every provider can easily choose whatever options they want for these. Below are the current defaults that come with the leap_platform.
+
+*tls-cipher*
+
+p((. The @--tls-cipher@ option governs the session authentication process of OpenVPN. If this is compromised, you could be communicating with a MiTM attacker. The TLS part of OpenVPN authenticates the server and client with each other, and negotiates the random material used in the packet authentication digest and the packet encryption.
+
+p((. Instead of allowing many options, Bitmask only supports a single cipher (to prevent rollback attacks).
+
+p((. For the moment, we have chosen @DHE-RSA-AES128-SHA@. The most important thing is to choose a cipher that supports PFS, as all the @DHE@ ciphers do.
+
+p((. We have chosen @AES-128@ because there are known weaknesses with the @AES-192@ and @AES-256@ key schedules. There is no known weakness to brute force attacks against full 14 round AES-256, but weakness of AES-256 using other round counts is sufficient to recommend AES-128 over AES-256 generally. For more information, see Bruce Scheier's post [[
+Another New AES Attack => https://www.schneier.com/blog/archives/2009/07/another_new_aes.html]].
+
+p((. We would prefer to use ECC over RSA, and plan to eventually. It is a bit more complicated and involves changes to our TLS code in many places (recompiling openvpn, and changing certificate generation libraries used by sysadmins and the provider API).
+
+p((. The current default for client and server x.509 certificates used by OpenVPN is 2048 bit RSA and 4096 bit RSA (respectively) with SHA256 digest. This is also easily configurable by the provider (to see all the options, run @leap inspect provider.json@).
+
+*auth*
+
+p((. The @--auth@ option determines what hashing digest is used to to authenticate each packet of traffic using HMAC.
+
+p((. We have chosen to keep the @SHA1@ the default digest rather than go with @SHA256@. If an attacker can break a SHA1 HMAC on each packet in real time, you have bigger problems than your VPN.
+
+*cipher*
+
+p((. The @--cipher@ option determines how actual traffic packets are encrypted. We have chosen @AES-128-CBC@.
+
+p((. The OpenVPN default is probably actually better than AES-128, since it's Blowfish. We have chosen AES-128 because the TLS cipher is already relying on AES-128. We would normally prefer cipher mode OFB over CBC, but the OpenVPN manual says that "CBC is recommended and CFB and OFB should be considered advanced modes".
+
+h3. obfsproxy
+
+Obfsproxy is optionally used to make VPN traffic not appear as VPN traffic to someone who is monitoring the network. Obfsproxy uses modules called pluggable transports to obfuscate underlying traffic. Different transports may or may not use encryption and have different implementation and choices over encryption schemes.
+
+We have chosen the Scramblesuit pluggable transport that uses Uniform Diffie-Hellman for the initial handshake and AES-CTR 256 for application data.
+
+h2. Encrypted Email - OpenPGP
+
+The user's autogenerated key pair uses 4096 bit RSA for the master signing key.
+
+Bitmask will refuse to encrypt to a recipient's public key if the length is 1024 or less.
+
+All keys are stored in Soledad.
+
+Bitmask does not yet support ECC keys.
+
+Bitmask uses GnuPG. The python library we use is [[Isis's fork of python-gnupg => https://github.com/isislovecruft/python-gnupg]].
+
+h2. Secure Updates - TUF
+
+The secure updates are done using [[TUF => http://theupdateframework.com/]], they use OpenSSL 4096 RSA keys with pyCrypto. There is three keys involved in the update process (root, targets and timestamp).
+
+* The root key is used to certify the rest of the keys that lives in an offline storage and only gets used once per year to update the cerification or in case of rotation of another other key.
+* The targets key is used to sign all the updates. This key is in the hands of the release manager and used on every release.
+* The timestamp key is used to sing a timestamp file every day, this file is used by the client to prevent an adversary from replaying an out-of-date updates. This key lives online in the platform servers.
+
+h2. Other
+
+h3. OpenSSH
+
+By default, all servers use RSA key host keys instead of ECDSA. If a host has a ECDSA key, the platform will prompt the sysadmin to switch to RSA. In the future, when Curve255219 is better supported, the platform will encourage switching to 25519.
+
+h3. DNSSec
+
+To be written
+
+h3. StartTLS + DANE
+
+To be written

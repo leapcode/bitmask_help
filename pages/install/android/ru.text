@@ -1,0 +1,32 @@
+@title = "Bitmask для Android"
+@nav_title = "Android"
+
+<script>
+  $(document).ready(function() {
+    if (navigator.userAgent.toLowerCase().indexOf("android") > -1) {
+      $('.non-android').hide();
+    }
+  });
+</script>
+
+<%= render({:partial => 'common/notice'}, {:type => 'info', :text => '<b>ПРИМЕЧАНИЕ:</b> Bitmask для Android все еще не поддерживает зашифрованную электронную почту.'}) %>
+
+h2. Установить с Google Play
+
+Вы можете поискать "Bitmask" в Google Play или использовать эти ссылки:
+
+p(android). <%= render({:partial => 'common/download_button'}, {:link => 'https://play.google.com/store/apps/details?id=se.leap.bitmaskclient', :text => 'Установить для Android'}) %>
+
+p(non-android). !/assets/qr/market-se.leap.bitmaskclient.png!:https://play.google.com/store/apps/details?id=se.leap.bitmaskclient
+
+h2. Скачать приложение
+
+Кроме того, вы можете скачать приложение Bitmask напрямую с этого сайта. Вам нужно будет включить в настройках <b>Settings > Security > Unknown Sources</b> на вашем устройстве для работы этого метода.
+
+p(android). <%= render({:partial => 'common/download_button'}, {:link => 'https://dl.bitmask.net/client/android/Bitmask-Android-latest.apk', :text => 'Скачать для Android'}) %>
+
+p(non-android). !/assets/qr/dl.bitmask.net-bitmask-android-latest.png!:https://dl.bitmask.net/client/android/Bitmask-Android-latest.apk
+
+h2. Скачать другие версии
+
+Если вы хотите скачать старые версии Bitmask, вы можете [[просмотреть все версии => https://dl.bitmask.net/client/android/]].
