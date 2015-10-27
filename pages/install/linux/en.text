@@ -18,26 +18,6 @@ bc. sudo add-apt-repository "deb http://deb.bitmask.net/debian vivid main"
 
 This is because the Ubuntu upgrade process probably commented out all your prior custom repository lines in @/etc/apt/sources.list@.
 
-h2. Install as packages
-
-This is the recommended method of installing Bitmask. If installed as a package, Bitmask will run faster, be better integrated in the system, and will be kept up to date.
-
-h3. Ubuntu 15.04 (Vivid Vervet)
-
-<%= render({:partial => 'via_packages'}, {:distro => 'vivid'}) %>
-
-h3. Ubuntu 14.04 LTS (Trusty Tahr)
-
-<%= render({:partial => 'via_packages'}, {:distro => 'trusty'}) %>
-
-h3. Debian 7.0 (Wheezy)
-
-<%= render({:partial => 'via_packages'}, {:distro => 'wheezy', :os => 'debian'}) %>
-
-h3. Debian 8.0 (Jessie)
-
-<%= render({:partial => 'via_packages'}, {:distro => 'jessie', :os => 'debian'}) %>
-
 h2. Install stand-alone bundle
 
 Alternately, you can run Bitmask from a stand alone bundle. This is useful if want to run Bitmask from a thumb drive. The bundle should work on most recent Linux distributions that are derived from Debian (e.g. Ubuntu, Mint, Trisquel, etc).
@@ -71,8 +51,22 @@ h3. 64 bit kernel
 
 [[Signature file => https://dl.bitmask.net/client/linux/stable/Bitmask-linux64-latest.tar.bz2.asc]]
 
-h3. Other options
+h2. Install as packages
 
-You can [[browse all releases => https://dl.bitmask.net/client/linux/]] for old or experimental downloads.
+This is the recommended method of installing Bitmask. If installed as a package, Bitmask will run faster, be better integrated in the system, and will be kept up to date.
 
-You should install the latest stable release. Downloads tagged with "RC" are "Release Candidates" and receive frequent experimental updates that may break the application.
+h3. Ubuntu 15.04 (Vivid Vervet)
+
+<%= render({:partial => 'via_packages'}, {:distro => 'vivid'}) %>
+
+h3. Ubuntu 14.04 LTS (Trusty Tahr)
+
+<%= render({:partial => 'via_packages'}, {:distro => 'trusty'}) %>
+
+h3. Debian 7.0 (Wheezy)
+
+<%= render({:partial => 'via_packages'}, {:distro => 'wheezy', :os => 'debian'}) %>
+
+h3. Debian 8.0 (Jessie)
+
+<%= render({:partial => 'via_packages'}, {:distro => 'jessie', :os => 'debian'}) %>
