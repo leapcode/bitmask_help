@@ -40,6 +40,12 @@ h2.hidey {
   margin: 0;
 }
 
+h3 {
+    @extend h3;
+    font-size: 21px;
+}
+
+
 h4 {
   margin-top: 20px;
 }
