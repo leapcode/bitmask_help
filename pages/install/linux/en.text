@@ -18,16 +18,26 @@ bc. sudo add-apt-repository "deb http://deb.bitmask.net/debian vivid main"
 
 This is because the Ubuntu upgrade process probably commented out all your prior custom repository lines in @/etc/apt/sources.list@.
 
-h2. Install stand-alone bundle
+---
 
-Alternately, you can run Bitmask from a stand alone bundle. This is useful if want to run Bitmask from a thumb drive. The bundle should work on most recent Linux distributions that are derived from Debian (e.g. Ubuntu, Mint, Trisquel, etc).
+There are two ways to install Bitmask - via the stand-alone bundles or via packages.
 
-There are two disadvantages to the stand-alone bundle:
+h2. Download stand-alone bundle
 
-* The Bitmask app will be less well integrated with the desktop environment.
-* Running from the bundle is slower to start than via packages.
+h3. 64 bit kernel
 
-Optionally, you can [[authenticate the signature => signature-verification]] for the Bitmask files before you run them.
+<%= render({:partial => 'common/download_button'}, {:link => 'https://dl.bitmask.net/client/linux/stable/Bitmask-linux64-latest.tar.bz2', :text => 'Download 64 bit'}) %>
+
+[[Signature file => https://dl.bitmask.net/client/linux/stable/Bitmask-linux64-latest.tar.bz2.asc]]
+
+h3. 32 bit kernel
+
+<%= render({:partial => 'common/download_button'}, {:link => 'https://dl.bitmask.net/client/linux/stable/Bitmask-linux32-latest.tar.bz2', :text => 'Download 32 bit'}) %>
+
+[[Signature file => https://dl.bitmask.net/client/linux/stable/Bitmask-linux32-latest.tar.bz2.asc]]
+
+If you want to make sure that the Bitmask wasn't messed with during download
+you can [[authenticate the signature => signature-verification]].
 
 How do you tell if you running a 32 bit or 64 bit kernel? Run the following command:
 
@@ -39,17 +49,14 @@ If the result is:
 * @i686@, you have *32 bit*
 * @i386@, you have *32 bit*
 
-h3. 32 bit kernel
 
-<%= render({:partial => 'common/download_button'}, {:link => 'https://dl.bitmask.net/client/linux/stable/Bitmask-linux32-latest.tar.bz2', :text => 'Download 32 bit'}) %>
 
-[[Signature file => https://dl.bitmask.net/client/linux/stable/Bitmask-linux32-latest.tar.bz2.asc]]
+NOTE:
+  Stand-alone bundles are useful if want to run Bitmask from a thumb drive.
+  There are two disadvantages to the stand-alone bundle:
+    * The Bitmask app will be less well integrated with the desktop environment.
+    * Running from the bundle is slower to start than via packages.
 
-h3. 64 bit kernel
-
-<%= render({:partial => 'common/download_button'}, {:link => 'https://dl.bitmask.net/client/linux/stable/Bitmask-linux64-latest.tar.bz2', :text => 'Download 64 bit'}) %>
-
-[[Signature file => https://dl.bitmask.net/client/linux/stable/Bitmask-linux64-latest.tar.bz2.asc]]
 
 h2. Install as packages
 
