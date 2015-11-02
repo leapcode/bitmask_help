@@ -3,7 +3,7 @@
 
 <%= render({:partial => 'common/notice'}, {:type => 'info', :text => '<b>NOTE:</b> Encrypted email support in Bitmask is still experimental.'}) %>
 
-There are two ways to install Bitmask - via the stand-alone bundles or via packages.
+There are two ways to install Bitmask - via the stand-alone bundles or via packages. 
 
 h2. Download stand-alone bundle
 
@@ -33,9 +33,8 @@ If the result is:
 * @i386@, you have *32 bit*
 
 
-
 NOTE:
-  Stand-alone bundles are useful if want to run Bitmask from a thumb drive.
+  Stand-alone bundles are useful if want to run Bitmask from a thumb drive. Or from a distribution which we don't support with packages.
   There are two disadvantages to the stand-alone bundle:
     * The Bitmask app will be less well integrated with the desktop environment.
     * Running from the bundle is slower to start than via packages.
@@ -45,17 +44,12 @@ h2. Install as packages
 
 This is the recommended method of installing Bitmask. If installed as a package, Bitmask will run faster, be better integrated in the system, and will be kept up to date.
 
+h3. Ubuntu 15.10 (Wily Werewolf)
+<%= render({:partial => 'via_packages'}, {:distro => 'wily'}) %>
+
 h3. Ubuntu 15.04 (Vivid Vervet)
 
 <%= render({:partial => 'via_packages'}, {:distro => 'vivid'}) %>
-
-h3. Ubuntu 14.04 LTS (Trusty Tahr)
-
-<%= render({:partial => 'via_packages'}, {:distro => 'trusty'}) %>
-
-h3. Debian 7.0 (Wheezy)
-
-<%= render({:partial => 'via_packages'}, {:distro => 'wheezy', :os => 'debian'}) %>
 
 h3. Debian 8.0 (Jessie)
 
@@ -73,5 +67,9 @@ apt-get dist-upgrade
 NOTE: When upgrading Ubuntu from 14.10 (Utopic) to 15.04 (Vivid), you may need to run this command again:
 
 bc. sudo add-apt-repository "deb http://deb.bitmask.net/debian vivid main"
+
+Similar is needed for the upgrade from 15.04 to 15.10 (Wily):
+
+bc. sudo add-apt-repository "deb http://deb.bitmask.net/debian wily main"
 
 This is because the Ubuntu upgrade process probably commented out all your prior custom repository lines in @/etc/apt/sources.list@.
