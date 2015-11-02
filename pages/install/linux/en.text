@@ -45,6 +45,7 @@ h2. Install as packages
 This is the recommended method of installing Bitmask. If installed as a package, Bitmask will run faster, be better integrated in the system, and will be kept up to date.
 
 h3. Ubuntu 15.10 (Wily Werewolf)
+
 <%= render({:partial => 'via_packages'}, {:distro => 'wily'}) %>
 
 h3. Ubuntu 15.04 (Vivid Vervet)

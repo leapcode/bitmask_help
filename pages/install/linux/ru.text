@@ -23,15 +23,12 @@ h2. Установить как пакет
 Это рекомендуемый способ установки Bitmask. При установке в качестве пакета Bitmask будет работать быстрее, будет лучше интегрирована с системой, а также будет постоянно обновляться.
 
 h3. Ubuntu 15.10 (Wily Werewolf)
+
 <%= render({:partial => 'via_packages'}, {:distro => 'wily'}) %>
 
 h3. Ubuntu 15.04 (Vivid Vervet)
 
 <%= render({:partial => 'via_packages'}, {:distro => 'vivid'}) %>
-
-h3. Ubuntu 14.04 LTS (Trusty Tahr)
-
-<%= render({:partial => 'via_packages'}, {:distro => 'trusty'}) %>
 
 h3. Debian 8.0 (Jessie)
 
