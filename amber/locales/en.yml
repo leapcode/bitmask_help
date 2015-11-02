@@ -17,6 +17,9 @@ en:
     Also, although Bitmask is improving rapidly, it is possible that you could
     lose your email when using an early beta release.
 
+  providers_for_testers: >
+    <b>TESTERS:</b> Use mail.bitmask.net for email and demo.bitmask.net for VPN.
+
   #
   # front page text
   #
