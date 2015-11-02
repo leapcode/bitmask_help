@@ -18,9 +18,7 @@ A second limitation is with the web application. It also uses SRP, but the SRP j
 We have three plans for the future to overcome these potential problems:
 
 # Allow the use of an additional long random key that is required as part of the authentication process (optionally). For example, each device a user has Bitmask installed on could have a "device key" and the user would need to authorize these device keys before they could run Bitmask on that new device.
-
 # We also plan to include with Bitmask a bloom filter of the top 10,000 most commonly used passwords. By some accounts, 98.8% of all users pick a password in the top 10,000. A bloom filter of these passwords is relatively small, and we can simply forbid the user from selecting any of these (albeit with some false positives).
-
 # Allow providers to forbid authentication via the web application. Authentication would happen via the Bitmask app, which would then load the website with the session token it obtained. This way, the critical SRP authentication code is never loaded from the provider.
 
 For more information, see:
@@ -134,7 +132,7 @@ h2. Secure Updates - TUF
 
 The secure updates are done using [[TUF => http://theupdateframework.com/]], they use OpenSSL 4096 RSA keys with pyCrypto. There is three keys involved in the update process (root, targets and timestamp).
 
-* The root key is used to certify the rest of the keys that lives in an offline storage and only gets used once per year to update the cerification or in case of rotation of another other key.
+* The root key is used to certify the rest of the keys that lives in an offline storage and only gets used once per year to update the certification or in case of rotation of another other key.
 * The targets key is used to sign all the updates. This key is in the hands of the release manager and used on every release.
 * The timestamp key is used to sing a timestamp file every day, this file is used by the client to prevent an adversary from replaying an out-of-date updates. This key lives online in the platform servers.
 

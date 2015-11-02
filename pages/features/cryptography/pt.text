@@ -18,9 +18,7 @@ Uma segunda limitação tem a ver com a aplicação web. Ela também usa SRS, ma
 Temos três planos para futuramente superar esses problemas potenciais:
 
 # Permitir o uso de uma chave longa e aleatória adicional que seja requerida como parte do processo de autenticação (opcionalmente). Por exemplo, cada dispositivo que um usuário tenha o Bitmask instalado poderia ter uma "chave de dispositivo" e o usuário precisaria autorizar essas chaves de dispositivo antes que ele rodasse o Bitmask em um novo dispositivo.
-
 # Também planejamos incluir com o Bitmask um filtro de _bloom_ das 10.000 senhas mais comumente usadas. Segundo algumas pesquisas, 98,8% de todos os usuários escolhem uma senha entre essas 10.000. Um filtro de _bloom_ é relativamente pequeno e podemos simplesmente proibir que o usuário selecione qualquer uma dessas senhas (embora com alguns falso positivos).
-
 # Permitir que os provedores proibam autenticação via aplicação web. A autenticação deveria acontecer pelo aplicativo do Bitmask que, em seguida, carregaria o website com um token de seção obtido. Desta forma, o código crítico de autenticação da SRS nunca é carregado do provedor.
 
 Para mais informações, ver:
