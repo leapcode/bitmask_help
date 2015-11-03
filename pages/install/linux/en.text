@@ -34,8 +34,7 @@ If the result is:
 
 
 NOTE:
-  Stand-alone bundles are useful if want to run Bitmask from a thumb drive. Or from a distribution which we don't support with packages.
-  There are two disadvantages to the stand-alone bundle:
+  Stand-alone bundles are useful if want to run Bitmask from a thumb drive. Or from a distribution which we don't support with packages. There are two disadvantages to the stand-alone bundle:
     * The Bitmask app will be less well integrated with the desktop environment.
     * Running from the bundle is slower to start than via packages.
 
