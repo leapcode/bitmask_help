@@ -19,7 +19,7 @@ h3. 32 bit kernel
 
 [[Signature file => https://dl.bitmask.net/client/linux/stable/Bitmask-linux32-latest.tar.bz2.asc]]
 
-If you want to make sure that the Bitmask wasn't messed with during download
+If you want to make sure that Bitmask wasn't messed with during download
 you can [[authenticate the signature => signature-verification]].
 
 How do you tell if you running a 32 bit or 64 bit kernel? Run the following command:
