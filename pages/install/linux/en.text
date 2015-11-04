@@ -1,26 +1,133 @@
-@title = 'Bitmask for Linux'
+@title = 'Bitmask for GNU/Linux'
 @nav_title = 'Linux'
 
 <%= render({:partial => 'common/notice'}, {:type => 'info', :text => '<b>NOTE:</b> Encrypted email support in Bitmask is still experimental.'}) %>
 
-There are two ways to install Bitmask - via the stand-alone bundles or via packages. 
+h2. For GNU/Linux, please use one of the following options depending on what distribution you are running
 
-h2. Download stand-alone bundle
+h2. How do I know which GNU/Linux distribution I am running?
 
-h3. 64 bit kernel
+To find out which distribution you are running, opena terminal and type in the following:
+
+.bc cat /etc/issue
+
+h2. Ubuntu
+
+For Ubuntu, we provide packages for Wily Werewolf (15.10) and Vivid Vervet (15.04). This is the recommended method of installing Bitmask. If installed as a package, Bitmask will run faster, be better integrated in the system, and will be kept up to date.
+
+If you are using Trusty, then you will use the bundle method.
+
+We are sorry, Precise Penguin (12.04) is not working at this time.
+
+h3. Wily Werewolf (15.10)
+
+<%= render({:partial => 'via_packages'}, {:distro => 'wily'}) %>
+
+h3. Vivid Vervet (15.04)
+
+<%= render({:partial => 'via_packages'}, {:distro => 'vivid'}) %>
+
+h3. Trusty Tahr (14.04)
+
+@Bundle Installation@
+
+*NOTE:*
+  Stand-alone bundles are useful if want to run Bitmask from a thumb drive. Or from a distribution which we don't support with packages.
+  There are two disadvantages to the stand-alone bundle:
+    * The Bitmask app will be less well integrated with the desktop environment.
+    * Running from the bundle is slower to start than via packages.
+
+First determine if you running a 32 bit or 64 bit kernel by running the following command:
+
+bc. uname -m
+
+If the result is:
+
+* @x86_64@, you have *64 bit*
+* @i686@, you have *32 bit*
+* @i386@, you have *32 bit*
+
+Then download the appropriate version below:
+
+* 64 bit kernel
 
 <%= render({:partial => 'common/download_button'}, {:link => 'https://dl.bitmask.net/client/linux/stable/Bitmask-linux64-latest.tar.bz2', :text => 'Download 64 bit'}) %>
 
 [[Signature file => https://dl.bitmask.net/client/linux/stable/Bitmask-linux64-latest.tar.bz2.asc]]
 
-h3. 32 bit kernel
+* 32 bit kernel
 
 <%= render({:partial => 'common/download_button'}, {:link => 'https://dl.bitmask.net/client/linux/stable/Bitmask-linux32-latest.tar.bz2', :text => 'Download 32 bit'}) %>
 
 [[Signature file => https://dl.bitmask.net/client/linux/stable/Bitmask-linux32-latest.tar.bz2.asc]]
 
-If you want to make sure that Bitmask wasn't messed with during download
-you can [[authenticate the signature => signature-verification]].
+If you want to make sure that the Bitmask wasn't messed with during download you can [[authenticate the signature => signature-verification]].
+
+h3. Other
+
+Please note that we only provide support for the above versions of Ubuntu. You are welcome to try and get Bitmask running on another version of Ubuntu, but we know that it currently wont work with the packages or bundle for Precise Penguin (12.04). If you wish to attempt to get Bitmask working for another version of Ubuntu that is not listed above, we recommend attempting to use the bundle (see below), or have a look at [[building it from source => https://leap.se/en/docs/get-involved/source]].
+
+@Bundle Installation@
+
+*NOTE:*
+  Stand-alone bundles are useful if want to run Bitmask from a thumb drive. Or from a distribution which we don't support with packages.
+  There are two disadvantages to the stand-alone bundle:
+    * The Bitmask app will be less well integrated with the desktop environment.
+    * Running from the bundle is slower to start than via packages.
+
+First determine if you running a 32 bit or 64 bit kernel by running the following command:
+
+bc. uname -m
+
+If the result is:
+
+* @x86_64@, you have *64 bit*
+* @i686@, you have *32 bit*
+* @i386@, you have *32 bit*
+
+Then download the appropriate version below:
+
+* 64 bit kernel
+
+<%= render({:partial => 'common/download_button'}, {:link => 'https://dl.bitmask.net/client/linux/stable/Bitmask-linux64-latest.tar.bz2', :text => 'Download 64 bit'}) %>
+
+[[Signature file => https://dl.bitmask.net/client/linux/stable/Bitmask-linux64-latest.tar.bz2.asc]]
+
+* 32 bit kernel
+
+<%= render({:partial => 'common/download_button'}, {:link => 'https://dl.bitmask.net/client/linux/stable/Bitmask-linux32-latest.tar.bz2', :text => 'Download 32 bit'}) %>
+
+[[Signature file => https://dl.bitmask.net/client/linux/stable/Bitmask-linux32-latest.tar.bz2.asc]]
+
+If you want to make sure that the Bitmask wasn't messed with during download you can [[authenticate the signature => signature-verification]].
+
+
+h2. Debian
+
+For Debian, we provide packages for the following versions. This is the recommended method of installing Bitmask. If installed as a package, Bitmask will run faster, be better integrated in the system, and will be kept up to date.
+
+h3. 8.0/Stable (Jessie)
+
+<%= render({:partial => 'via_packages'}, {:distro => 'jessie', :os => 'debian'}) %>
+
+h3. Testing (Stretch)
+
+<%= render({:partial => 'via_packages'}, {:distro => 'testing', :os => 'debian'}) %>
+
+h3. Unstable (Sid)
+<%= render({:partial => 'via_packages'}, {:distro => 'sid', :os => 'debian'}) %>
+
+h3. Other
+
+Please note that we only provide support for the above versions of Debian. You are welcome to try and get Bitmask running on another version of Debian, we recommend attempting to use the bundle (see below), or have a look at [[building it from source => https://leap.se/en/docs/get-involved/source]].
+
+*NOTE:*
+  Stand-alone bundles are useful if want to run Bitmask from a thumb drive. Or from a distribution which we don't support with packages.
+  There are two disadvantages to the stand-alone bundle:
+    * The Bitmask app will be less well integrated with the desktop environment.
+    * Running from the bundle is slower to start than via packages.
+
+@Bundle Installation@
 
 How do you tell if you running a 32 bit or 64 bit kernel? Run the following command:
 
@@ -32,28 +139,21 @@ If the result is:
 * @i686@, you have *32 bit*
 * @i386@, you have *32 bit*
 
+Then download the appropriate version below:
 
-NOTE:
-  Stand-alone bundles are useful if want to run Bitmask from a thumb drive. Or from a distribution which we don't support with packages. There are two disadvantages to the stand-alone bundle:
-    * The Bitmask app will be less well integrated with the desktop environment.
-    * Running from the bundle is slower to start than via packages.
+* 64 bit kernel
 
+<%= render({:partial => 'common/download_button'}, {:link => 'https://dl.bitmask.net/client/linux/stable/Bitmask-linux64-latest.tar.bz2', :text => 'Download 64 bit'}) %>
 
-h2. Install as packages
+[[Signature file => https://dl.bitmask.net/client/linux/stable/Bitmask-linux64-latest.tar.bz2.asc]]
 
-This is the recommended method of installing Bitmask. If installed as a package, Bitmask will run faster, be better integrated in the system, and will be kept up to date.
+* 32 bit kernel
 
-h3. Ubuntu 15.10 (Wily Werewolf)
+<%= render({:partial => 'common/download_button'}, {:link => 'https://dl.bitmask.net/client/linux/stable/Bitmask-linux32-latest.tar.bz2', :text => 'Download 32 bit'}) %>
 
-<%= render({:partial => 'via_packages'}, {:distro => 'wily'}) %>
+[[Signature file => https://dl.bitmask.net/client/linux/stable/Bitmask-linux32-latest.tar.bz2.asc]]
 
-h3. Ubuntu 15.04 (Vivid Vervet)
-
-<%= render({:partial => 'via_packages'}, {:distro => 'vivid'}) %>
-
-h3. Debian 8.0 (Jessie)
-
-<%= render({:partial => 'via_packages'}, {:distro => 'jessie', :os => 'debian'}) %>
+If you want to make sure that the Bitmask wasn't messed with during download you can [[authenticate the signature => signature-verification]].
 
 h2. Upgrading
 
@@ -64,7 +164,7 @@ h2. Upgrading
 bc. apt-get update
 apt-get dist-upgrade
 
-NOTE: When upgrading Ubuntu from 14.10 (Utopic) to 15.04 (Vivid), you may need to run this command again:
+*NOTE:* When upgrading Ubuntu from 14.10 (Utopic) to 15.04 (Vivid), you may need to run this command again:
 
 bc. sudo add-apt-repository "deb http://deb.bitmask.net/debian vivid main"
 
