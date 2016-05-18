@@ -57,15 +57,15 @@ bc. uname -m
 
 h3. 32-битное ядро
 
-<%= render({:partial => 'common/download_button'}, {:link => 'https://dl.bitmask.net/client/linux/stable/Bitmask-linux32-latest.tar.bz2', :text => 'Скачать 32-битную версию'}) %>
+<%= render({:partial => 'common/download_button'}, {:link => 'https://dl.bitmask.net/client/linux/stable/Bitmask-linux32-latest.tar.gz', :text => 'Скачать 32-битную версию'}) %>
 
-[[Файл подписи => https://dl.bitmask.net/client/linux/stable/Bitmask-linux32-latest.tar.bz2.asc]]
+[[Файл подписи => https://dl.bitmask.net/client/linux/stable/Bitmask-linux32-latest.tar.gz.asc]]
 
 h3. 64-битное ядро
 
-<%= render({:partial => 'common/download_button'}, {:link => 'https://dl.bitmask.net/client/linux/stable/Bitmask-linux64-latest.tar.bz2', :text => 'Скачать 64-битную версию'}) %>
+<%= render({:partial => 'common/download_button'}, {:link => 'https://dl.bitmask.net/client/linux/stable/Bitmask-linux64-latest.tar.gz', :text => 'Скачать 64-битную версию'}) %>
 
-[[Файл подписи => https://dl.bitmask.net/client/linux/stable/Bitmask-linux64-latest.tar.bz2.asc]]
+[[Файл подписи => https://dl.bitmask.net/client/linux/stable/Bitmask-linux64-latest.tar.gz.asc]]
 
 h3. Другие варианты
 

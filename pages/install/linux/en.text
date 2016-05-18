@@ -35,13 +35,13 @@ If the result is:
 
 Then download the appropriate version below:
 
-<%= render({:partial => 'common/download_button'}, {:link => 'https://dl.bitmask.net/client/linux/stable/Bitmask-linux64-latest.tar.bz2', :text => 'Download 64 bit'}) %>
+<%= render({:partial => 'common/download_button'}, {:link => 'https://dl.bitmask.net/client/linux/stable/Bitmask-linux64-latest.tar.gz', :text => 'Download 64 bit'}) %>
 
-[[Signature file => https://dl.bitmask.net/client/linux/stable/Bitmask-linux64-latest.tar.bz2.asc]]
+[[Signature file => https://dl.bitmask.net/client/linux/stable/Bitmask-linux64-latest.tar.gz.asc]]
 
-<%= render({:partial => 'common/download_button'}, {:link => 'https://dl.bitmask.net/client/linux/stable/Bitmask-linux32-latest.tar.bz2', :text => 'Download 32 bit'}) %>
+<%= render({:partial => 'common/download_button'}, {:link => 'https://dl.bitmask.net/client/linux/stable/Bitmask-linux32-latest.tar.gz', :text => 'Download 32 bit'}) %>
 
-[[Signature file => https://dl.bitmask.net/client/linux/stable/Bitmask-linux32-latest.tar.bz2.asc]]
+[[Signature file => https://dl.bitmask.net/client/linux/stable/Bitmask-linux32-latest.tar.gz.asc]]
 
 If you want to make sure that the Bitmask wasn't messed with during download you can [[authenticate the signature => signature-verification]].
 
@@ -63,7 +63,7 @@ h3. Packages
 
 h2. Debian
 
-There are two ways to install bitmask on Debian, via packages and via bundles. If you are comfortable with the command line, we recommend using packages when available, if you are comfortable with the command line, otherwise use the bundle. If installed as a package, Bitmask will run faster, be better integrated in the system, and will be kept up to date.
+There are two ways to install bitmask on Debian, via packages and via bundles. If you are comfortable with the command line, we recommend using packages when available, otherwise use the bundle. If installed as a package, Bitmask will run faster, be better integrated in the system, and will be kept up to date.
 
 For Debian, we only provide packages for Stable (Jessie/8), Testing (Stretch) and Unstable (Sid).
 
@@ -83,13 +83,13 @@ If the result is:
 
 Then download the appropriate version below:
 
-<%= render({:partial => 'common/download_button'}, {:link => 'https://dl.bitmask.net/client/linux/stable/Bitmask-linux64-latest.tar.bz2', :text => 'Download 64 bit'}) %>
+<%= render({:partial => 'common/download_button'}, {:link => 'https://dl.bitmask.net/client/linux/stable/Bitmask-linux64-latest.tar.gz', :text => 'Download 64 bit'}) %>
 
-[[Signature file => https://dl.bitmask.net/client/linux/stable/Bitmask-linux64-latest.tar.bz2.asc]]
+[[Signature file => https://dl.bitmask.net/client/linux/stable/Bitmask-linux64-latest.tar.gz.asc]]
 
-<%= render({:partial => 'common/download_button'}, {:link => 'https://dl.bitmask.net/client/linux/stable/Bitmask-linux32-latest.tar.bz2', :text => 'Download 32 bit'}) %>
+<%= render({:partial => 'common/download_button'}, {:link => 'https://dl.bitmask.net/client/linux/stable/Bitmask-linux32-latest.tar.gz', :text => 'Download 32 bit'}) %>
 
-[[Signature file => https://dl.bitmask.net/client/linux/stable/Bitmask-linux32-latest.tar.bz2.asc]]
+[[Signature file => https://dl.bitmask.net/client/linux/stable/Bitmask-linux32-latest.tar.gz.asc]]
 
 If you want to make sure that the Bitmask wasn't messed with during download you can [[authenticate the signature => signature-verification]].
 
@@ -122,13 +122,13 @@ If the result is:
 
 Then download the appropriate version below:
 
-<%= render({:partial => 'common/download_button'}, {:link => 'https://dl.bitmask.net/client/linux/stable/Bitmask-linux64-latest.tar.bz2', :text => 'Download 64 bit'}) %>
+<%= render({:partial => 'common/download_button'}, {:link => 'https://dl.bitmask.net/client/linux/stable/Bitmask-linux64-latest.tar.gz', :text => 'Download 64 bit'}) %>
 
-[[Signature file => https://dl.bitmask.net/client/linux/stable/Bitmask-linux64-latest.tar.bz2.asc]]
+[[Signature file => https://dl.bitmask.net/client/linux/stable/Bitmask-linux64-latest.tar.gz.asc]]
 
-<%= render({:partial => 'common/download_button'}, {:link => 'https://dl.bitmask.net/client/linux/stable/Bitmask-linux32-latest.tar.bz2', :text => 'Download 32 bit'}) %>
+<%= render({:partial => 'common/download_button'}, {:link => 'https://dl.bitmask.net/client/linux/stable/Bitmask-linux32-latest.tar.gz', :text => 'Download 32 bit'}) %>
 
-[[Signature file => https://dl.bitmask.net/client/linux/stable/Bitmask-linux32-latest.tar.bz2.asc]]
+[[Signature file => https://dl.bitmask.net/client/linux/stable/Bitmask-linux32-latest.tar.gz.asc]]
 
 If you want to make sure that the Bitmask wasn't messed with during download you can [[authenticate the signature => signature-verification]].
 
