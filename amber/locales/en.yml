@@ -46,3 +46,4 @@ en:
   #
   to_install: To install
   to_remove: To remove
+  upgrade_os: When upgrading to this OS
