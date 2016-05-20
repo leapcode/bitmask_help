@@ -44,7 +44,7 @@ If you are using Wheezy, then you will need to use the bundle method.
 
 <%= render({:partial => 'via_packages'}, {:distro => 'sid', :os => 'debian'}) %>
 
-### Stand Alone Bundle
+# Stand Alone Bundle
 
 The Bitmask stand alone bundle should work on most recent versions of Debian and Ubuntu. You are welcome to try the bundle on other distributions, it sometimes works. Alternately, you can [[build it from source => https://leap.se/en/docs/get-involved/source]].
 
