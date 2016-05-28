@@ -78,7 +78,7 @@ h2. An internet connection with VPN
 
 With an VPN, your traffic is encrypted on your computer, passes through your ISP and on to your VPN provider. Because the data is encrypted, your ISP has no knowledge of what is in your data that they relay on to your VPN provider. Once your data reaches the VPN provider, it is decrypted and forwarded on to its final destination.
 
-With the *Encrypted Internet Proxy*, if your data is not using a secure connections then it is still vulnerable from the point it leaves the VPN Gateway. However, by routing your data through the VPN provider, you have acheived two important advantages:
+With the *Encrypted Internet Proxy*, if your data is not using a secure connections then it is still vulnerable from the point it leaves the VPN Gateway. However, by routing your data through the VPN provider, you have achieved two important advantages:
 
 * Your data is protected from blocking, tracking, or man-in-the-middle attacks conducted by your ISP or network operators in your local country.
 * Your data now appears to use the IP address of the VPN provider, and not your real IP address. Most websites gather and retain extensive data base on this IP address, which has now been anonymized.
