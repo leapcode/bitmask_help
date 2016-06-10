@@ -18,10 +18,11 @@ h3. Manual email client configuration
 
 * IMAP -- @localhost:1984@
 ** *username*: the full email address you use with the Bitmask app.
-** *password*: ignored, can be anything.
+** *password*: the password you'll find the email section Preferences window in bitmask.
 ** *SSL/TLS*: off
 * SMTP -- @localhost:2013@
-** *authentication*: none
+** *username*: the full email address you use with the Bitmask app.
+** *password*: the password you'll find the email section Preferences window in bitmask.
 ** *SSL/TLS*: off
 
 *Disable caching*: You should also disable any local caching in your email client, if applicable. All the data stored by Bitmask is kept on disk in an encrypted format, but any cache maintained by your mail client is probably less secure. Because all your Bitmask email is synchronized locally there is no benefit to local caching.

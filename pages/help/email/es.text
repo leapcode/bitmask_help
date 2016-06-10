@@ -19,10 +19,11 @@ h3. Configuración manual del cliente de correo.
 
 * IMAP -- @localhost:1984@
 ** *username*: tu dirección completa del email que usas con Bitmask.
-** *password*: ignóralo, puede ser cualquier frase.
+** *password*: la password que encontraras en la sección email de la ventana de Preferencias de bitmask.
 ** *SSL/TLS*: off
 * SMTP -- @localhost:2013@
-** *authentication*: ninguna
+** *username*: tu dirección completa del email que usas con Bitmask.
+** *password*: la password que encontraras en la sección email de la ventana de Preferencias de bitmask.
 ** *SSL/TLS*: off
 
 *Deshabilita el caché*: Deberías deshabilitar cualquier tipo de caché en tu cliente de correo, si lo soporta. Toda la información almacenada por Bitmask se guarda en tu disco de forma cifrada, pero cualquier tipo de caché que tu cliente de correo almacene es probablemente menos seguro. Como todo el Mail de Bitmask es sincronizado de forma local no hay un beneficio real en el uso de caché.
