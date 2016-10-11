@@ -48,23 +48,15 @@ If you are using Wheezy, then you will need to use the bundle method.
 
 The Bitmask stand alone bundle should work on most recent versions of Debian and Ubuntu. You are welcome to try the bundle on other distributions, it sometimes works. Alternately, you can [[build it from source => https://leap.se/en/docs/get-involved/source]].
 
-First determine if you running a 32 bit or 64 bit kernel by running the following command:
+Our most recent stable release is only available for a 64 bit kernel. 
 
-    uname -m
-
-<table class="table"><tr><td>
-  If the result is x86_64, you have <b>64 bit</b>
-</td><td>
+<table class="table">
+<tr><td>
   <%= render({:partial => 'common/download_button'}, {:link => 'https://dl.bitmask.net/client/linux/stable/Bitmask-linux64-latest.tar.gz', :text => 'Download 64 bit'}) %>
 </td><td>
   [[Signature file => https://dl.bitmask.net/client/linux/stable/Bitmask-linux64-latest.tar.gz.asc]]
-</td></tr><tr><td>
-  If the result is: i686 or i386, you have <b>32 bit</b>
-</td><td>
-  <%= render({:partial => 'common/download_button'}, {:link => 'https://dl.bitmask.net/client/linux/stable/Bitmask-linux32-latest.tar.gz', :text => 'Download 32 bit'}) %>
-</td><td>
-  [[Signature file => https://dl.bitmask.net/client/linux/stable/Bitmask-linux32-latest.tar.gz.asc]]
-</td></tr></table>
+</td></tr>
+</table>
 
 Optionally, you can [[authenticate the signature => signature-verification]] using LEAP's archive signing key.
 
