@@ -10,7 +10,7 @@ h3. Option 1 - wget
 
 The easiest way to get the LEAP archive signing key is to just download it from the bitmask.net website and import into your keyring:
 
-bc. wget -O- https://dl.bitmask.net/apt.key | gpg --import
+bc. wget -O- [[https://dl.bitmask.net/apt.key => https://dl.bitmask.net/apt.key]] | gpg --import
 
 You should see output that looks like this:
 
