@@ -34,7 +34,7 @@ If you are using Wheezy, then you will need to use the bundle method.
 
 ### Debian 8 (Stable/Jessie)
 
-<%= render({:partial => 'via_packages'}, {:distro => 'jessie', :os => 'debian'}) %>
+<%= render({:partial => 'via_packages'}, {:distro => 'jessie', :os => 'debian', :backport => 'true'}) %>
 
 ### Debian Testing (Stretch)
 
@@ -72,3 +72,8 @@ If you want to try an experimental or release candidate versions of Bitmask, you
     apt-get dist-upgrade
 
 **NOTE:** When upgrading the version of your operating system, you must also follow the directions listed under "When upgrading the OS" above.
+
+# Latest builds
+For the more adventurous we make stand alone bundle builds available after each commit or merge. Currently best tested again cdev.bitmask.net, because of ongoing changes of Soledad. 
+
+  <%= render({:partial => 'common/download_button'}, {:link => 'https://0xacab.org/leap/bitmask-dev/builds/artifacts/master/download?job=bitmask_latest_bundle', :text => 'Download latest experimental bundle'}) %>

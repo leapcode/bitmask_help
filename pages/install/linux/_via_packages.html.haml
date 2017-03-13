@@ -3,12 +3,18 @@
   %p.b= t :to_install
 
   %pre
-    :preserve
+    - if @locals[:backport] == 'true'
+      Follow [[instructions for activating Debian Backports => https://backports.debian.org/Instructions]].
       sudo -s
+      apt install -t #{@locals[:distro]}-backports leap-archive-keyring
+      \
+    - else
+      sudo -s
+      apt install leap-archive-keyring
+    :preserve
       echo "deb http://deb.bitmask.net/debian #{@locals[:distro]} main" > /etc/apt/sources.list.d/bitmask.list
-      wget -O- https://dl.bitmask.net/apt.key | apt-key add -
       apt update
-      apt install bitmask leap-archive-keyring
+      apt install bitmask
 
   %p.b= t :to_remove
 
@@ -16,7 +22,6 @@
     :preserve
       sudo -s
       apt remove bitmask leap-archive-keyring
-      apt-key del 0x1E34A1828E207901
       rm /etc/apt/sources.list.d/bitmask.list
 
   %p.b= t :upgrade_os
