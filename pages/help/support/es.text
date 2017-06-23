@@ -6,7 +6,7 @@ El idioma en común entre todos quienes desarrollan Bitmask es Inglés. Si neces
 
 h2. ¿Encontraste un fallo en el programa?
 
-Puedes enviar un "reporte del fallo":https://leap.se/code/projects/report-issues/issues/new?issue[tracker_id]=2 en el Sistema de Seguimiento de Errores de LEAP. Primero, [[busca entre los reportes existentes => https://leap.se/code/search]] para ver si alguien ya lo envió. 
+Puedes enviar un "reporte del fallo":https://0xacab.org/leap/bitmask-dev/issues/new en el Sistema de Seguimiento de Errores de LEAP. Primero, [[busca entre los reportes existentes => https://0xacab.org/leap/bitmask-dev/issues]] para ver si alguien ya lo envió.
 
 
 h2. ¿Quieres pedir una nueva funcionalidad?
