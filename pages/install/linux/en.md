@@ -14,6 +14,24 @@ To find out which distribution you are running, open a terminal and type in the 
 
     cat /etc/issue
 
+# Stand Alone Bundle
+
+The Bitmask stand alone bundle should work on most recent versions of Debian and Ubuntu. You are welcome to try the bundle on other distributions, it sometimes works. Alternately, you can [[build it from source => https://leap.se/en/docs/get-involved/source]].
+
+Our most recent stable release is only available for a 64 bit kernel. 
+
+<table class="table">
+<tr><td>
+  <%= render({:partial => 'common/download_button'}, {:link => 'https://dl.bitmask.net/client/linux/stable/Bitmask-linux64-latest.tar.gz', :text => 'Download 64 bit'}) %>
+</td><td>
+  [[Signature file => https://dl.bitmask.net/client/linux/stable/Bitmask-linux64-latest.tar.gz.asc]]
+</td></tr>
+</table>
+
+Optionally, you can [[authenticate the signature => signature-verification]] using LEAP's archive signing key.
+
+If you want to try an experimental or release candidate versions of Bitmask, you can browse the [[full list of available downloads => https://dl.bitmask.net/client/linux]].
+
 # Ubuntu Packages
 
 ### Ubuntu 16.04 LTS (Xenial Xerus)
@@ -32,35 +50,17 @@ To find out which distribution you are running, open a terminal and type in the 
 
 If you are using Wheezy, then you will need to use the bundle method.
 
-### Debian 8 (Stable/Jessie)
+### Debian 8 (Oldstable/Jessie)
 
 <%= render({:partial => 'via_packages'}, {:distro => 'jessie', :os => 'debian', :backport => 'true'}) %>
 
-### Debian Testing (Stretch)
+### Debian Stable (Stretch)
 
 <%= render({:partial => 'via_packages'}, {:distro => 'testing', :os => 'debian'}) %>
 
 ### Debian Unstable (Sid)
 
 <%= render({:partial => 'via_packages'}, {:distro => 'sid', :os => 'debian'}) %>
-
-# Stand Alone Bundle
-
-The Bitmask stand alone bundle should work on most recent versions of Debian and Ubuntu. You are welcome to try the bundle on other distributions, it sometimes works. Alternately, you can [[build it from source => https://leap.se/en/docs/get-involved/source]].
-
-Our most recent stable release is only available for a 64 bit kernel. 
-
-<table class="table">
-<tr><td>
-  <%= render({:partial => 'common/download_button'}, {:link => 'https://dl.bitmask.net/client/linux/stable/Bitmask-linux64-latest.tar.gz', :text => 'Download 64 bit'}) %>
-</td><td>
-  [[Signature file => https://dl.bitmask.net/client/linux/stable/Bitmask-linux64-latest.tar.gz.asc]]
-</td></tr>
-</table>
-
-Optionally, you can [[authenticate the signature => signature-verification]] using LEAP's archive signing key.
-
-If you want to try an experimental or release candidate versions of Bitmask, you can browse the [[full list of available downloads => https://dl.bitmask.net/client/linux]].
 
 # Upgrading
 
