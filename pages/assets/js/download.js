@@ -1,22 +1,44 @@
 $(document).ready(function() {
+  var platform = platformStr();
+
   $(".download").click(function(e) {
     e.preventDefault();
-    download();
+    download(platform);
   }); 
+
+  if (["linux", "mac", "android"].indexOf(platform) != -1) {
+    $(".download-text").text("Download Bitmask for " + platform);
+  }
 });
 
-function download() {
+function download(platform) {
   var link = "install";
-  if (navigator.platform.indexOf("Linux") != -1) {
-    link = "https://dl.bitmask.net/client/linux/stable/Bitmask-linux64-latest.tar.gz";
+  switch (platform) {
+    case "linux":
+      link = "https://dl.bitmask.net/client/linux/stable/Bitmask-linux64-latest.tar.gz";
+      break;
+    case "mac":
+      link = "https://dl.bitmask.net/client/osx/stable/Bitmask-latest.pkg";
+      break;
+    case "android":
+      link = "install/android";
+      break;
   }
-  if (navigator.platform.indexOf("Mac") != -1) {
-    link = "https://dl.bitmask.net/client/osx/stable/Bitmask-latest.pkg";
-  }
-  if (navigator.platform.indexOf("Android") != -1) {
-    link = "install/android";
-  }
-  //if (navigator.platform.indexOf("Win") != -1) {
-  //}
   window.location = link;
 };
+
+function platformStr() {
+  if (navigator.platform.indexOf("Linux") != -1) {
+    return "linux";
+  }
+  if (navigator.platform.indexOf("Mac") != -1) {
+    return "mac";
+  }
+  if (navigator.platform.indexOf("Android") != -1) {
+    return "android";
+  }
+  if (navigator.platform.indexOf("Win") != -1) {
+    return "win";
+  }
+  return "other";
+}
