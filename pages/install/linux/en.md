@@ -26,4 +26,4 @@ Change ``stretch`` for ``zesty`` or ``buster``, according to your distro. [[ Rea
 
 # Other
 
-If none of the above methods works for you, you can try to install [[ via pip => pip ]] or [[ from source => git ]], or get in contact with us if you want to package Bitmask for some other distribution.
+If none of the above methods works for you, you can try to install [[ via pip => 'http://bitmask.readthedocs.io/en/latest/installation/index.html#installing-with-pip' ]] or [[ from source => 'http://bitmask.readthedocs.io/en/latest/hacking/index.html#devenv' ]], or get in contact with us if you want to package Bitmask for some other distribution.
