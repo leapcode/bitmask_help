@@ -12,7 +12,7 @@
     %p
       %small
         %a{:href=>"android"}
-          apk
+          get .apk
   .col-sm-3.col-xs-6.text-center
     %a.btn.btn-default{:href=>"https://dl.bitmask.net/client/linux/stable/Bitmask-linux64-latest.tar.gz"}
       %i.fa.fa-linux.fa-4x
@@ -23,7 +23,7 @@
     %p
       %small
         %a{:href=>"linux"}
-          packages
+          bundles, .deb
   .col-sm-3.col-xs-6.text-center
     %a.btn.btn-default{:href=>"https://dl.bitmask.net/client/osx/stable/Bitmask-latest.pkg"}
       %i.fa.fa-apple.fa-4x
@@ -42,4 +42,6 @@
 .row
   .col-sm-8.col-sm-offset-2
     .p.text-center
-      = t :warning
+      = t :warning 
+      = t :warning_disabled
+
