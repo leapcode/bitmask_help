@@ -19,7 +19,7 @@ sudo apt update && sudo apt install bitmask
 
 Above, the ``release`` component tracks only the **stable** releases. That is probably what you want to use.
 
-If you want **alpha** versions and **rcs**, use ``staging`` in your ``/etc/apt/sources.list.d/bitmask.list`` file, like this:
+If you want **alpha** versions and **release candidates**, use ``staging`` in your ``/etc/apt/sources.list.d/bitmask.list`` file, like this:
 
 ```
 sudo gedit /etc/apt/sources.list.d/bitmask.list
