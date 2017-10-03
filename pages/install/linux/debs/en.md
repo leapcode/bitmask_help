@@ -1,10 +1,11 @@
 @title = 'Bitmask debian/ubuntu repositories'
 @nav_title = 'Bitmask debian/ubuntu repositories'
+@this.toc = false
 
 # Supported distributions
 
-At the moment of writing this, we provide packages for **ubuntu** ``zesty`` (17.04) and **debian** ``stretch`` (stable) and ``buster`` (testing).
-You can try the [[ standalone bundles => /en/install/linux/#standalone-bundles ]] if your distribution is not supported.
+We provide packages for **ubuntu** ``zesty`` (17.04), **debian** ``stretch`` (*stable*) and ``buster`` (*testing*).
+Try the [[ standalone bundles => /en/install/linux/#standalone-bundles ]] if your distribution is not there.
 
 Change ``stretch`` in the following instructions for the one you are using:
 
@@ -14,11 +15,11 @@ sudo sh -c 'echo "deb http://deb.leap.se/client stretch release" > /etc/apt/sour
 sudo apt update && sudo apt install bitmask
 ```
 
-# Sources for stable, staging and master
+# Release, staging, or master?
 
-Above, the ``release`` component tracks only the stable releases. This is probably what you want to use.
+Above, the ``release`` component tracks only the **stable** releases. That is probably what you want to use.
 
-If you want alpha versions and rcs, use ``staging`` in your ``/etc/apt/sources.list.d/bitmask.list`` file, like this:
+If you want **alpha** versions and **rcs**, use ``staging`` in your ``/etc/apt/sources.list.d/bitmask.list`` file, like this:
 
 ```
 sudo gedit /etc/apt/sources.list.d/bitmask.list
@@ -32,7 +33,7 @@ deb http://deb.leap.se/client stretch master
 ```
 
 
-# Removing the Bitmask packages 
+# Removing the packages 
 
 If you want to remove bitmask from your system:
 
