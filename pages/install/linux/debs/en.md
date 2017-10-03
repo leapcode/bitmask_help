@@ -11,7 +11,7 @@ Change ``stretch`` in the following instructions for the one you are using:
 ```
 sudo apt install leap-archive-keyring
 sudo sh -c 'echo "deb http://deb.leap.se/client stretch release" > /etc/apt/sources.list.d/bitmask.list'
-sudo apt update && sudo apt install bitmask-qt bitmask-vpn bitmask-mail
+sudo apt update && sudo apt install bitmask
 ```
 
 # Sources for stable, staging and master
@@ -38,7 +38,7 @@ If you want to remove bitmask from your system:
 
 ```
 sudo -s
-apt remove bitmask-qt leap-archive-keyring
+apt remove bitmask leap-archive-keyring
 rm /etc/apt/sources.list.d/bitmask.list
 ```
 
