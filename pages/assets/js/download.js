@@ -18,7 +18,7 @@ function download(platform) {
       link = "https://dl.bitmask.net/client/linux/stable/Bitmask-linux64-latest.tar.gz";
       break;
     case "mac":
-      link = "https://dl.bitmask.net/client/osx/stable/Bitmask-latest.pkg";
+      link = "https://dl.bitmask.net/client/osx/stable/Bitmask-OSX-latest.pkg";
       break;
     case "android":
       link = "install/android";
