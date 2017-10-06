@@ -1,44 +1,47 @@
 - @title = 'Instálate Bitmask'
 - @nav_title = 'Instálatelo'
 
-.row
-  .col-sm-8.col-sm-offset-2
-    .p.alert.alert-danger
-      %i.fa.fa-warning
-        = t :warning
-
-.row
-  .col-sm-8.col-sm-offset-2
-    .p.alert.alert-info
-      %i.fa.fa-info-circle
-        = t :providers_for_testers
-
 .row.bm-front-buttons
-  .col-sm-3.col-xs-6
-    %a.btn.btn-default{:href=>"android"}
+  .col-sm-3.col-xs-6.text-center
+    %a.btn.btn-default{:href=>"https://play.google.com/store/apps/details?id=se.leap.bitmaskclient"}
       %i.fa.fa-android.fa-4x
       %br
       %b Android
       %br
-      %small 4.0 y superiores
-  .col-sm-3.col-xs-6
-    %a.btn.btn-default{:href=>"linux"}
+      %small Version 0.9.5
+    %p
+      %small
+        %a{:href=>"android"}
+          descarga la .apk
+  .col-sm-3.col-xs-6.text-center
+    %a.btn.btn-default{:href=>"https://dl.bitmask.net/client/linux/stable/Bitmask-linux64-latest.tar.gz"}
       %i.fa.fa-linux.fa-4x
       %br
       %b GNU/Linux
       %br
-      %small Debian, Ubuntu, Mint
-  .col-sm-3.col-xs-6
-    %a.btn.btn-default.disabled{:href=>"mac"}
+      %small Version 0.10
+    %p
+      %small
+        %a{:href=>"linux"}
+          bundles, .deb
+  .col-sm-3.col-xs-6.text-center
+    %a.btn.btn-default{:href=>"https://dl.bitmask.net/client/osx/stable/Bitmask-OSX-latest.pkg"}
       %i.fa.fa-apple.fa-4x
       %br
       %b Mac OS
       %br
-      %small Pronto, muy pronto...
-  .col-sm-3.col-xs-6
+      %small Version 0.10
+  .col-sm-3.col-xs-6.text-center
     %a.btn.btn-default.disabled{:href=>"windows"}
       %i.fa.fa-windows.fa-4x
       %br
       %b Windows
       %br
       %small Pronto...
+
+.row
+  .col-sm-8.col-sm-offset-2
+    .p.text-center
+      = t :warning 
+      = t :warning_disabled
+
