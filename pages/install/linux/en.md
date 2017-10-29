@@ -15,7 +15,7 @@ If you want to try the latest code, you can download the [[latest bundle => http
 
 ```
 sudo apt install leap-archive-keyring
-sudo sh -c 'echo "deb http://deb.leap.se/client stretch release" > /etc/apt/sources.list.d/bitmask.list'
+sudo sh -c 'echo "deb http://deb.leap.se/client release stretch" > /etc/apt/sources.list.d/bitmask.list'
 sudo apt update && sudo apt install bitmask
 ```
 
