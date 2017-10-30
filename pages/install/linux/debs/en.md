@@ -11,7 +11,7 @@ Change ``stretch`` in the following instructions for the one you are using:
 
 ```
 sudo apt install leap-archive-keyring
-sudo sh -c 'echo "deb http://deb.leap.se/client stretch release" > /etc/apt/sources.list.d/bitmask.list'
+sudo sh -c 'echo "deb http://deb.leap.se/client release stretch" > /etc/apt/sources.list.d/bitmask.list'
 sudo apt update && sudo apt install bitmask
 ```
 
@@ -23,13 +23,13 @@ If you want **alpha** versions and **release candidates**, use ``staging`` in yo
 
 ```
 sudo gedit /etc/apt/sources.list.d/bitmask.list
-deb http://deb.leap.se/client stretch staging
+deb http://deb.leap.se/client staging stretch
 ```
 
 If you want to have the bleeding edge, use ``master`` instead. Beware that this can be unstable at times:
 
 ```
-deb http://deb.leap.se/client stretch master
+deb http://deb.leap.se/client master stretch
 ```
 
 
