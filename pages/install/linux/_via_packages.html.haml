@@ -12,7 +12,7 @@
       sudo -s
       apt install leap-archive-keyring
     :preserve
-      echo "deb http://deb.bitmask.net/debian release #{@locals[:distro]}" > /etc/apt/sources.list.d/bitmask.list
+      echo "deb http://deb.bitmask.net/client #{@locals[:distro]} release" > /etc/apt/sources.list.d/bitmask.list
       apt update
       apt install bitmask
 
@@ -29,7 +29,7 @@
   %pre
     :preserve
       sudo -s
-      echo "deb http://deb.bitmask.net/debian release #{@locals[:distro]}" > /etc/apt/sources.list.d/bitmask.list
+      echo "deb http://deb.bitmask.net/client #{@locals[:distro]} release" > /etc/apt/sources.list.d/bitmask.list
       apt update
       apt upgrade
 
@@ -42,7 +42,7 @@
   %pre
     :preserve
       sudo -s
-      add-apt-repository "deb http://deb.bitmask.net/debian release #{@locals[:distro]}"
+      add-apt-repository "deb http://deb.bitmask.net/client #{@locals[:distro]} release"
       wget -O- https://dl.bitmask.net/apt.key | apt-key add -
       apt update
       apt install bitmask leap-archive-keyring
@@ -54,15 +54,15 @@
       sudo -s
       apt remove bitmask leap-archive-keyring
       apt-key del 0x1E34A1828E207901
-      add-apt-repository --remove "deb http://deb.bitmask.net/debian release #{@locals[:distro]}"
+      add-apt-repository --remove "deb http://deb.bitmask.net/client #{@locals[:distro]} release"
 
   %p.b= t :upgrade_os
 
   %pre
     :preserve
       sudo -s
-      add-apt-repository --remove "deb http://deb.bitmask.net/debian release #{prior[@locals[:distro]]}"
-      add-apt-repository "deb http://deb.bitmask.net/debian release #{@locals[:distro]}"
+      add-apt-repository --remove "deb http://deb.bitmask.net/client #{prior[@locals[:distro]]} release"
+      add-apt-repository "deb http://deb.bitmask.net/client #{@locals[:distro]} release"
       apt update
       apt upgrade
 
