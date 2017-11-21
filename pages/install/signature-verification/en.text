@@ -2,6 +2,8 @@
 
 Many of the files available for download from this site have been signed. This page will walk you through what you need to do in order to verify these signatures. This process is entirely optional.
 
+@NOTE:@ Installation of Android and Mac apps will have their signatures verified automatically. However, we provide signatures for these files if you wish to verify them manually with the process below.
+
 h2. Import LEAP's key
 
 All the files have been signed with the "LEAP archive signing key". The first step is to import this key into your local keyring. These instructions will use @gpg@, a free implementation of OpenPGP that works on Mac, Windows, and Linux.
@@ -54,7 +56,7 @@ For a listing of the available signature files, see:
 
 * [[All Android files => https://dl.bitmask.net/client/android/]]
 * [[All Linux files => https://dl.bitmask.net/client/linux/]]
-* [[All Mac files => https://dl.bitmask.net/client/mac/]]
+* [[All Mac files => https://dl.bitmask.net/client/osx/]]
 * [[All Windows files => https://dl.bitmask.net/client/windows/]]
 
 Make sure you put the signature file and the download you want to authenticate in the same directory, and that they have the same name (other than the .asc suffix for the signature file).
