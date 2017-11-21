@@ -23,10 +23,37 @@ h2. Download app
 
 Alternately, you can download the Bitmask app directly from this website. You will need to enabled the option <b>Settings > Security > Unknown Sources</b> on your device for this method to work.
 
+h3. Stable version
+
 p(android). <%= render({:partial => 'common/download_button'}, {:link => 'https://dl.bitmask.net/client/android/Bitmask-Android-latest.apk', :text => 'Download for Android'}) %>
 
 p(non-android). !/assets/qr/dl.bitmask.net-bitmask-android-latest.png!:https://dl.bitmask.net/client/android/Bitmask-Android-latest.apk
 
+h3. Beta version
+
+You can install Bitmask Beta next to the stable release on the same device. 
+
+<%= render({:partial => 'common/download_button'}, {:link => 'https://dl.bitmask.net/client/android/Bitmask-Android-testing.apk', :text => 'Download for Android'}) %>
+
+<%= render({:partial => 'common/notice'}, {:type => 'warning', :text => '<b>ATTENTION:</b> Please [[verify=>https://dl.bitmask.net/en/signature-verification]] the [[signature => https://dl.bitmask.net/client/android/Bitmask-Android-testing.apk.sig]]!</p>'}) %>
+
+h2. Install from F-Droid
+
+h3. Stable version
+
+We are currently integrating Bitmask to the official F-Droid repository and it will be available there soon!
+[[F-Droid => https://f-droid.org/]] is an alternative app store for open-source and privacy-aware Android apps.
+
+h3. Beta version
+
+You can get Bitmask Beta from [[IzzySoft's F-Droid repository => https://apt.izzysoft.de/fdroid/index/]]. 
+
 h2. Download other versions
 
 If you want to install an old version of Bitmask, you can [[browse all releases => https://dl.bitmask.net/client/android/]].
+
+p. If you want to see the latest features and bug fixes and would like to contribute to Bitmask by testing the app, you can join [[Google's Beta-Channel for Bitmask => https://play.google.com/apps/testing/se.leap.bitmaskclient]]. The pre-releases can be found [[here =>  https://play.google.com/store/apps/details?id=se.leap.bitmaskclient]]. 
+
+If you find any bugs you can file a ticket on our [[GitLab platform => https://0xacab.org/leap/bitmask_android/issues]]. You can either create an account on 0xacab.org or simply login with your github.com or gitlab.com account to create new tickets.
+
+Finally you can also download the [[latest build artifact => https://0xacab.org/leap/bitmask_android/builds/artifacts/master/download?job=build]] from our CI. This version is not signed and therefore you can not verify the integrity and security of that app! This is only an option for curious testers and it's not ment for regular use. 
