@@ -47,6 +47,7 @@ We are currently integrating Bitmask to the official F-Droid repository and it w
 h3. Beta version
 
 You can get Bitmask Beta from [[IzzySoft's F-Droid repository => https://apt.izzysoft.de/fdroid/index/]]. 
+A short manual how to add the repository to your F-Droid app can be found on our [[help page => https://bitmask.net/en/help/faq#i-would-like-to-test-bitmask-beta-for-android-without-using-google-playstore-how-can-i-do-that]].
 
 h2. Download other versions
 
