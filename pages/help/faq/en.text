@@ -41,7 +41,8 @@ Bitmask is part of the software developed by the LEAP Encryption Access Project 
 
 h2. I found a bug! Now what?
 
-Please report it to us in our [[bug tracker => https://0xacab.org/leap/bitmask-dev]].
+Please report bugs for Bitmask running on Linux or Mac OS X to us in our [[bug tracker => https://0xacab.org/leap/bitmask-dev]].
+Our bugtracker for Bitmask Android can be found [[here => https://0xacab.org/leap/bitmask_android/issues]].
 
 h1. Contributions
 
@@ -54,3 +55,15 @@ h2. What are the communication channels?
 We hang in the #leap channel in <pre>irc.freenode.org</pre>
 The public mailing list is discuss@lists.riseup.net. There's another mailing list for beta-testers at bitmask@lists.riseup.net.
 You can also write to info@leap.se for general questions.
+
+h2. I would like to test Bitmask Beta for Android without using Google Playstore. How can I do that?
+
+Izzysoft's F-Droid repository contains our Beta releases for Bitmask. You can add that repository to your F-Droid app by doing the followoing steps: 
+
+* open your F-Droid app
+* navigate to: Settings > Repositories > click on '+' 
+* add the following url and fingerprint: <pre>https://apt.izzysoft.de/fdroid/repo</pre>  <pre>3BF0D6ABFEAE2F401707B6D966BE743BF0EEE49C2561B9BA39073711F628937A</pre> 
+* if the reposities don't get updated automatically navigate to Updates and pull down the main screen
+* you can now search for Bitmask Beta
+
+Alternatively you can download our latest Beta release directly from our [[ download page=> https://bitmask.net/en/install/android ]]. 
