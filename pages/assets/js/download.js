@@ -29,14 +29,15 @@ function download(platform) {
 };
 
 function platformStr() {
+  if (navigator.platform.toLowerCase().indexOf("linux arm") != -1 ||
+      navigator.platform.toLowerCase().indexOf("android") != -1) {
+    return "Android";
+  }
   if (navigator.platform.indexOf("Linux") != -1) {
     return "GNU/Linux";
   }
   if (navigator.platform.indexOf("Mac") != -1) {
     return "macOS";
-  }
-  if (navigator.platform.indexOf("Android") != -1) {
-    return "Android";
   }
   if (navigator.platform.indexOf("Win") != -1) {
     return "Windows";
