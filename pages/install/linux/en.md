@@ -14,7 +14,7 @@ If you want to try the latest code, you can download the [[latest bundle => http
 # Debian/Ubuntu
 
 
-## For Debian jessie and Ubuntu Artful:
+## For Debian stable (9.0, Stretch) and Ubuntu stable (17.10, Artful):
 
 ```
 sudo apt install lsb-release curl
@@ -24,7 +24,7 @@ sudo apt update && sudo apt install bitmask
 ```
 
 
-## For Debian testing and Ubuntu Bionic:
+## For Debian testing and Ubuntu next release (18.04, Bionic):
 
 ```
 sudo apt install leap-archive-keyring lsb-release
