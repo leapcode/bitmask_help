@@ -4,16 +4,10 @@
 
 # Supported distributions
 
-We provide packages for **ubuntu** ``zesty`` (17.04), **debian** ``stretch`` (*stable*) and ``buster`` (*testing*).
+We provide packages for **ubuntu** ``Artful`` (17.10), **debian** ``Stretch`` (*stable*) and ``Buster`` (*testing*).
 Try the [[ standalone bundles => /en/install/linux/#standalone-bundles ]] if your distribution is not there.
 
-Change ``stretch`` in the following instructions for the one you are using:
-
-```
-sudo apt install leap-archive-keyring
-sudo sh -c 'echo "deb http://deb.leap.se/client release stretch" > /etc/apt/sources.list.d/bitmask.list'
-sudo apt update && sudo apt install bitmask
-```
+Please refer to the [[ linux installation docs => /en/install/linux#Debian/Ubuntu ]] how to install the debian packages for your distribution.
 
 # Release, staging, or master?
 
@@ -39,7 +33,7 @@ If you want to remove bitmask from your system:
 
 ```
 sudo -s
-apt remove bitmask leap-archive-keyring
+apt remove --purge bitmask leap-archive-keyring
 rm /etc/apt/sources.list.d/bitmask.list
 ```
 

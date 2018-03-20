@@ -13,21 +13,13 @@ If you want to try the latest code, you can download the [[latest bundle => http
 
 # Debian/Ubuntu
 
-We officially support these releases:
-
-- Latest stable Debian release (9.0, Stretch)
-- Latest stable Ubuntu release (17.10, Artful)
-
-You might find debian packages for other releases as well but they might or might not work for you. Please understand that we can't provide support for these.
-
-Read more about [[ our different repositories => debs ]] for deb packages.
 
 For Debian jessie and Ubuntu Artful:
 
 ```
 sudo apt install lsb-release curl
 sudo sh -c 'echo "deb http://deb.leap.se/client release $(lsb_release -sc)" > /etc/apt/sources.list.d/bitmask.list'
-curl https://downloads.leap.se/platform/leap-archive-signing-keys.asc | sudo apt-key add
+curl https://downloads.leap.se/platform/leap-archive-signing-keys.asc | sudo apt-key add -
 sudo apt update && sudo apt install bitmask
 ```
 
@@ -40,6 +32,7 @@ sudo sh -c 'echo "deb http://deb.leap.se/client release $(lsb_release -sc)" > /e
 sudo apt update && sudo apt install bitmask
 ```
 
+Read more about [[ our different repositories => debs ]] for deb packages.
 
 # Other
 
