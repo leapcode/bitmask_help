@@ -14,12 +14,36 @@ If you want to try the latest code, you can download the [[latest bundle => http
 # Debian/Ubuntu
 
 
-## For Debian stable (9.0, Stretch) and Ubuntu stable (17.10, Artful):
+## For Ubuntu stable (17.10, Artful):
 
 ```
-sudo apt install lsb-release curl
-sudo sh -c 'echo "deb http://deb.leap.se/client release $(lsb_release -sc)" > /etc/apt/sources.list.d/bitmask.list'
-curl https://downloads.leap.se/platform/leap-archive-signing-keys.asc | sudo apt-key add -
+sudo apt install wget 
+sudo sh -c 'echo "deb http://deb.leap.se/client release artful" > /etc/apt/sources.list.d/bitmask.list'
+wget https://downloads.leap.se/platform/leap-archive-signing-keys.asc -O /tmp/leap-archive-signing-keys.asc
+sha256sum /tmp/leap-archive-signing-keys.asc
+```
+
+The latest command will output a checksum that you need to compare with this one: `940aed61f2bd9db8246c4855a2239a7ed5b847894de89e25bebb163055f85da9`
+Please *only* proceed if the checksums are identical !
+
+```
+sudo apt-key add /tmp/leap-archive-signing-keys.asc
+sudo apt update && sudo apt install bitmask
+```
+
+
+## For Debian stable (9.0, Stretch): 
+
+You need to enable `stretch-backports` to install the latest `leap-archive-keyring` package (skip this step
+if you already have `stretch-backports` enabled):
+
+```
+sudo echo "deb http://deb.debian.org/debian stretch-backports main" > /etc/apt/sources.list.d/stretch-backports.list
+sudo apt update && sudo apt install -t stretch-backports leap-archive-keyring
+```
+
+```
+sudo sh -c 'echo "deb http://deb.leap.se/client release stretch" > /etc/apt/sources.list.d/bitmask.list'
 sudo apt update && sudo apt install bitmask
 ```
 
