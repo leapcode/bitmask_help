@@ -48,14 +48,6 @@ sudo apt update && sudo apt install bitmask
 ```
 
 
-## For Debian testing and Ubuntu next release (18.04, Bionic):
-
-```
-sudo apt install leap-archive-keyring lsb-release
-sudo sh -c 'echo "deb http://deb.leap.se/client release $(lsb_release -sc)" > /etc/apt/sources.list.d/bitmask.list'
-sudo apt update && sudo apt install bitmask
-```
-
 Read more about [[ our different repositories => debs ]] for deb packages.
 
 # Other
