@@ -4,7 +4,7 @@
 
 # Supported distributions
 
-We provide packages for **ubuntu** ``Artful`` (17.10), **debian** ``Stretch`` (*stable*) and ``Buster`` (*testing*).
+We provide packages for **ubuntu** ``Bionic`` (18.04), ``Artful`` (17.10), **debian** ``Stretch`` (*stable*) and ``Buster`` (*testing*).
 Try the [[ standalone bundles => /en/install/linux/#standalone-bundles ]] if your distribution is not there.
 
 Please refer to the [[ linux installation docs => /en/install/linux#Debian/Ubuntu ]] how to install the debian packages for your distribution.
