@@ -8,8 +8,6 @@
 
 The [[signature => https://dl.bitmask.net/client/linux/stable/Bitmask-linux64-latest.tar.gz.asc]] can be [[verified => signature-verification]] using LEAP's archive signing key. You can browse [[the downloads => https://dl.bitmask.net/client/linux]], including release candidates.
 
-If you want to try the latest code, you can download the [[latest bundle => https://0xacab.org/leap/bitmask-dev/-/jobs/artifacts/master/download?job=bitmask_latest_bundle]] that is built automatically for every change.
-
 
 # Debian/Ubuntu
 
