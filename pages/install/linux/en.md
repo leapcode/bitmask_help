@@ -1,4 +1,4 @@
-@title = 'Bitmask for GNU/Linux. Version 0.10.0'
+@title = 'Bitmask for GNU/Linux. Version 0.10.7'
 @nav_title = 'Linux'
 @this.toc = false
 
@@ -11,24 +11,12 @@ The [[signature => https://dl.bitmask.net/client/linux/stable/Bitmask-linux64-la
 
 # Debian/Ubuntu
 
-
-## For Ubuntu stable (17.10, Artful):
-
+## For Ubuntu Bionic Beaver (18.04) and Debian testing (buster):
 ```
-sudo apt install wget 
-sudo sh -c 'echo "deb http://deb.leap.se/client release artful" > /etc/apt/sources.list.d/bitmask.list'
-wget https://downloads.leap.se/platform/leap-archive-signing-keys.asc -O /tmp/leap-archive-signing-keys.asc
-sha256sum /tmp/leap-archive-signing-keys.asc
-```
-
-The latest command will output a checksum that you need to compare with this one: `940aed61f2bd9db8246c4855a2239a7ed5b847894de89e25bebb163055f85da9`
-Please *only* proceed if the checksums are identical !
-
-```
-sudo apt-key add /tmp/leap-archive-signing-keys.asc
+sudo apt install leap-archive-keyring lsb-release
+sudo sh -c 'echo "deb http://deb.leap.se/client release $(lsb_release -sc)" > /etc/apt/sources.list.d/bitmask.list'
 sudo apt update && sudo apt install bitmask
 ```
-
 
 ## For Debian stable (9.0, Stretch): 
 
@@ -45,6 +33,22 @@ sudo sh -c 'echo "deb http://deb.leap.se/client release stretch" > /etc/apt/sour
 sudo apt update && sudo apt install bitmask
 ```
 
+## For Ubuntu oldstable (17.10, Artful):
+
+```
+sudo apt install wget
+sudo sh -c 'echo "deb http://deb.leap.se/client release artful" > /etc/apt/sources.list.d/bitmask.list'
+wget https://downloads.leap.se/platform/leap-archive-signing-keys.asc -O /tmp/leap-archive-signing-keys.asc
+sha256sum /tmp/leap-archive-signing-keys.asc
+```
+
+The latest command will output a checksum that you need to compare with this one: `940aed61f2bd9db8246c4855a2239a7ed5b847894de89e25bebb163055f85da9`
+Please *only* proceed if the checksums are identical !
+
+```
+sudo apt-key add /tmp/leap-archive-signing-keys.asc
+sudo apt update && sudo apt install bitmask
+```
 
 Read more about [[ our different repositories => debs ]] for deb packages.
 
