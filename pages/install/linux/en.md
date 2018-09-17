@@ -24,7 +24,7 @@ You need to enable `stretch-backports` to install the latest `leap-archive-keyri
 if you already have `stretch-backports` enabled):
 
 ```
-sudo echo "deb http://deb.debian.org/debian stretch-backports main" > /etc/apt/sources.list.d/stretch-backports.list
+sudo sh -c 'echo "deb http://deb.debian.org/debian stretch-backports main" > /etc/apt/sources.list.d/stretch-backports.list'
 sudo apt update && sudo apt install -t stretch-backports leap-archive-keyring
 ```
 
