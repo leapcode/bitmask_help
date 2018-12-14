@@ -19,6 +19,7 @@ p(android). <%= render({:partial => 'common/download_button'}, {:link => 'https:
 
 p(non-android). !/assets/qr/market-se.leap.bitmaskclient.png!:https://play.google.com/store/apps/details?id=se.leap.bitmaskclient
 
+
 h2. Скачать приложение
 
 Кроме того, вы можете скачать приложение Bitmask напрямую с этого сайта. Вам нужно будет включить в настройках <b>Settings > Security > Unknown Sources</b> на вашем устройстве для работы этого метода.
@@ -26,6 +27,10 @@ h2. Скачать приложение
 p(android). <%= render({:partial => 'common/download_button'}, {:link => 'https://dl.bitmask.net/client/android/Bitmask-Android-latest.apk', :text => 'Скачать для Android'}) %>
 
 p(non-android). !/assets/qr/dl.bitmask.net-bitmask-android-latest.png!:https://dl.bitmask.net/client/android/Bitmask-Android-latest.apk
+
+<%= render({:partial => 'common/notice'}, {:type => 'warning', :text => '<b>ВНИМАНИЕ:</b> Пожалуйста [[проверьте=>https://dl.bitmask.net/en/signature-verification]]] [[сигнатура => https://dl.bitmask.net/client/android/Bitmask-Android-latest.apk.sig]]]!</p>'}) %>
+
+
 
 h2. Скачать другие версии
 
