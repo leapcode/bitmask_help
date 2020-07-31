@@ -1,18 +1,18 @@
 - @title = "Bitmask for Mac OS"
 - @nav_title = 'Mac OS'
 
+h1. Bitmask is now RiseupVPN 
+
+We've deprecated Bitmask for all desktop clients. We've rewritten the clients and offer provider branded versions. You can try the new client by installing RiseupVPN.
+
 h2. Download latest version
 
-Bitmask requires Mountain Lion or newer.
+RiseupVPN requires Catalina.
 
-<%= render({:partial => 'common/download_button'}, {:link => 'https://dl.bitmask.net/client/osx/Bitmask-OSX-latest.dmg', :text => 'Download for Mac OS'}) %>
-
-Optionally, you can [[authenticate the signature => signature-verification]] for the Bitmask .dmg file using [[this signature file => https://dl.bitmask.net/client/osx/Bitmask-OSX-latest.dmg.asc]].
-
-Once the file `Bitmask-OSX-latest.dmg` has been saved to your computer, mount the `.dmg` image and drag the `Bitmask` icon to your `Applications` folder.
+<%= render({:partial => 'common/download_button'}, {:link => 'https://dl.bitmask.net/RiseupVPN/osx/RiseupVPN-OSX-latest.pkg', :text => 'Download for Mac OS'}) %>
 
 h2. Download other versions
 
-You can [[browse all releases => https://dl.bitmask.net/client/osx/]] for old or experimental downloads.
+You can [[browse all releases => https://dl.bitmask.net/RiseupVPN/osx/]] for old or experimental downloads.
 
 You should install the latest stable release. Downloads tagged with "RC" are "Release Candidates" and receive frequent experimental updates that may break the application.

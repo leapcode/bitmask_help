@@ -6,9 +6,7 @@ es:
   download_bitmask: Descarga Bitmask
   downloads: Descargas
   download: Descargar
-  warning: >
-    <b>ADVERTENCIA:</b> Bitmask está todavía en fase experimental. Por favor, no uses estas versiones beta
-    de Bitmask en situaciones en las que un compromiso de tus datos podría ponerte en peligro.
+  warning: 
   warning_disabled: >
     Aunque Bitmask evoluciona rapidamente, es posible que pierdas tus emails usando una version beta.
 
@@ -30,7 +28,3 @@ es:
   bitmask_vpn_blurb: >
     Con [[Bitmask VPN => features#vpn]], todo el tráfico se enruta de forma segura a través de
     tu proveedor antes de ser descifrado y enviado a la Internet abierta.
-  encrypted_email: Correo Electrónico Cifrado
-  encrypted_email_blurb: >
-    El [[Mail Cifrado Bitmask => features#email]] es fácil de usar, permaneciendo
-    compatible con el protocolo OpenPGP existente para correo electrónico seguro.

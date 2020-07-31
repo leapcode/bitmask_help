@@ -1,0 +1,18 @@
+- @title = "Bitmask for Linux"
+- @nav_title = 'Linux'
+
+h1. Bitmask is now RiseupVPN 
+
+We've deprecated Bitmask for all desktop clients. We've rewritten the clients and offer provider branded versions. You can try the new client by installing RiseupVPN.
+RiseupVPN is distributed as a snap package. Currently we don't have the capacities to offer packaging for different Linux distributions and need community support for it! 
+You can get "in contact with us":https://0xacab.org/leap/bitmask-vpn/-/issues/new, if you want to help with packaging!
+
+h2. Download latest version
+
+<%= render({:partial => 'common/download_button'}, {:link => 'https://dl.bitmask.net/RiseupVPN/linux/riseup-vpn_latest.snap', :text => 'Download for Linux'}) %>
+
+h2. Download other versions
+
+You can [[browse all releases => https://dl.bitmask.net/RiseupVPN/linux/]] for old or experimental downloads.
+
+You should install the latest stable release. Downloads tagged with "RC" are "Release Candidates" and receive frequent experimental updates that may break the application.

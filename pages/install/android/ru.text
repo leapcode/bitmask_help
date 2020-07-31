@@ -9,8 +9,6 @@
   });
 </script>
 
-<%= render({:partial => 'common/notice'}, {:type => 'info', :text => '<b>ПРИМЕЧАНИЕ:</b> Bitmask для Android все еще не поддерживает зашифрованную электронную почту.'}) %>
-
 h2. Установить с Google Play
 
 Вы можете поискать "Bitmask" в Google Play или использовать эти ссылки:

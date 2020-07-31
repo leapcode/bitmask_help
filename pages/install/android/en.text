@@ -9,8 +9,6 @@
   });
 </script>
 
-<%= render({:partial => 'common/notice'}, {:type => 'info', :text => '<b>NOTE:</b> Bitmask for Android does not yet support encrypted email.'}) %>
-
 h2. Install from Google Play
 
 You can search for "Bitmask" in the Google Play store or use this link:

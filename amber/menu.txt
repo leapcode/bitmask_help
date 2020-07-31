@@ -5,6 +5,8 @@ features
 install
   android
   linux
+  mac
+  windows
   signature-verification
 help
   support

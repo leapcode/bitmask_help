@@ -41,44 +41,6 @@ Os certificados CA específicos de provedores usam RSA de 4096 bit com digest de
 
 Todas as conexões TLS usan cifras PFS.
 
-h2. Armazenamento - Soledad
-
-A aplicação Bitmask armazena seus próprios dados na [[Soledad => https://leap.se/soledad]], que lida com a encriptação desses dados, fazendo backups seguros, e sincroniza-os entre os dispositivos do usuário. Na Soledad, o armazenamento local utiliza bloco simétrico de encriptação de toda a base de dados usando uma única chave. Para os dados armazenados remotamente, cada documento é encriptado separadamente usando uma chave única para cada um deles.
-
-Tanto as chaves do armazenamento local quanto as do remoto derivam de um "segredo de armazenamento" mestre. Este segredo longo e aleatório é armazenado localmente no disco, protegido por encriptação simétrica usando uma chave derivada da senha de usuário (scrypt é usado como função de derivação da chave).
-
-Atualmente, nossos parâmetros para o scrypt são:
-
-bc. N (CPU/parâmetro de custo de memória) = 2^14 = 16384
-p (parâmetro de paralelização) = 1
-r (tamanho do bloco misturado pelo SMix()) = 8
-dkLen (tamanho da chave derivada) = 32 bytes = 256 bits
-
-Estamos vendo de usar um N maior.
-
-*Armazenamento local*
-
-p((. A base de dados SQLite local encriptada em bloco usa @AES-256-CBC@ usando os primeiros 256 bits do [@segredo de armazenamento@]. Ver https://github.com/kalikaneko/python-u1dbcipher and http://sqlcipher.net.
-
-*Armazenamento remoto*
-
-p((. A encriptação de cada documento no armazenamento remoto usa encriptação simétrica com AES-256-CTR ou cifra XSalsa20 usando chaves de 256 bit. Usamos a biblioteca pycryptopp para isso. A chave e o MAC usados para encriptar cada documento individualmente são derivados da seguinte forma:
-
-<pre style="margin-left: 2em">
-storage_secret_a = primeiros 256 bits do segredo de armazenamento
-storage_secret_b = tudo que venha depois dos primeiros 256 bits do segredo de armazenamento
-document_key = hmac(document_id, storage_secret_b)
-document_mac = hmac(document_id | document_revision | iv | ciphertext, hmac(document_id, storage_secret_a)
-</pre>
-
-p((. Cada documento possui sua própria chave. A [@revisão do documento@] no MAC do documento previne a sobreposição de uma antiga versão sobre uma nova. HMAC usa SHA256.
-
-p((. Alguns documentos nos dados remotos de usuário são adicionados pelo provedor, tais como no caso de novos emails. Estes documentos usam encriptação assimétrica, sendo cada documento encriptado usando a chave pública OpenPGP do usuário. Usamos a biblioteca derivada do python-gnupg [[Isis => https://github.com/isislovecruft/python-gnupg]] para isso. Esses documentos são armazenados apenas temporariamente dessa forma: assim que o cliente os tiver visto, eles são desencriptados e re-encriptados usando os outros métodos.
-
-*Transporte*
-
-p((. TLS, como acima. Em breve será com CurveZMQ.
-
 h2. Tunel Encriptado - OpenVPN
 
 OpenVPN possui três configurações que controlam quais cifras são usadas (existe uma quarta, @--tls-auth@, mas ainda não podemos usá-la num ambiente público de múltiplos usuários). Cada provedor pode facilmente escolher a opção que quiser. Abaixo estão os padrões atuais que vêm com a plataforma LEAP.
@@ -128,24 +90,9 @@ O Bitmask ainda não suporta chaves ECC.
 
 O Bitmask usa GnuPG. A biblioteca em python que usamos é a [[ramificação Isis do python-gnupg => https://github.com/isislovecruft/python-gnupg]].
 
-h2. Atualizações de Segurança - TUF
-
-As atualizações de segurança são feitas usando o [[TUF => http://theupdateframework.com/]], que usa chaves RSA OpenSSL 4096 com pyCrypto. Existe três chaves envolvidas no processo de atualização (root, targets e timestamp).
-
-* A chave 'root' é usada para certificar o resto das chaves que estão armazenadas offline e é usada somente uma vez por ano para atualizar a certificação ou no caso de mudança de alguma outra chave [key rotation].
-* A chave 'targets' é usada para assinar todas as atualizações. Esta chave está nas mãos do gerenciador de lançamentos [release] e é usada a cada nova versão.
-* A chave 'timestamp' é usada para assinar um arquivo com data e hora a cada dia. Este arquivo é usada pelo cliente para prevenir que um adversário imponha uma atualização antiga. Esta chave está online nos servidores da plataforma.
-
 h2. Outros
 
 h3. OpenSSH
 
 Por padrão, todos os servidores usam chave RSA para guardar as chaves ao invés de ECDSA. Se um 'host' possui uma chave ECDSA, a plataforma irá sugerir ao 'sysadmin' que mude para RSA. No futuro, quando o Curve255219 for bem suportado, a plataforma instigará a mudar para 25519.
 
-h3. DNSSec
-
-Ainda será escrito.
-
-h3. StartTLS + DANE
-
-Ainda será escrito.

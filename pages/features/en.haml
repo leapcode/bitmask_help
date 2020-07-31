@@ -19,23 +19,6 @@
     <b>Extra Security</b><br>
     We take extra security measures to prevent problems common to other personal VPNs, such as DNS leakage and IPv6 leakage.
 
-%h1#email Email features
-
-%p Bitmask Encrypted Email is easy to use while still being backward compatible with the existing OpenPGP protocol for secure email.
-
-%ul.fa-ul.spaced
-  %li
-    %i.fa-li.fa.fa-check-square
-    <b>Full end-to-end encryption</b><br>
-    Whenever possible, all messages are encrypted end-to-end on the client device.
-  %li
-    %i.fa-li.fa.fa-check-square
-    <b>Secure Storage</b><br>
-    All incoming email is automatically encrypted so only you can read it (including meta-data).
-  %li
-    %i.fa-li.fa.fa-check-square
-    <b>Automatic Key Management</b><br>
-    The user never needs to know or worry about generating keys, discovering keys, or validating keys.
 
 
 %h1 Security features
@@ -44,23 +27,28 @@
   .col-sm-6
     %ul.fa-ul.spaced
       %li
-        %i.fa-li.fa.fa-save
-        <b>Client-encrypted Storage</b><br>
-        All data storage is encrypted, including local data and cloud backups. This encryption always [[takes place on your device => https://leap.se/en/soledad]], so the service provider cannot read your stored data.
-      %li
-        %i.fa-li.fa.fa-exchange
-        <b>Always Available</b><br>
-        Your data is always available, even when you are offline, it is [[synchronized to the devices => https://leap.se/en/soledad]] you choose, and secured backed up to the cloud.
+        %i.fa-li.fa.fa-exclamation-circle
+        <b>Allows anonymous usage</b><br>
+        LEAP providers can enable the VPN usage using a anonymous certificate as verification method. No Passwords needed!
       %li
         %i.fa-li.fa.fa-exclamation-circle
         <b>Passwords, Improved</b><br>
         Although you specify a username and password to login, your [[password is never communicated to the provider => https://en.wikipedia.org/wiki/Secure_Remote_Password_protocol]].
+      %li
+        %i.fa-li.fa.fa-exclamation-circle
+        <b>Pluggable Transports</b><br>
+        Bitmask Android supports Pluggable Transports to circumvent VPN blockings.
+      %li
+        %i.fa-li.fa.fa-exclamation-circle
+        <b>Firewall</b><br>
+        RiseupVPN, the branded version of Bitmask for desktops supports extra firewalling to prevent data leakage (currently Linux and MacOSX, Windows coming soon). 
+    
   .col-sm-6
     %ul.fa-ul.spaced
       %li
         %i.fa-li.fa.fa-clock-o
         <b>Up to date</b><br>
-        The Bitmask application is always kept up to date with the latest security patches (coming soon).
+        The Bitmask application is always kept up to date with the latest security patches.
       %li
         %i.fa-li.fa.fa-institution
         <b>Don't trust the provider</b><br>
