@@ -1,5 +1,5 @@
-- @title = "Bitmask for Mac OS"
-- @nav_title = 'Mac OS'
+@title = "Bitmask for Mac OS"
+@nav_title = 'Mac OS'
 
 h1. Bitmask is now RiseupVPN 
 
@@ -16,3 +16,7 @@ h2. Download other versions
 You can [[browse all releases => https://dl.bitmask.net/RiseupVPN/osx/]] for old or experimental downloads.
 
 You should install the latest stable release. Downloads tagged with "RC" are "Release Candidates" and receive frequent experimental updates that may break the application.
+
+h2. Source code
+
+The source code for MacOS client can be found [[here => https://0xacab.org/leap/bitmask-vpn]]
