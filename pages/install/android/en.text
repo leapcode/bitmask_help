@@ -27,7 +27,7 @@ p(android). <%= render({:partial => 'common/download_button'}, {:link => 'https:
 
 p(non-android). !/assets/qr/dl.bitmask.net-bitmask-android-latest.png!:https://dl.bitmask.net/client/android/Bitmask-Android-latest.apk
 
-<%= render({:partial => 'common/notice'}, {:type => 'warning', :text => '<b>ATTENTION:</b> Please [[verify=>https://dl.bitmask.net/en/signature-verification]] the [[signature => https://dl.bitmask.net/client/android/Bitmask-Android-latest.apk.sig]]!</p>'}) %>
+<%= render({:partial => 'common/notice'}, {:type => 'warning', :text => '<b>ATTENTION:</b> Please [[verify=> signature-verification]] the [[signature => https://dl.bitmask.net/client/android/Bitmask-Android-latest.apk.sig]]!</p>'}) %>
 
 h3. Beta version
 
@@ -35,7 +35,7 @@ You can install Bitmask Beta next to the stable release on the same device.
 
 <%= render({:partial => 'common/download_button'}, {:link => 'https://dl.bitmask.net/client/android/Bitmask-Android-testing.apk', :text => 'Download for Android'}) %>
 
-<%= render({:partial => 'common/notice'}, {:type => 'warning', :text => '<b>ATTENTION:</b> Please [[verify=>https://dl.bitmask.net/en/signature-verification]] the [[signature => https://dl.bitmask.net/client/android/Bitmask-Android-testing.apk.sig]]!</p>'}) %>
+<%= render({:partial => 'common/notice'}, {:type => 'warning', :text => '<b>ATTENTION:</b> Please [[verify=> signature-verification]] the [[signature => https://dl.bitmask.net/client/android/Bitmask-Android-testing.apk.sig]]!</p>'}) %>
 
 h2. Install from F-Droid
 
