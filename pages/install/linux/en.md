@@ -7,7 +7,7 @@ We've deprecated Bitmask for all desktop clients. We've rewritten the clients an
 
 ## Requirements
 
-RiseupVPN is distributed as a `snap` package or as a `deb` package in Debian Stable. Currently we don't have the capacities to offer up to date packages for other Linux distributions and need community support for it! 
+RiseupVPN is officially distributed as a `snap` package. Knowing that not everybody likes snap, we produce `deb` packages as well and we do our best to keep them up to date. Currently we don't have the capacities to offer packages for other Linux distributions and need community support for it!
 You can get [[in contact with us => https://0xacab.org/leap/bitmask-vpn/-/issues/new]], if you want to help with packaging!
 RiseupVPN is currently tested on **Ubuntu LTS** (18.04) and **Debian Stable**. If you have a different release, it may or may not work.
 
