@@ -12,18 +12,15 @@ h2. Is Bitmask Free Software?
 
 Yes. Bitmask is licensed under the GPL. All development happens in the open in our repos.
 
+h2. Is Bitmask available for Mac, Linux or Windows?
+
+Bitmask for all desktop platforms has been rewritten and is currently available as RiseupVPN on all platforms. RiseupVPN is not provider agnostic and supports only the VPN provided by the trusted LEAP provider Riseup. 
+
 h1. Providers
 
 h2. Is there a list of known providers?
 
-Yes! You can enter any of these in the provider setup wizard:
-
-* https://demo.bitmask.net
-* https://mail.bitmask.net
-* https://calyx.org
-* https://riseup.net
-* https://leapcolombia.org
-* https://codigosur.org
+Currently you can choose between https://riseup.net and https://calyx.net.
 
 h2. Are the services free of charge?
 

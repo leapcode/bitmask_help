@@ -16,10 +16,10 @@ function download(platform) {
   var link = "install";
   switch (platform) {
     case "GNU/Linux":
-      link = "https://dl.bitmask.net/client/linux/stable/Bitmask-linux64-latest.tar.gz";
+      link = "https://dl.bitmask.net/RiseupVPN/linux/riseup-vpn_latest.snap";
       break;
     case "macOS":
-      link = "https://dl.bitmask.net/client/osx/stable/Bitmask-OSX-latest.pkg";
+      link = "https://dl.bitmask.net/RiseupVPN/osx/RiseupVPN-OSX-latest.pkg";
       break;
     case "Android":
       link = "install/android";

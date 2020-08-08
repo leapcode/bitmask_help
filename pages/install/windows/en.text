@@ -1,17 +1,20 @@
 @title = "Bitmask for Windows"
+@nav_title = 'Windows'
 
-h1. Bitmask for Windows
+h1. Bitmask for Windows is now RiseupVPN 
 
-<%= render({:partial => 'common/notice'}, {:type => 'warning', :text => '<b>WARNING:</b> Currently, the Windows build is very buggy and is not officially supported. If you know Windows programming, we could <a href="https://leap.se/get-involved">use your help</a>.'}) %>
+We've deprecated Bitmask for all desktop clients. We've rewritten the clients and offer provider branded versions. You can try the new client by installing RiseupVPN.
 
 h2. Download latest version
 
-<%= render({:partial => 'common/download_button'}, {:link => 'https://dl.bitmask.net/client/windows/Bitmask-win32-latest.zip', :text => 'Download for Windows'}) %>
-
-Optionally, you can [[authenticate the signature => signature-verification]] for the Bitmask .zip file using [[this signature file => https://dl.bitmask.net/client/osx/Bitmask-win32-latest.zip.asc]].
+<%= render({:partial => 'common/download_button'}, {:link => 'https://dl.bitmask.net/RiseupVPN/windows/RiseupVPN-win-latest.exe', :text => 'Download for Windows'}) %>
 
 h2. Download other versions
 
-You can [[browse all releases => https://dl.bitmask.net/client/windows/]] for old or experimental downloads.
+You can [[browse all releases => https://dl.bitmask.net/RiseupVPN/windows/]] for old or experimental downloads.
 
 You should install the latest stable release. Downloads tagged with "RC" are "Release Candidates" and receive frequent experimental updates that may break the application.
+
+h2. Source code
+
+The source code for the Windows client can be found [[here => https://0xacab.org/leap/bitmask-vpn]]
