@@ -2,7 +2,7 @@
 
 В частности, если у вас есть отточенные навыки в Python, Android Java, Ruby, C, CouchDB, Windows, Mac, Puppet, Qt, или вы действительно любите криптографию, мы точно могли бы воспользоваться вашей помощью.
 
-# [[Форкайте наш код => https://leap.se/en/source]]
+# Вставить код нашего [[Android клиент => https://0xacab.org/leap/bitmask_android]] или нашего [[Windows, Linux и Mac клиент => https://0xacab.org/leap/bitmask-vpn]].
 # Создавайте новую ветку от веток для разработки feature/x или bugfix/x.
 # Пишите код.
 # Делайте запрос на пулл на github из вашей ветки feature или bugfix в upstream ветку для разработки.

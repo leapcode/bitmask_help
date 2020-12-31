@@ -2,7 +2,7 @@
 
 Se você tem bom domínio de Python, Android Java, Ruby, C, CouchDB, Windows, Mac, Puppet, Qt, ou gosta muito de criptografia, sua ajuda será muito bem-vinda.
 
-# [[Clone nosso código => https://leap.se/en/source]]
+# Fork o código do nosso [[cliente Android => https://0xacab.org/leap/bitmask_android]] ou do nosso [[cliente Windows, Linux e Mac => https://0xacab.org/leap/bitmask-vpn]].
 # Crie uma nova ramificação a partir de 'develop' chamada 'feature/x' ou 'bugfix/x'.
 # Hackeie à vontade.
 # Abra um 'pull request' a partir da sua nova 'feature' ou 'bugfix' no 'upstream develop' no github.
