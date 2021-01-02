@@ -2,7 +2,7 @@
 
 In particular, if you have finely honed skill in Python, Android Java, Ruby, C, CouchDB, Windows, Mac, Puppet, Qt, or you really love crypto, we could sure use your help.
 
-# [[Fork our code => https://leap.se/en/source]]
+# Fork the code of our [[Android client => https://0xacab.org/leap/bitmask_android]] or our [[Windows, Linux and Mac client => https://0xacab.org/leap/bitmask-vpn]].
 # Create a new branch from develop called feature/x or bugfix/x.
 # Hack away.
 # Issue a pull request on github from your feature or bugfix branch to the upstream develop branch.
